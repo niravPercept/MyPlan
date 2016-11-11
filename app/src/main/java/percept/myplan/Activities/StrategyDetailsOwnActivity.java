@@ -49,6 +49,7 @@ import java.util.Map;
 import io.tpa.tpalib.TpaConfiguration;
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
 import percept.myplan.CustomListener.RecyclerTouchListener;
+import percept.myplan.Dialogs.dialogDeleteAlert;
 import percept.myplan.Dialogs.dialogYesNoOption;
 import percept.myplan.Global.Constant;
 import percept.myplan.Global.General;
@@ -307,6 +308,7 @@ public class StrategyDetailsOwnActivity extends AppCompatActivity {
 
 
 //        initSwipe(LST_STRATEGYCONTACT);
+        initSwipe(lstOwnStrategyMusic);
 
     }
 
@@ -332,6 +334,10 @@ public class StrategyDetailsOwnActivity extends AppCompatActivity {
                     deleteAlarms(position);
                 else if (recyclerView == LST_STRATEGYCONTACT)
                     deleteContacts(position);
+                else if (recyclerView==lstOwnStrategyMusic)
+                   // deleteAudio(position);
+                    deletemessagebox(position);
+
 
             }
 
@@ -469,6 +475,7 @@ public class StrategyDetailsOwnActivity extends AppCompatActivity {
             LIST_STRATEGYCONTACT.clear();
             LISTMUSIC.clear();
             listLink.clear();
+            Log.d("remove music",LISTMUSIC.toString());
             new General().getJSONContentFromInternetService(StrategyDetailsOwnActivity.this, General.PHPServices.GET_STRATEGY, params, true, false, true, new VolleyResponseListener() {
                 @Override
                 public void onError(VolleyError message) {
@@ -557,7 +564,7 @@ public class StrategyDetailsOwnActivity extends AppCompatActivity {
                         Log.d("data",LISTMUSIC.toString());
 
                         if (LISTMUSIC != null && LISTMUSIC.size() > 0) {
-                            musicAdapter = new StrategyMusicAdapter(LISTMUSIC);
+                            musicAdapter = new StrategyMusicAdapter(StrategyDetailsOwnActivity.this,LISTMUSIC);
                             lstOwnStrategyMusic.setAdapter(musicAdapter);
                             tvMusic.setVisibility(View.VISIBLE);
                             vMusic.setVisibility(View.VISIBLE);
@@ -728,6 +735,90 @@ public class StrategyDetailsOwnActivity extends AppCompatActivity {
             snackbar.show();
         }
     }
+
+
+
+
+    // massage box delete
+
+    public void deletemessagebox(final int is){
+
+        final dialogDeleteAlert alert=new dialogDeleteAlert(StrategyDetailsOwnActivity.this,getString(R.string.audioremove)) {
+            @Override
+            public void onClickYes() {
+                deleteAudio(is);
+              //  alert.dismiss();
+                dismiss();
+            }
+
+            @Override
+            public void onClickNo() {
+             dismiss();
+            }
+        };
+        alert.show();
+
+    }
+
+
+
+    //ketan code
+    //strategy Music delete remove item
+    public void deleteAudio(final int posi){
+        if (!General.checkInternetConnection(StrategyDetailsOwnActivity.this))
+            return;
+
+        mProgressDialog = new ProgressDialog(StrategyDetailsOwnActivity.this);
+        mProgressDialog.setMessage(getString(R.string.progress_loading));
+        mProgressDialog.setIndeterminate(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
+        mProgressDialog.show();
+        HashMap<String, String> params = new HashMap<>();
+        params.put("sid", Constant.SID);
+        params.put("sname", Constant.SNAME);
+        params.put("audios",LISTMUSIC.get(posi).toString());
+        params.put("id", STRATEGY_ID);
+
+
+        try {
+            new General().getJSONContentFromInternetService(StrategyDetailsOwnActivity.this,
+                    General.PHPServices.DELETE_STRATEGY_AUDIO, params, true, false, true, new VolleyResponseListener() {
+
+                        @Override
+                        public void onError(VolleyError message) {
+                            mProgressDialog.dismiss();
+                        }
+
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            mProgressDialog.dismiss();
+                            LISTMUSIC.remove(posi);
+                            musicAdapter.notifyDataSetChanged();
+                            Log.d("reso",response.toString());
+                        }
+                    },"");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mProgressDialog.dismiss();
+            Snackbar snackbar = Snackbar
+                    .make(REL_COORDINATE, getResources().getString(R.string.nointernet), Snackbar.LENGTH_INDEFINITE)
+                    .setAction(getResources().getString(R.string.retry), new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+//                            deleteImages(posi);
+                        }
+                    });
+            snackbar.setActionTextColor(Color.RED);
+            View sbView = snackbar.getView();
+            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(Color.YELLOW);
+            snackbar.show();
+        }
+
+    }
+
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

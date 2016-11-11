@@ -198,6 +198,7 @@ public class StrategyEditActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
+            LIST_MUSIC.clear();
             StrategyEditActivity.this.finish();
             return true;
         } else if (item.getItemId() == R.id.action_saveStrategy) {

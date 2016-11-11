@@ -268,6 +268,11 @@ public class MusicListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
+//            thumbnailsselection.
+
+            for(int i=0;i<thumbnailsselection.length;i++){
+               thumbnailsselection[i]=false;
+            }
             MusicListActivity.this.finish();
             return true;
         } else if (item.getItemId() == R.id.action_AddStrategyMusic) {

@@ -32,6 +32,7 @@ import io.tpa.tpalib.TpaConfiguration;
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
 import me.crosswall.photo.pick.PickConfig;
 import me.crosswall.photo.pick.util.UriUtil;
+import percept.myplan.Dialogs.dialogOk;
 import percept.myplan.Global.Constant;
 import percept.myplan.Global.General;
 import percept.myplan.Global.MultiPartParsing;
@@ -116,14 +117,28 @@ public class AddHopeBoxActivity extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             AddHopeBoxActivity.this.finish();
         } else if (item.getItemId() == R.id.action_addHopeBox) {
-            InputMethodManager inputManager = (InputMethodManager)
-                    getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+            if(EDT_FOLDERNAME.getText().length()==0){
+                dialogOk _dialoglert=new dialogOk(AddHopeBoxActivity.this, getString(R.string.hopeboxenterfolder)) {
+                    @Override
+                    public void onClickOk() {
+                        dismiss();
+                    }
+                };
+                _dialoglert.setCancelable(false);
+                _dialoglert.setCanceledOnTouchOutside(false);
+                _dialoglert.show();
+            }else {
+
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
 //            Toast.makeText(AddHopeBoxActivity.this, "Saved Called", Toast.LENGTH_SHORT).show();
 
 //            new AddHopeBox(EDT_FOLDERNAME.getText().toString(), FOLDER_IMG_PATH).execute();
                 addHopeBox(EDT_FOLDERNAME.getText().toString(), FOLDER_IMG_PATH);
+            }
         }
         return false;
     }

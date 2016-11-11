@@ -1,6 +1,7 @@
 package percept.myplan.Activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ import java.util.HashMap;
 
 import io.tpa.tpalib.TpaConfiguration;
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
+import percept.myplan.Dialogs.dialogOk;
 import percept.myplan.Global.Constant;
 import percept.myplan.Global.General;
 import percept.myplan.Global.MultiPartParsing;
@@ -154,9 +157,28 @@ public class HopeDetailsAddElementActivity extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             HopeDetailsAddElementActivity.this.finish();
         } else if (item.getItemId() == R.id.action_Save) {
-            if (hopeDetail != null)
-                addHopeBoxElement(EDT_TITLE.getText().toString().trim(),
-                        getIntent().getExtras().getString("HOPE_ID"), "", hopeDetail.getID(), hopeDetail.getTYPE());
+       if (hopeDetail != null) {
+                if(EDT_TITLE.getText().length()==0){
+                    dialogOk _dialoglert=new dialogOk(HopeDetailsAddElementActivity.this, getString(R.string.enter_titile)) {
+                        @Override
+                        public void onClickOk() {
+                            dismiss();
+                        }
+                    };
+                    _dialoglert.setCancelable(false);
+                    _dialoglert.setCanceledOnTouchOutside(false);
+                    _dialoglert.show();
+                }else {
+
+                    /*InputMethodManager inputManager = (InputMethodManager)
+                            getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+*/
+                    addHopeBoxElement(EDT_TITLE.getText().toString().trim(),
+                            getIntent().getExtras().getString("HOPE_ID"), "", hopeDetail.getID(), hopeDetail.getTYPE());
+
+                }
+           }
         }
         return false;
     }

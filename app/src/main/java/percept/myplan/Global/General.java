@@ -143,6 +143,8 @@ public class General {
                 return ".getprofile";
             case DELETE_PROFILEMAGE:
                 return ".deleteProfilemage";
+            case DELETE_STRATEGY_AUDIO:
+                return ".DeleteStrategyaudio";
             default:
                 return "";
         }
@@ -294,6 +296,6 @@ public class General {
         GET_USER_STRATEGY, PROFILE, DELETE_HOPE_BOX, FORGOT_PASSWORD,
         GET_SETTINGS, SAVE_SETTINGS, GET_MESSAGE, SAVE_MESSAGE, GET_HELP_INFO, GIVE_FEEDBACK,
         GET_EMERGENCY_ROOMS, SAVE_EMERGENCY_ROOM, DELETE_STRATEGY_IMAGES, DELETE_SYMPTOM, DELETE_HOPE_MEDIA,
-        GET_EXPORT_PDF, GET_PROFILE, DELETE_PROFILEMAGE,
+        GET_EXPORT_PDF, GET_PROFILE, DELETE_PROFILEMAGE,DELETE_STRATEGY_AUDIO,
     }
 }

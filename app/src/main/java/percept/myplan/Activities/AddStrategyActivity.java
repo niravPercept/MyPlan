@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
+import percept.myplan.Dialogs.dialogOk;
 import percept.myplan.Global.Constant;
 import percept.myplan.Global.General;
 import percept.myplan.Global.MultiPartParsing;
@@ -167,13 +168,53 @@ public class AddStrategyActivity extends AppCompatActivity {
             AddStrategyActivity.this.finish();
             return true;
         } else if (item.getItemId() == R.id.action_saveStrategy) {
+//            InputMethodManager inputManager = (InputMethodManager)
+//                    getSystemService(Context.INPUT_METHOD_SERVICE);
+//            inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            /*new AddStrategy(EDT_TITLE.getText().toString().trim(), EDT_TEXT.getText().toString().trim(),
+                    STR_CONTACTID, LIST_IMG, LIST_MUSIC, STR_LINK).execute();*/
+
+            /*if (EDT_TITLE.getText().length()!=0 || !EDT_TITLE.equals(null) ){
+                addStrategy();
+            }else {
+
+                dialogOk dialogOk=new dialogOk(AddStrategyActivity.this, getString(R.string.enter_titile)) {
+                    @Override
+                    public void onClickOk() {
+                        dismiss();
+                    }
+                };
+
+                dialogOk.show();
+
+            }*/
+
+            //change by ketan
+
+                 if(EDT_TITLE.getText().length()==0){
+          dialogOk _dialoglert=new dialogOk(AddStrategyActivity.this, getString(R.string.enter_titile)) {
+                    @Override
+                    public void onClickOk() {
+                        dismiss();
+                    }
+                };
+                _dialoglert.setCancelable(false);
+                _dialoglert.setCanceledOnTouchOutside(false);
+                _dialoglert.show();
+            }else {
             InputMethodManager inputManager = (InputMethodManager)
                     getSystemService(Context.INPUT_METHOD_SERVICE);
             inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-            /*new AddStrategy(EDT_TITLE.getText().toString().trim(), EDT_TEXT.getText().toString().trim(),
-                    STR_CONTACTID, LIST_IMG, LIST_MUSIC, STR_LINK).execute();*/
-            addStrategy();
+
+             addStrategy();
+
+           /* addStrategy(EDT_TITLE.getText().toString().trim(), EDT_TEXT.getText().toString().trim(),
+                    STR_CONTACTID, LIST_IMG, LIST_MUSIC, TextUtils.join(",", listLink));*/
             return true;
+
+            }
+
+
         }
         return false;
     }
@@ -223,7 +264,7 @@ public class AddStrategyActivity extends AppCompatActivity {
         // Extra parameters if you want to pass to server
 
         //   map.put(Constant.URL, getResources().getString(R.string.server_url) + ".saveStrategy");
-        String str=android.text.TextUtils.join(",", LIST_MUSIC);
+        String str= TextUtils.join(",", LIST_MUSIC);
         Log.e("Music List","Music List="+str);
         map.put("sid", Constant.SID);
         map.put("sname", Constant.SNAME);

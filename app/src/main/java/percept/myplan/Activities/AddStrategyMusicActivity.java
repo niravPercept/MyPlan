@@ -36,6 +36,7 @@ public class AddStrategyMusicActivity extends AppCompatActivity {
     private String HOPE_ELEMENT_ID = "";
     private boolean FROM_EDIT = false;
     public List<String> listmusic; //change by ketan
+    public List<String> listmusics;//change by ketan
     private RecyclerView rvMusic;
     private SelectedMusicListAdapter selectedMusicListAdapter;
 
@@ -109,9 +110,27 @@ public class AddStrategyMusicActivity extends AppCompatActivity {
 
         // change by ketan
         // before edit show strategies  music List
-        selectedMusicListAdapter=new SelectedMusicListAdapter(StrategyDetailsOwnActivity.LISTMUSIC);
-        rvMusic.setAdapter(selectedMusicListAdapter);
+       /* if (StrategyDetailsOwnActivity.LISTMUSIC !=null ){
 
+            selectedMusicListAdapter = new SelectedMusicListAdapter(StrategyDetailsOwnActivity.LISTMUSIC);
+            rvMusic.setAdapter(selectedMusicListAdapter);
+        }*/
+
+     /*   if (StrategyEditActivity.LIST_MUSIC !=null ||StrategyDetailsOwnActivity.LISTMUSIC !=null){
+
+            listmusics=new ArrayList<>();
+            listmusics.addAll(StrategyEditActivity.LIST_MUSIC);
+            listmusics.addAll(StrategyDetailsOwnActivity.LISTMUSIC);
+           // selectedMusicListAdapter = new SelectedMusicListAdapter(StrategyEditActivity.LIST_MUSIC);
+            selectedMusicListAdapter = new SelectedMusicListAdapter(listmusics);
+            rvMusic.setAdapter(selectedMusicListAdapter);
+        }
+*/
+
+        if(StrategyEditActivity.LIST_MUSIC != null){
+            selectedMusicListAdapter = new SelectedMusicListAdapter(StrategyEditActivity.LIST_MUSIC);
+            selectedMusicListAdapter = new SelectedMusicListAdapter(listmusic);
+        }
     }
 
     @Override
@@ -137,8 +156,12 @@ public class AddStrategyMusicActivity extends AppCompatActivity {
                     if (FROM.equals("") || FROM_EDIT) {
                         if (FROM_EDIT) {
                             listmusic=new ArrayList<>();
+//                            listmusic.addAll(StrategyEditActivity.LIST_MUSIC);
                             listmusic.addAll(StrategyEditActivity.LIST_MUSIC);
-                            listmusic.addAll(StrategyDetailsOwnActivity.LISTMUSIC);
+                            //listmusic.addAll(StrategyDetailsOwnActivity.LISTMUSIC);
+
+                            Log.d("startegyeditActivity",StrategyEditActivity.LIST_MUSIC.toString());
+                            Log.d("strategydetailActivity",StrategyEditActivity.LIST_MUSIC.toString());
 
 //                      selectedMusicListAdapter = new SelectedMusicListAdapter(StrategyEditActivity.LIST_MUSIC);
                             selectedMusicListAdapter = new SelectedMusicListAdapter(listmusic);
@@ -146,7 +169,7 @@ public class AddStrategyMusicActivity extends AppCompatActivity {
                             rvMusic.setAdapter(selectedMusicListAdapter);
                         } else {
 //                            selectedMusicListAdapter = new SelectedMusicListAdapter(AddStrategyActivity.LIST_MUSIC);
-                            selectedMusicListAdapter=new SelectedMusicListAdapter(StrategyDetailsOwnActivity.LISTMUSIC);
+                            selectedMusicListAdapter=new SelectedMusicListAdapter(AddStrategyActivity.LIST_MUSIC);
                             rvMusic.setAdapter(selectedMusicListAdapter);
                         }
                     }
@@ -174,18 +197,18 @@ public class AddStrategyMusicActivity extends AppCompatActivity {
                     } else AddStrategyMusicActivity.this.finish();
                 }
 
-            } else
+            } else AddStrategyMusicActivity.this.finish();
 
-                AddStrategyMusicActivity.this.finish();
             return true;
         }
         return false;
     }
 
     private class SelectedMusicListAdapter extends RecyclerView.Adapter<SelectedMusicListAdapter.MusicViewHolder> {
-        List<String> listMusic;
+        List<String> listMusic =new ArrayList<>();
 
         public SelectedMusicListAdapter(List<String> listMusic) {
+
             this.listMusic = listMusic;
         }
 
