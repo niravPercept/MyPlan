@@ -101,7 +101,11 @@ public class AddNoteActivity extends AppCompatActivity {
 
     private void addHopeBoxNoteElement(final String NOTE, final String TYPE) {
 
-        if (!new Utils(AddNoteActivity.this).isNetConnected()) {
+        HopeDetailsAddElementActivity.DATA_NOTE=NOTE;
+        HopeDetailsAddElementActivity.TYPE=TYPE;
+        AddNoteActivity.this.finish();
+
+       /* if (!new Utils(AddNoteActivity.this).isNetConnected()) {
             Snackbar snackbar = Snackbar
                     .make(REL_COORDINATE, getResources().getString(R.string.nointernet), Snackbar.LENGTH_INDEFINITE)
                     .setAction(getResources().getString(R.string.retry), new View.OnClickListener() {
@@ -164,7 +168,7 @@ public class AddNoteActivity extends AppCompatActivity {
             TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
             textView.setTextColor(Color.YELLOW);
             snackbar.show();
-        }
+        }*/
     }
 
 //    private class AddHopeBoxNoteElement extends AsyncTask<Void, Integer, String> {

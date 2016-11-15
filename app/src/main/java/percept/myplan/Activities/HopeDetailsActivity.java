@@ -117,7 +117,7 @@ public class HopeDetailsActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                    Log.d("::::::  ", String.valueOf(LIST_HOPEDETAILS.size()));
+                    Log.d(":::::: 1 ", String.valueOf(LIST_HOPEDETAILS.size()));
 //                    ADAPTER = new HopeDetailsAdapter(HopeDetailsActivity.this, LIST_HOPEDETAILS);
 //                    LST_HOPEDETAILS.setAdapter(ADAPTER);
                     mAdapter = new Basic3Adapter(HopeDetailsActivity.this, LIST_HOPEDETAILS, HOPE_TITLE);

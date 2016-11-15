@@ -73,6 +73,7 @@ public class AssignPriorityActivity extends AppCompatActivity {
         }
         if (getIntent().hasExtra("FROM_EMERGENCY"))
             imgTickEmergency.setChecked(true);
+
 //        tvEmergency.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -97,23 +98,29 @@ public class AssignPriorityActivity extends AppCompatActivity {
         imgTickHelp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isSelect) {
-                if (_count >= 10) {
-                    Toast.makeText(AssignPriorityActivity.this, getString(R.string.help_contact_validate), Toast.LENGTH_LONG).show();
-                    compoundButton.setChecked(false);
-                    return;
-                } else if (isSelect)
-                    imgTickEmergency.setChecked(false);
-                else
-                    imgTickEmergency.setChecked(true);
+//                if (_count >= 10) {
+//                    Toast.makeText(AssignPriorityActivity.this, getString(R.string.help_contact_validate), Toast.LENGTH_LONG).show();
+//                    compoundButton.setChecked(true);
+//                    return;
+//                } else if (!isSelect)
+//                    imgTickEmergency.setChecked(false);
+//                else
+//                    imgTickEmergency.setChecked(true);
+                if (!isSelect)
+                    imgTickHelp.setChecked(false);
+                else {
+                    if (_count > 10)
+                        imgTickHelp.setChecked(true);
+                }
             }
         });
         imgTickEmergency.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isSelect) {
-                if (isSelect)
+                if (!isSelect)
                     imgTickHelp.setChecked(false);
                 else {
-                    if (_count < 10)
+                    if (_count > 10)
                         imgTickHelp.setChecked(true);
                 }
             }
@@ -133,7 +140,12 @@ public class AssignPriorityActivity extends AppCompatActivity {
             return true;
         } else if (item.getItemId() == R.id.action_saveNote) {
             Intent intent = new Intent();
-            if (imgTickEmergency.isChecked())
+
+            if (imgTickEmergency.isChecked() && imgTickHelp.isChecked() ){
+
+            }else if(!imgTickEmergency.isChecked() && !imgTickHelp.isChecked()){
+                con_priority = 0;
+            }else if (imgTickEmergency.isChecked())
                 con_priority = 2;
             else con_priority = 1;
             intent.putExtra("FROM_PRIORITY", con_priority);

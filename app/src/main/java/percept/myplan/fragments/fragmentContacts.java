@@ -236,13 +236,16 @@ public class fragmentContacts extends Fragment {
                                 TV_EMERGENCYNO.setText(_obj.getFirst_name());
                             else
                                 TV_EMERGENCYNO.setText(_obj.getPhone());
+
                             UTILS.setPreference("EMERGENCY_CONTACT_NAME", _obj.getFirst_name());
                             UTILS.setPreference("EMERGENCY_CONTACT_NO", _obj.getPhone());
                         } else if (_obj.getHelplist().equals("0")) {
-                            CONTACT_NAME.put(_obj.getId(), _obj.getFirst_name());
+                            String name=_obj.getFirst_name()+_obj.getLast_name();
+                            CONTACT_NAME.put(_obj.getId(), name);
                             LIST_CONTACTS.add(_obj);
                         } else {
-                            HELP_CONTACT_NAME.put(_obj.getId(), _obj.getFirst_name());
+                            String name=_obj.getFirst_name()+_obj.getLast_name();
+                            HELP_CONTACT_NAME.put(_obj.getId(), name);
                             LIST_HELPCONTACTS.add(_obj);
                         }
                     }

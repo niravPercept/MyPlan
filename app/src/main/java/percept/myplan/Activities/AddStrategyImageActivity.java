@@ -398,11 +398,12 @@ public class AddStrategyImageActivity extends AppCompatActivity {
                     imageAdapter = new ImageDeleteAdapter(AddStrategyImageActivity.this, StrategyEditActivity.LIST_IMG);
                     rvPhotos.setAdapter(imageAdapter);
 //                        AddStrategyImageActivity.this.finish();
-                } else {
-                    imageAdapter = new ImageDeleteAdapter(AddStrategyImageActivity.this, AddStrategyActivity.LIST_IMG);
-                    rvPhotos.setAdapter(imageAdapter);
-//                        AddStrategyImageActivity.this.finish();
                 }
+//                else {
+//                    imageAdapter = new ImageDeleteAdapter(AddStrategyImageActivity.this, AddStrategyActivity.LIST_IMG);
+//                    rvPhotos.setAdapter(imageAdapter);
+////                        AddStrategyImageActivity.this.finish();
+//                }
 
             } catch (NullPointerException e) {
                 e.printStackTrace();
@@ -483,7 +484,19 @@ public class AddStrategyImageActivity extends AppCompatActivity {
                         }
                         imageAdapter.notifyDataSetChanged();
                     } else {
-                        addHopeBoxImageElement(HOPE_TITLE, HOPE_ID, FILE_PATH, HOPE_ELEMENT_ID, "image");
+//                        addHopeBoxImageElement(HOPE_TITLE, HOPE_ID, FILE_PATH, HOPE_ELEMENT_ID, "image");
+
+                        if (HopeDetailsAddElementActivity.DATA_IMAGE.size() > 0) {
+                            HopeDetailsAddElementActivity.DATA_IMAGE.clear();
+                            if (HopeDetailsAddElementActivity.DATA_IMAGE.size() < 0) {
+                                HopeDetailsAddElementActivity.DATA_IMAGE.add(FILE_PATH);
+                                HopeDetailsAddElementActivity.TYPE ="image";
+                            }
+                        } else{
+                            HopeDetailsAddElementActivity.DATA_IMAGE.add(FILE_PATH);
+                        HopeDetailsAddElementActivity.TYPE ="image";
+                    }
+                        AddStrategyImageActivity.this.finish();
                     }
                 }
             }.execute();
@@ -498,7 +511,10 @@ public class AddStrategyImageActivity extends AppCompatActivity {
 
     private void addHopeBoxImageElement(final String title, final String hopeId, final String imgpath, final String hopeElementId, final String type) {
 
-        if (!UTILS.isNetConnected()) {
+
+
+
+     /*   if (!UTILS.isNetConnected()) {
             Snackbar snackbar = Snackbar
                     .make(REL_COORDINATE, getResources().getString(R.string.nointernet), Snackbar.LENGTH_INDEFINITE)
                     .setAction(getResources().getString(R.string.retry), new View.OnClickListener() {
@@ -551,9 +567,9 @@ public class AddStrategyImageActivity extends AppCompatActivity {
                 if (getIntent().hasExtra("FROM_HOPE")) {
                     GET_HOPE_DETAILS = true;
                 }
-                AddStrategyImageActivity.this.finish();
+
             }
-        });
+        });*/
 
     }
 

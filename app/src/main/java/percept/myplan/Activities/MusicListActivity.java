@@ -341,7 +341,20 @@ public class MusicListActivity extends AppCompatActivity {
     }
 
     public void addHopeBoxMusicElement(final String title, final String hopeId, final String musicpath, final String type) {
-        mProgressDialog = new ProgressDialog(MusicListActivity.this);
+
+        if (HopeDetailsAddElementActivity.DATA_MUSIC.size() > 0) {
+            HopeDetailsAddElementActivity.DATA_MUSIC.clear();
+            if (HopeDetailsAddElementActivity.DATA_MUSIC.size() < 0) {
+                HopeDetailsAddElementActivity.DATA_MUSIC.add(musicpath);
+                HopeDetailsAddElementActivity.TYPE =type;
+            }
+        } else {
+            HopeDetailsAddElementActivity.DATA_MUSIC.add(musicpath);
+            HopeDetailsAddElementActivity.TYPE = type;
+        }
+            MusicListActivity.this.finish();
+
+        /*mProgressDialog = new ProgressDialog(MusicListActivity.this);
         mProgressDialog.setMessage(getString(R.string.progress_loading));
         mProgressDialog.setIndeterminate(false);
         mProgressDialog.setCanceledOnTouchOutside(false);
@@ -350,9 +363,9 @@ public class MusicListActivity extends AppCompatActivity {
 //        params.put(Constant.URL, getResources().getString(R.string.server_url) + ".saveHopemedia");
         if (!type.equals("music")) {
 
-         /*   File file = new File(musicpath);
+         *//*   File file = new File(musicpath);
             long musicLength = file.length() / 1024;
-            if (musicLength <= (5 * 1024L))*/
+            if (musicLength <= (5 * 1024L))*//*
             if (!TextUtils.isEmpty(musicpath)) {
                 if (musicpath.length() != 0) {
                     params.put("media", musicpath);
@@ -367,11 +380,11 @@ public class MusicListActivity extends AppCompatActivity {
         }
         if (!TextUtils.isEmpty(musicpath)) {
 
-            /*File file = new File(musicpath);
+            *//*File file = new File(musicpath);
             long musicLength = file.length() / 1024;
-            if (musicLength <= (5 * 1024L))*/
+            if (musicLength <= (5 * 1024L))*//*
             if (musicpath.length()!=0) {
-            /*if (musicpath.length()!=0) {*/
+            *//*if (musicpath.length()!=0) {*//*
                 params.put("internal_audio", musicpath);
                 Log.d("msi", musicpath);
 
@@ -399,7 +412,7 @@ public class MusicListActivity extends AppCompatActivity {
                 mProgressDialog.dismiss();
                 MusicListActivity.this.finish();
             }
-        });
+        });*/
     }
 
 //    private class AddHopeBoxMusicElement extends AsyncTask<Void, Integer, String> {

@@ -111,7 +111,13 @@ public class AddStrategyLinksActivity extends AppCompatActivity {
     }
 
     private void addHopeBoxLinkElement(final String title, final String hopeId, final String link, final String type) {
-        if (!new Utils(AddStrategyLinksActivity.this).isNetConnected()) {
+
+
+        HopeDetailsAddElementActivity.DATA_LINK=link;
+        HopeDetailsAddElementActivity.TYPE=type;
+        AddStrategyLinksActivity.this.finish();
+
+       /* if (!new Utils(AddStrategyLinksActivity.this).isNetConnected()) {
             Snackbar snackbar = Snackbar
                     .make(REL_COORDINATE, getResources().getString(R.string.nointernet), Snackbar.LENGTH_INDEFINITE)
                     .setAction(getResources().getString(R.string.retry), new View.OnClickListener() {
@@ -174,7 +180,7 @@ public class AddStrategyLinksActivity extends AppCompatActivity {
             TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
             textView.setTextColor(Color.YELLOW);
             snackbar.show();
-        }
+        }*/
     }
 //    private class AddHopeBoxLinkElement extends AsyncTask<Void, Integer, String> {
 //

@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class AddStrategyMusicActivity extends AppCompatActivity {
     private String HOPE_ID = "";
     private String HOPE_ELEMENT_ID = "";
     private boolean FROM_EDIT = false;
+    private boolean HOPE=false;
     public List<String> listmusic; //change by ketan
     public List<String> listmusics;//change by ketan
     private RecyclerView rvMusic;

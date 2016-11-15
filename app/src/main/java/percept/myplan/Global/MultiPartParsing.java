@@ -3,6 +3,7 @@ package percept.myplan.Global;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -36,8 +37,11 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.X509TrustManager;
 
+import percept.myplan.Activities.AddVideoActivity;
 import percept.myplan.Interfaces.AsyncTaskCompletedListener;
 import percept.myplan.R;
+
+import static android.R.id.progress;
 
 /**
  * Created by percept on 16/8/16.
@@ -48,6 +52,7 @@ public class MultiPartParsing {
     private HashMap<String, String> map;
     private AsyncTaskCompletedListener completedListener;
     private General.PHPServices servicesName;
+//    private AddVideoActivity.MPROGRESSDIALOG mprogressdialog;
 
     public MultiPartParsing(Context _context, HashMap<String, String> _map,
                             General.PHPServices servicesName, AsyncTaskCompletedListener _completedListener) {
@@ -63,6 +68,8 @@ public class MultiPartParsing {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+
+//        AddVideoActivity.MPROGRESSDIALOG.setMessage("file upload ........chga");
         }
 
         @Override
@@ -113,9 +120,18 @@ public class MultiPartParsing {
                         else if (!TextUtils.isEmpty(map.get(key))) {
                             try {
                                 File _f = new File(map.get(key));
-                                if (_f.exists())
+                                if (_f.exists()) {
                                     entity.addPart(key, new FileBody(_f));
-                                else
+
+                                   /* byte[] bytes = new byte[(int) _f.length()];
+                                    int bufferLength = 1024;
+                                    for (int i = 0; i < bytes.length; i += bufferLength) {
+                                        int progress = (int) ((i / (float) bytes.length) * 100);
+                                        if (AddVideoActivity.MPROGRESSDIALOG!= null) {
+                                            AddVideoActivity.MPROGRESSDIALOG.setProgress(progress);
+                                        }
+                                    }*/
+                                } else
                                     entity.addPart(key, new StringBody(map.get(key)));
                             } catch (Exception e) {
                                 entity.addPart(key, new StringBody(map.get(key)));
@@ -156,6 +172,9 @@ public class MultiPartParsing {
             return responseString;
 
         }
+
+
+
 
         @Override
         protected void onPostExecute(String response) {

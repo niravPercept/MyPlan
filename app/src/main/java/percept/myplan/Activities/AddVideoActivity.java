@@ -68,7 +68,8 @@ public class AddVideoActivity extends AppCompatActivity {
     private String HOPE_TITLE = "";
     private String HOPE_ID = "";
     private String HOPE_ELEMENT_ID = "";
-    private ProgressDialog mProgressDialog;
+//    private ProgressDialog MPROGRESSDIALOG;
+    public static ProgressDialog MPROGRESSDIALOG;
     private boolean HAS_PERMISSION = true;
     private Utils UTILS;
     private CoordinatorLayout REL_COORDINATE;
@@ -293,8 +294,24 @@ public class AddVideoActivity extends AppCompatActivity {
 //                    String _path = Constant.APP_MEDIA_PATH + File.separator + "VIDEOS" + File.separator + "compress.mp4";
 //                    new TranscdingBackground(AddVideoActivity.this).execute(videosPath, _path);
                     new VideoCompressor().execute(videosPath);
-                } else
-                    addHopeBoxVideoElement(HOPE_TITLE, HOPE_ID, HOPE_ELEMENT_ID, videosPath, "video");
+                } else {
+
+                    if (HopeDetailsAddElementActivity.DATA.size()>0){
+                        HopeDetailsAddElementActivity.DATA.clear();
+                        if (HopeDetailsAddElementActivity.DATA.size()<0){
+                            HopeDetailsAddElementActivity.DATA.add(videosPath);
+                            HopeDetailsAddElementActivity.TYPE="video";
+                        }
+                    }else
+                        HopeDetailsAddElementActivity.DATA.add(videosPath);
+                    HopeDetailsAddElementActivity.TYPE="video";
+//                    HopeDetailsAddElementActivity.DATA.add(videosPath);
+
+//               addHopeBoxVideoElement(HOPE_TITLE, HOPE_ID, HOPE_ELEMENT_ID, _path, "video");
+                   /* MPROGRESSDIALOG.dismiss();
+                    AddVideoActivity.this.finish();*/
+//                    addHopeBoxVideoElement(HOPE_TITLE, HOPE_ID, HOPE_ELEMENT_ID, videosPath, "video");
+                }
 
 
 //              int end = videosPath.toString().lastIndexOf("/");
@@ -353,20 +370,19 @@ public class AddVideoActivity extends AppCompatActivity {
 //                new TranscdingBackground(AddVideoActivity.this).execute(picturePaths, _path);
                 new VideoCompressor().execute(picturePaths);
                 Log.d("::::::::::: ", _path);
-                //addHopeBoxVideoElement(HOPE_TITLE, HOPE_ID, HOPE_ELEMENT_ID, _path, "video");
+//                addHopeBoxVideoElement(HOPE_TITLE, HOPE_ID, HOPE_ELEMENT_ID, _path, "video");
             }
         }
     }
 
     public void addHopeBoxVideoElement(final String title, final String hopeId, final String hopeElementId, final String vidpath, final String type) {
-
         if (!UTILS.isNetConnected()) {
             Snackbar snackbar = Snackbar
                     .make(REL_COORDINATE, getResources().getString(R.string.nointernet), Snackbar.LENGTH_INDEFINITE)
                     .setAction(getResources().getString(R.string.retry), new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            addHopeBoxVideoElement(title, hopeId, hopeElementId, vidpath, type);
+//                                addHopeBoxVideoElement(title, hopeId, hopeElementId, vidpath, type);
                         }
                     });
 
@@ -375,17 +391,18 @@ public class AddVideoActivity extends AppCompatActivity {
 
             // Changing action button text color
             View sbView = snackbar.getView();
-            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-            textView.setTextColor(Color.YELLOW);
+//                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+//                textView.setTextColor(Color.YELLOW);
 
             snackbar.show();
-            return;
+//                return;
         }
-        mProgressDialog = new ProgressDialog(AddVideoActivity.this);
-        mProgressDialog.setMessage(getString(R.string.progress_uploading));
-        mProgressDialog.setIndeterminate(false);
-        mProgressDialog.setCanceledOnTouchOutside(false);
-        mProgressDialog.show();
+        MPROGRESSDIALOG = new ProgressDialog(AddVideoActivity.this);
+        MPROGRESSDIALOG.setIndeterminate(false);
+        MPROGRESSDIALOG.setCanceledOnTouchOutside(false);
+        MPROGRESSDIALOG.setMessage(getString(R.string.progress_uploading));
+        MPROGRESSDIALOG.show();
+
         HashMap<String, String> params = new HashMap<>();
 //        params.put(Constant.URL,getResources().getString(R.string.server_url) + ".saveHopemedia");
         if (!TextUtils.isEmpty(vidpath)) {
@@ -398,6 +415,8 @@ public class AddVideoActivity extends AppCompatActivity {
         params.put(Constant.HOPE_ID, hopeId);
         params.put(Constant.HOPE_TITLE, title);
         params.put(Constant.HOPE_TYPE, type);
+
+
 
         new MultiPartParsing(AddVideoActivity.this, params, General.PHPServices.SAVE_HOPE_MEDIA, new AsyncTaskCompletedListener() {
             @Override
@@ -415,7 +434,7 @@ public class AddVideoActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                mProgressDialog.dismiss();
+
                 Log.d(":::::: ", response);
                 if (getIntent().hasExtra("FROM_HOPE")) {
                     GET_HOPE_DETAILS = true;
@@ -425,6 +444,7 @@ public class AddVideoActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void showAlertMessage() {
         dialogOk dialogOk = new dialogOk(AddVideoActivity.this,getString(R.string.video_size_bigger)) {
@@ -445,32 +465,59 @@ public class AddVideoActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            mProgressDialog = new ProgressDialog(AddVideoActivity.this);
-            mProgressDialog.setMessage(getString(R.string.progress_loading));
-            mProgressDialog.setIndeterminate(false);
-            mProgressDialog.setCanceledOnTouchOutside(false);
-            mProgressDialog.show();
+            MPROGRESSDIALOG = new ProgressDialog(AddVideoActivity.this);
+            MPROGRESSDIALOG.setMessage(getString(R.string.progress_loading));
+//            MPROGRESSDIALOG.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            MPROGRESSDIALOG.setIndeterminate(false);
+            MPROGRESSDIALOG.setCanceledOnTouchOutside(false);
+//            MPROGRESSDIALOG.setProgress(10);
+            MPROGRESSDIALOG.show();
 //            Log.d(TAG,"Start video compression");
         }
 
         @Override
         protected String doInBackground(String... path) {
+
             return MediaController.getInstance().convertVideo(path[0]);
         }
 
         @Override
         protected void onPostExecute(String _path) {
             super.onPostExecute(_path);
-            mProgressDialog.dismiss();
+            MPROGRESSDIALOG.dismiss();
             if (!android.text.TextUtils.isEmpty(_path)) {
 //                Log.d(TAG,"Compression successfully!");
                 File file = new File(_path);
                 long videoLength = file.length() / 1024;
-                if (videoLength <= (5 * 1024L))
-                    addHopeBoxVideoElement(HOPE_TITLE, HOPE_ID, HOPE_ELEMENT_ID, _path, "video");
-                else
+                if (videoLength <= (5 * 1024L)){
+
+                    if (HopeDetailsAddElementActivity.DATA.size()>0){
+                       HopeDetailsAddElementActivity.DATA.clear();
+                        if (HopeDetailsAddElementActivity.DATA.size()<0){
+                            HopeDetailsAddElementActivity.DATA.add(_path);
+                            HopeDetailsAddElementActivity.TYPE="video";
+                        }
+                    }else
+                        HopeDetailsAddElementActivity.DATA.add(_path);
+                        HopeDetailsAddElementActivity.TYPE="video";
+
+
+//               addHopeBoxVideoElement(HOPE_TITLE, HOPE_ID, HOPE_ELEMENT_ID, _path, "video");
+               /*MPROGRESSDIALOG.dismiss();
+               AddVideoActivity.this.finish();*/
+                 MPROGRESSDIALOG.dismiss();
+                 AddVideoActivity.this.finish();
+            }else
                     showAlertMessage();
             }
+        }
+
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+
+            MPROGRESSDIALOG.setTitle("file upload"+values.toString());
         }
     }
 
@@ -707,4 +754,13 @@ public void autoScreenTracking(){
         super.onStop();
         AppLifeCycle.getInstance().stopped(this);
     }
+
+
+
+    // new add video progress shown
+
+
+
+
+
 }
