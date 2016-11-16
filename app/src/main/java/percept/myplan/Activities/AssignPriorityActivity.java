@@ -142,16 +142,18 @@ public class AssignPriorityActivity extends AppCompatActivity {
             Intent intent = new Intent();
 
             if (imgTickEmergency.isChecked() && imgTickHelp.isChecked() ){
-
-            }else if(!imgTickEmergency.isChecked() && !imgTickHelp.isChecked()){
-                con_priority = 0;
-            }else if (imgTickEmergency.isChecked())
-                con_priority = 2;
-            else con_priority = 1;
-            intent.putExtra("FROM_PRIORITY", con_priority);
-            setResult(Activity.RESULT_OK, intent);
-            AssignPriorityActivity.this.finish();
-            return true;
+                Toast.makeText(getApplicationContext(),R.string.priority,Toast.LENGTH_LONG).show();
+            }else {
+                if (!imgTickEmergency.isChecked() && !imgTickHelp.isChecked()) {
+                    con_priority = 0;
+                } else if (imgTickEmergency.isChecked())
+                    con_priority = 2;
+                else con_priority = 1;
+                intent.putExtra("FROM_PRIORITY", con_priority);
+                setResult(Activity.RESULT_OK, intent);
+                AssignPriorityActivity.this.finish();
+                return true;
+            }
         }
         return false;
     }

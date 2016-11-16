@@ -15,6 +15,7 @@ import java.util.List;
 
 import percept.myplan.AppController;
 import percept.myplan.POJO.ContactDisplay;
+import percept.myplan.POJO.Strategy;
 import percept.myplan.R;
 import percept.myplan.customviews.RoundedImageView;
 
@@ -25,6 +26,7 @@ import percept.myplan.customviews.RoundedImageView;
 public class ContactHelpListAdapter extends RecyclerView.Adapter<ContactHelpListAdapter.ContactHelpListHolder> {
 
 
+    String ad="";
     public List<ContactDisplay> LIST_HELPCONTACT;
     ImageLoader imageLoader;
     private String TYPE;
@@ -44,6 +46,7 @@ public class ContactHelpListAdapter extends RecyclerView.Adapter<ContactHelpList
     @Override
     public void onBindViewHolder(final ContactHelpListHolder holder, int position) {
         ContactDisplay _contact = LIST_HELPCONTACT.get(position);
+
         if (!TextUtils.isEmpty(_contact.getFirst_name())) {
             holder.TV_HELPCONTACT.setText(_contact.getFirst_name()+" "+_contact.getLast_name());
         } else {
@@ -76,8 +79,19 @@ public class ContactHelpListAdapter extends RecyclerView.Adapter<ContactHelpList
             else
                 holder.TV_CONTACTCHAR.setVisibility(View.VISIBLE);
 
-            if (!TextUtils.isEmpty(LIST_HELPCONTACT.get(position).getFirst_name())) {
-                holder.TV_CONTACTCHAR.setText(LIST_HELPCONTACT.get(position).getFirst_name().substring(0, 2)+" "+LIST_HELPCONTACT.get(position).getLast_name());
+            if (!TextUtils.isEmpty(LIST_HELPCONTACT.get(position).getFirst_name()) && LIST_HELPCONTACT.get(position).getFirst_name().length()!=0) {
+
+                String a=LIST_HELPCONTACT.get(position).getFirst_name().substring(0,1);
+                if (LIST_HELPCONTACT.get(position).getLast_name().length() !=0){
+                    String b=LIST_HELPCONTACT.get(position).getLast_name().substring(0,1);
+                    holder.TV_CONTACTCHAR.setText(a+b);
+                }else {
+                    holder.TV_CONTACTCHAR.setText(a);
+                }
+
+                //  holder.TV_CONTACTCHAR.setText(LIST_HELPCONTACT.get(position).getFirst_name().substring(0, 2)+" "+LIST_HELPCONTACT.get(position).getLast_name().charAt(1));
+               // holder.TV_CONTACTCHAR.setText(LIST_HELPCONTACT.get(position).getFirst_name().charAt(0)+""+LIST_HELPCONTACT.get(position).getLast_name().charAt(0));
+
             }
 
 

@@ -32,6 +32,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -530,7 +532,16 @@ public class StrategyEditActivity extends AppCompatActivity {
     }
     private void setAlarms(String title, String time, int dayOfWeek, int requestCode, String uri) {
 
-        Date date = new Date(Long.parseLong(time));
+        Date date=new Date(Long.parseLong(time));
+       /* Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+
+
+        try {
+            date = sdf.parse(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }*/
 
         Calendar calendar = Calendar.getInstance();
         if (dayOfWeek > 0)

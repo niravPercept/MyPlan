@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgLogo"
             android:paddingTop="10dp"
-            android:text="@string/prototypeby"
             android:textColor="@android:color/white" />
+        <!--android:text="@string/prototypeby"-->
     </RelativeLayout>
 </RelativeLayout>

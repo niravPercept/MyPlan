@@ -252,6 +252,7 @@ public class fragmentContacts extends Fragment {
                     if (TextUtils.isEmpty(TV_EMERGENCYNO.getText().toString())) {
                         TV_EMERGENCYNO.setText("112");
                     }
+
                     ADPT_CONTACTHELPLIST = new ContactHelpListAdapter(LIST_HELPCONTACTS, "HELP");
                     LST_HELP.setAdapter(ADPT_CONTACTHELPLIST);
 

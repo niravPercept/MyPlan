@@ -51,7 +51,7 @@
     <string name="howtostartnewcontact">Sådan opretter du en ny kontakt</string>
     <string name="howtoaddhelp">Sådan tilføjer du hjælp</string>
     <string name="enterpwd">Indtast adgangskode</string>
-    <string name="pwdprotectdata">adgangskode beskytter din data</string>
+    <string name="pwdprotectdata">Adgangskode beskytter din data</string>
     <string name="enteremailtoreset">Indtast e-mailadresse for at nulstille dit adgangskode</string>
     <string name="send">Send</string>
     <string name="howareyoufeelingtoday">Hvordan har du det i dag?</string>
@@ -375,4 +375,5 @@
     <string name="setting_off_location">Geotracking er deaktiveret. Aktiver denne for at dele dine lokationer.</string>
     <string name="cover_photo">Coverbillede</string>
     <string name="delete_cover_photo">Er du sikker på at du vil slette dit coverbillede?</string>
+    <string name="progress_loading">Loader - vent venligst...</string>
 </resources>

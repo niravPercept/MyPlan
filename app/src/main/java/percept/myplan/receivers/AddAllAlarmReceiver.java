@@ -14,6 +14,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -88,7 +89,7 @@ public class AddAllAlarmReceiver extends BroadcastReceiver {
 
     private void setAlarms(String title, String time, int dayOfWeek, int requestCode, String uri) {
 
-        Date date = new Date(Long.parseLong(time));
+        Date date = new Date(time);
 
         Calendar calendar = Calendar.getInstance();
         if (dayOfWeek > 0)
@@ -96,6 +97,7 @@ public class AddAllAlarmReceiver extends BroadcastReceiver {
         calendar.set(Calendar.HOUR_OF_DAY, date.getHours());
         calendar.set(Calendar.MINUTE, date.getMinutes());
         calendar.set(Calendar.SECOND, 0);
+
 
         Log.i("::::Time", calendar.get(Calendar.HOUR_OF_DAY) + " : " + calendar.get(Calendar.MINUTE));
 

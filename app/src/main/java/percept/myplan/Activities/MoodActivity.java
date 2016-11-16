@@ -24,7 +24,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
@@ -291,6 +293,8 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
                                     if (!TextUtils.isEmpty(LIST_MOOD_TMP.get(j).getNOTE()))
                                         _obj.setNOTE(_obj.getNOTE() + "|"
                                                 + LIST_MOOD_TMP.get(j).getNOTE());
+                                    //
+
                                     LIST_MOOD_TMP.remove(j);
                                     flag = true;
                                     break;
@@ -397,6 +401,7 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
         cal.set(year, month, day);
 //        Toast.makeText(MoodActivity.this,cal.getTime().toString()+ " Clicked",Toast.LENGTH_SHORT).show();
         String NOTE = "";
+        String STATE="";
         for (Mood _obj : LIST_MOOD) {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             try {
@@ -407,6 +412,7 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
                 int _Month = _cal.get(Calendar.MONTH);
                 if (_day == day && _Month == month) {
                     NOTE = _obj.getNOTE();
+                    STATE=_obj.getMEASUREMENT();
                     break;
                 }
             } catch (ParseException e) {
@@ -415,7 +421,7 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
         }
 
         if (!TextUtils.isEmpty(NOTE)) {
-            NoteCalender _dialog = new NoteCalender(MoodActivity.this, NOTE);
+            NoteCalender _dialog = new NoteCalender(MoodActivity.this, NOTE,STATE);
             _dialog.setCanceledOnTouchOutside(true);
             _dialog.show();
         }
@@ -618,13 +624,21 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
 
         private TextView TV_NOTE;
         private String NOTE;
+        private String STATE;
         private Context CONTEXT;
+        private ImageView img;
+        List<String> arr;
 
-        public NoteCalender(Context context, String note) {
+
+
+        public NoteCalender(Context context, String note,String state) {
             super(context, R.style.DialogTheme);
             CONTEXT = context;
             NOTE = note;
+            STATE=state;
         }
+
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -633,7 +647,59 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
             setContentView(R.layout.lay_note);
 
             TV_NOTE = (TextView) findViewById(R.id.tvNote);
+             img= (ImageView) findViewById(R.id.colorstate1);
+
             TV_NOTE.setText(NOTE.replace("|", "\n"));
+
+//            if (STATE.equals("1"))
+//                laystate.setBackgroundColor(R.color.veryhappy);
+//            if (STATE.equals("2"))
+//                laystate.setBackgroundColor(R.color.happy);
+//            if (STATE.equals("3"))
+//                laystate.setBackgroundColor(R.color.ok);
+//            if (STATE.equals("4"))
+//                laystate.setBackgroundColor(R.color.sad);
+//            if (STATE.equals("5"))
+//                laystate.setBackgroundColor(R.color.verysad);
+
+
+
+            String measurement[] = TextUtils.split(STATE, "|");
+            String measures=STATE;
+
+            int count1 = 0;
+            for (String strMeasurement : measurement) {
+
+                switch (strMeasurement) {
+                    case "1":
+                        ++count1;
+                        img.setImageResource(R.drawable.circcle_happy);
+//                        laystate.setBackgroundColor(R.color.veryhappy);
+                        break;
+                    case "2":
+                        ++count1;
+                        img.setImageResource(R.drawable.circle_happy);
+//                        laystate.setBackgroundColor(R.color.happy);
+                        break;
+                    case "3":
+                        ++count1;
+                        img.setImageResource(R.drawable.circle_ok);
+//                        laystate.setBackgroundColor(R.color.ok);
+                        break;
+                    case "4":
+                        ++count1;
+                        img.setImageResource(R.drawable.circle_sad);
+//                        laystate.setBackgroundColor(R.color.sad);
+                        break;
+                    case "5":
+                        ++count1;
+                        img.setImageResource(R.drawable.circle_verysad);
+//                        laystate.setBackgroundColor(R.color.verysad);
+                        break;
+                }
+                if (count1 > 5)
+                    break;
+            }
         }
     }
     public void autoScreenTracking(){

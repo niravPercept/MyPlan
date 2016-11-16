@@ -123,6 +123,8 @@ public class AddContactDetailActivity extends AppCompatActivity {
         int helpCount = 0;
         if (getIntent().hasExtra(Constant.HELP_COUNT)) {
             helpCount = getIntent().getIntExtra(Constant.HELP_COUNT, 0);
+            contact_priority = 1;
+
         }
 
         initializeComponent();
@@ -253,11 +255,19 @@ public class AddContactDetailActivity extends AppCompatActivity {
             if (_contactDisplay.getCon_image().equals("")) {
                 imgContact.setImageResource(R.drawable.contact_noimage);
                 tvContactChar.setTextColor(getResources().getColor(android.R.color.white));
-                if (!TextUtils.isEmpty(_contactDisplay.getFirst_name())) {
-                    tvContactChar.setText(_contactDisplay.getFirst_name().substring(0, 2));
-                } else if (!TextUtils.isEmpty(_contactDisplay.getLast_name())) {
-                    tvContactChar.setText(_contactDisplay.getLast_name().substring(0, 2));
+//                if (!TextUtils.isEmpty(_contactDisplay.getFirst_name())) {
+//                    tvContactChar.setText(_contactDisplay.getFirst_name().substring(0, 2));
+//                } else if (!TextUtils.isEmpty(_contactDisplay.getLast_name())) {
+//                    tvContactChar.setText(_contactDisplay.getLast_name().substring(0, 2));
+//                }
+
+                if (!TextUtils.isEmpty(_contactDisplay.getFirst_name()) && !TextUtils.isEmpty(_contactDisplay.getLast_name()) )
+                {
+                    tvContactChar.setText(_contactDisplay.getFirst_name().substring(0, 1)+""+_contactDisplay.getLast_name().substring(0,1));
+                }else if (TextUtils.isEmpty(_contactDisplay.getLast_name()) ){
+                    tvContactChar.setText(_contactDisplay.getFirst_name().substring(0, 1));
                 }
+
 
 
 //            holder.IMG_CONTACT.setBackgroundColor(Color.rgb(169, 169, 169));
@@ -439,6 +449,7 @@ public class AddContactDetailActivity extends AppCompatActivity {
                     if (data.hasExtra("FROM_PRIORITY")) {
                         contact_priority = data.getIntExtra("FROM_PRIORITY", 0);
                         switch (contact_priority) {
+
                             case 1:
                                 tvAssignPriority.setText(getString(R.string.help));
                                 break;
@@ -446,9 +457,26 @@ public class AddContactDetailActivity extends AppCompatActivity {
                                 tvAssignPriority.setText(getString(R.string.emergency));
                                 break;
                         }
-                        if (contact_priority == 2)
+
+//                        if (contact_priority ==2)
+//                            ADD_TO_EMERGENCY="1";
+//                        else
+//                           ADD_TO_EMERGENCY="";
+//
+
+                        if (contact_priority == 2) {
                             ADD_TO_EMERGENCY = "1";
-                        else ADD_TO_EMERGENCY = "";
+                            ADD_TO_HELP_LIST = "";
+                        }
+                        else if (contact_priority ==1) {
+                            ADD_TO_HELP_LIST = "1";
+                            ADD_TO_EMERGENCY = "";
+                        }
+                        else{
+                            ADD_TO_EMERGENCY = "";
+                            //ADD_TO_HELP_LIST = "";
+                        }
+
                     }
                 }
                 break;
@@ -488,8 +516,20 @@ public class AddContactDetailActivity extends AppCompatActivity {
         mProgressDialog.setIndeterminate(false);
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
-        if (contact_priority != 2)
-            ADD_TO_HELP_LIST = String.valueOf(contact_priority);
+//        if (contact_priority ==2)
+//            ADD_TO_EMERGENCY=String.valueOf(contact_priority);
+//           // ADD_TO_HELP_LIST = String.valueOf(contact_priority);
+//        else if (contact_priority == 1)
+//            ADD_TO_HELP_LIST=String.valueOf(contact_priority);
+//        else if (contact_priority==0){
+//            ADD_TO_HELP_LIST=String.valueOf(contact_priority);
+//            ADD_TO_EMERGENCY=String.valueOf(contact_priority);
+//        }
+
+
+//            ADD_TO_EMERGENCY=String.valueOf(contact_priority);
+//            ADD_TO_HELP_LIST=String.valueOf(contact_priority);
+
         HashMap<String, String> params = new HashMap<>();
         // Adding file data to http body
         if (FILE_PATH != null)
