@@ -190,7 +190,7 @@ public class HopeDetailsAddElementActivity extends AppCompatActivity {
                 if (TYPE!=null) {
                     newaddHopeBoxElement add = (newaddHopeBoxElement) new newaddHopeBoxElement().execute();
                 }else {
-                    dialogOk _dialoglert=new dialogOk(HopeDetailsAddElementActivity.this, getString(R.string.enter_titile)) {
+                    dialogOk _dialoglert=new dialogOk(HopeDetailsAddElementActivity.this, getString(R.string.hopebox_history)) {
                         @Override
                         public void onClickOk() {
                             dismiss();

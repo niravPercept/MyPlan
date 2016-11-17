@@ -391,4 +391,5 @@
     <string name="audioremove">Are you sure you want to delete this Audio on Strategys</string>
     <string name="hopeboxenterfolder">please enter Name Folder</string>
     <string name="priority">Please select one priority </string>
+    <string name="hopebox_history">Please select any Media</string>
 </resources>

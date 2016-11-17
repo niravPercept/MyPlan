@@ -21,10 +21,12 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -42,11 +44,14 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 import io.tpa.tpalib.TpaConfiguration;
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
@@ -627,8 +632,11 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
         private String STATE;
         private Context CONTEXT;
         private ImageView img;
-        List<String> arr;
 
+        String as="";
+
+
+        ListView lst;
 
 
         public NoteCalender(Context context, String note,String state) {
@@ -646,10 +654,29 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
             requestWindowFeature(Window.FEATURE_NO_TITLE);
             setContentView(R.layout.lay_note);
 
-            TV_NOTE = (TextView) findViewById(R.id.tvNote);
-             img= (ImageView) findViewById(R.id.colorstate1);
+            lst= (ListView) findViewById(R.id.listpop_mood);
 
-            TV_NOTE.setText(NOTE.replace("|", "\n"));
+
+           // String note[] = TextUtils.split(NOTE, "|");
+
+            /*for (String stnote : note ){
+
+                if(stnote.length()!=0){
+                    if (!stnote.equals('|')) {
+                        if (stnote.length() != 0) {
+                            as.concat(stnote);
+                        }else {
+                            if (as.length()!=0)
+                                   note1.add(as);
+                        }
+                    }
+                }
+            }
+*/
+//            TV_NOTE = (TextView) findViewById(R.id.tvNote);
+//             img= (ImageView) findViewById(R.id.colorstate1);
+//
+//            TV_NOTE.setText(NOTE.replace("|", "\n"));
 
 //            if (STATE.equals("1"))
 //                laystate.setBackgroundColor(R.color.veryhappy);
@@ -663,45 +690,152 @@ public class MoodActivity extends AppCompatActivity implements FlexibleCalendarV
 //                laystate.setBackgroundColor(R.color.verysad);
 
 
+           /*String measurement[]=null;
+            List<String> arr=new ArrayList<String>();
+            if(STATE.contains("|")) {
+                measurement = STATE.split("|");
+                arr = Arrays.asList(measurement);
+            }
+            else{
+                arr.add(STATE);
+            }*/
 
-            String measurement[] = TextUtils.split(STATE, "|");
-            String measures=STATE;
+           /* String Notess[]=null;
+            List<String> note1=new ArrayList<String>();
+            if(NOTE.contains("|")) {
+                Notess = NOTE.split("|");
 
-            int count1 = 0;
+                note1 = Arrays.asList(Notess);
+            }
+            else{
+                note1.add(NOTE);
+            }*/
+            List<String> note1=new ArrayList<String>();
+            StringTokenizer token = new StringTokenizer(NOTE, "|");
+
+//            ArrayList note1= new ArrayList();
+
+            while (token.hasMoreTokens() ) {
+                note1.add(token.nextToken());
+            }
+
+            List<String> arr=new ArrayList<String>();
+            StringTokenizer toke = new StringTokenizer(STATE, "|");
+
+            while (toke.hasMoreTokens() ) {
+                arr.add(toke.nextToken());
+            }
+
+
+           /* int cout1 = 0;
             for (String strMeasurement : measurement) {
 
                 switch (strMeasurement) {
                     case "1":
                         ++count1;
-                        img.setImageResource(R.drawable.circcle_happy);
+                        arr.add(strMeasurement);
+//                        img.setImageResource(R.drawable.circcle_happy);
 //                        laystate.setBackgroundColor(R.color.veryhappy);
                         break;
                     case "2":
                         ++count1;
-                        img.setImageResource(R.drawable.circle_happy);
+                        arr.add(strMeasurement);
+//                        img.setImageResource(R.drawable.circle_happy);
 //                        laystate.setBackgroundColor(R.color.happy);
                         break;
                     case "3":
                         ++count1;
-                        img.setImageResource(R.drawable.circle_ok);
+                        arr.add(strMeasurement);
+//                        img.setImageResource(R.drawable.circle_ok);
 //                        laystate.setBackgroundColor(R.color.ok);
                         break;
                     case "4":
                         ++count1;
-                        img.setImageResource(R.drawable.circle_sad);
+                        arr.add(strMeasurement);
+//                        img.setImageResource(R.drawable.circle_sad);
 //                        laystate.setBackgroundColor(R.color.sad);
                         break;
                     case "5":
                         ++count1;
-                        img.setImageResource(R.drawable.circle_verysad);
+                        arr.add(strMeasurement);
+//                        img.setImageResource(R.drawable.circle_verysad);
 //                        laystate.setBackgroundColor(R.color.verysad);
                         break;
                 }
                 if (count1 > 5)
                     break;
-            }
+            }*/
+
+
+            mooddatewise nodeadapter=new mooddatewise(MoodActivity.this,note1,arr);
+            lst.setAdapter(nodeadapter);
         }
     }
+
+    class  mooddatewise extends BaseAdapter{
+
+        List<String> adnote,adstate;
+        Context context;
+        ImageView img_mood;
+        TextView txtmood;
+
+        public mooddatewise(MoodActivity moodActivity, List<String> note1, List<String> arr) {
+            this.context=moodActivity;
+            this.adnote=note1;
+            this.adstate=arr;
+        }
+
+        @Override
+        public int getCount() {
+            return adstate.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return adstate.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            View v=View.inflate(getApplicationContext(),R.layout.popup_mood_date,null);
+            if (v!=null){
+                img_mood= (ImageView) v.findViewById(R.id.img_mood_popup);
+                txtmood= (TextView) v.findViewById(R.id.txt_mood_popup);
+            }
+
+            txtmood.setText(adnote.get(i));
+
+            String a=adstate.get(i);
+
+            switch (a){
+                case "1":
+                     img_mood.setImageResource(R.drawable.circcle_happy);
+                    break;
+                case "2":
+                    img_mood.setImageResource(R.drawable.circle_happy);
+                    break;
+                case "3":
+                    img_mood.setImageResource(R.drawable.circle_ok);
+                    break;
+                case "4":
+                    img_mood.setImageResource(R.drawable.circle_sad);
+                    break;
+                case "5":
+                    img_mood.setImageResource(R.drawable.circle_verysad);
+                    break;
+            }
+
+
+            return v;
+        }
+    }
+
+
     public void autoScreenTracking(){
         TpaConfiguration config =
                 new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")

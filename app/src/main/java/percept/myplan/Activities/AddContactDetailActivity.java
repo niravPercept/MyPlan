@@ -123,7 +123,7 @@ public class AddContactDetailActivity extends AppCompatActivity {
         int helpCount = 0;
         if (getIntent().hasExtra(Constant.HELP_COUNT)) {
             helpCount = getIntent().getIntExtra(Constant.HELP_COUNT, 0);
-            contact_priority = 1;
+//            contact_priority = 1;
 
         }
 
@@ -474,6 +474,7 @@ public class AddContactDetailActivity extends AppCompatActivity {
                         }
                         else{
                             ADD_TO_EMERGENCY = "";
+                            ADD_TO_HELP_LIST = "";
                             //ADD_TO_HELP_LIST = "";
                         }
 

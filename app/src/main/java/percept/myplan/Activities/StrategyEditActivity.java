@@ -532,8 +532,8 @@ public class StrategyEditActivity extends AppCompatActivity {
     }
     private void setAlarms(String title, String time, int dayOfWeek, int requestCode, String uri) {
 
-        Date date=new Date(Long.parseLong(time));
-       /* Date date = new Date();
+        //Date date=new Date(Long.parseLong(time));
+        Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 
 
@@ -541,7 +541,7 @@ public class StrategyEditActivity extends AppCompatActivity {
             date = sdf.parse(time);
         } catch (ParseException e) {
             e.printStackTrace();
-        }*/
+        }
 
         Calendar calendar = Calendar.getInstance();
         if (dayOfWeek > 0)

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -38,9 +39,18 @@ public class StrategyAlarmAdapter extends RecyclerView.Adapter<StrategyAlarmAdap
         Alarm _symptom = LIST_SYMPTOMSTRATEGY.get(position);
 //        String hm = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toHours(Long.parseLong(_symptom.getAlarmTime())),
 //                TimeUnit.MILLISECONDS.toMinutes(Long.parseLong(_symptom.getAlarmTime())) % TimeUnit.HOURS.toMinutes(1));
-        String hm = new SimpleDateFormat("HH:mm").format(new Date(Long.parseLong(_symptom.getAlarmTime())));
+//        String hm = new SimpleDateFormat("HH:mm").format(new Date(_symptom.getAlarmTime()));
+
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("HH:mm");
+        Date hm = null;
+        try {
+            hm = simpleDateFormat.parse(_symptom.getAlarmTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         holder.TV_STRATEGYALARMNAME.setText(_symptom.getAlarmName());
-        holder.TV_STRATEGYALARMTIME.setText(hm);
+        holder.TV_STRATEGYALARMTIME.setText(simpleDateFormat.format(hm.getTime()));
     }
 
     @Override

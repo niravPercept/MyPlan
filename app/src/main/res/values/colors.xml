@@ -40,8 +40,9 @@
     <color name="verysad">#ED1C24</color>
     <color name="sad">#F7941E</color>
     <color name="ok">#FED304</color>
-    <color name="happy">#CDCCCC</color>
-    <color name="veryhappy">#4CC1B6</color>
+    <color name="veryhappy">#04a060</color>
+    <!--<color name="happy">#CDCCCC</color>-->
+    <color name="happy">#4CC1B6</color>
 
     <color name="pie_color1">#04a060</color>
     <color name="pie_color2">#fed304</color>
