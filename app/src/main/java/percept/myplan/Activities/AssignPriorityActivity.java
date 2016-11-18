@@ -118,10 +118,10 @@ public class AssignPriorityActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isSelect) {
                 if (!isSelect)
-                    imgTickHelp.setChecked(false);
+                    imgTickEmergency.setChecked(false);
                 else {
                     if (_count > 10)
-                        imgTickHelp.setChecked(true);
+                        imgTickEmergency.setChecked(true);
                 }
             }
         });

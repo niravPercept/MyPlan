@@ -62,6 +62,7 @@ import java.util.Map;
 import io.tpa.tpalib.TpaConfiguration;
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
 import percept.myplan.AppController;
+import percept.myplan.Dialogs.dialogOk;
 import percept.myplan.Dialogs.dialogSelectPic;
 import percept.myplan.Global.Constant;
 import percept.myplan.Global.General;
@@ -265,7 +266,12 @@ public class AddContactDetailActivity extends AppCompatActivity {
                 {
                     tvContactChar.setText(_contactDisplay.getFirst_name().substring(0, 1)+""+_contactDisplay.getLast_name().substring(0,1));
                 }else if (TextUtils.isEmpty(_contactDisplay.getLast_name()) ){
-                    tvContactChar.setText(_contactDisplay.getFirst_name().substring(0, 1));
+                    if (_contactDisplay.getFirst_name().length()!=0) {
+                        tvContactChar.setText(_contactDisplay.getFirst_name().substring(0, 1));
+                    }else
+                        tvContactChar.setText("");
+                }else {
+                    tvContactChar.setText("");
                 }
 
 
@@ -353,7 +359,24 @@ public class AddContactDetailActivity extends AppCompatActivity {
             onBackPressed();
             return true;
         } else if (item.getItemId() == R.id.action_save) {
-            saveContact();
+
+            if (edtFirstName.getText().length()!=0 || edtAddPhoneNo.getText().length()!=0){
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                saveContact();
+            }else {
+                dialogOk _dialoglert=new dialogOk(AddContactDetailActivity.this, getString(R.string.contactadderror)) {
+                    @Override
+                    public void onClickOk() {
+                        dismiss();
+                    }
+                };
+                _dialoglert.setCancelable(false);
+                _dialoglert.setCanceledOnTouchOutside(false);
+                _dialoglert.show();
+            }
+
             return true;
         } else if (item.getItemId() == R.id.action_edit) {
             imgAddPhoneNo.setVisibility(View.VISIBLE);

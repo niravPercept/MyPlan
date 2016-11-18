@@ -111,6 +111,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 public void onAnimationEnd(Animator animation) {
                                     super.onAnimationEnd(animation);
                                     LAY_INFO.setVisibility(View.VISIBLE);
+                                    pbHelpVideo=new ProgressBar(getApplicationContext());
                                     getHelpinfo();
                                 }
                             });

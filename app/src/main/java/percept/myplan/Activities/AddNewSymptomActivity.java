@@ -13,6 +13,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,6 +33,7 @@ import java.util.List;
 import java.util.Map;
 
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
+import percept.myplan.Dialogs.dialogOk;
 import percept.myplan.Global.Constant;
 import percept.myplan.Global.General;
 import percept.myplan.Interfaces.VolleyResponseListener;
@@ -73,15 +75,19 @@ public class AddNewSymptomActivity extends AppCompatActivity {
         LST_SYMPTOMSTRATEGY.setItemAnimator(new DefaultItemAnimator());
         REL_COORDINATE = (CoordinatorLayout) findViewById(R.id.snakeBar);
 
+        EDT_TITLE = (EditText) findViewById(R.id.edtTitle);
+        EDT_DESC = (EditText) findViewById(R.id.edtDescription);
+
         TV_ADDSTRATEGY.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivityForResult(new Intent(AddNewSymptomActivity.this, AddStrategyToSymptomActivity.class), ADDSTRATEGY);
+
             }
         });
 
-        EDT_TITLE = (EditText) findViewById(R.id.edtTitle);
-        EDT_DESC = (EditText) findViewById(R.id.edtDescription);
+
     }
 
     @Override
@@ -94,15 +100,16 @@ public class AddNewSymptomActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if (requestCode == ADDSTRATEGY) {
-            if (resultCode == Activity.RESULT_OK) {
+
                 STR_STRATEGYID = data.getStringExtra("result");
                 ADAPTER = new SymptomStrategyAdapter(LIST_ADDSYMPTOMSTRATEGY);
                 LST_SYMPTOMSTRATEGY.setAdapter(ADAPTER);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 //Write your code if there's no result
+
             }
-        }
+
     }
 
     @Override
@@ -111,10 +118,25 @@ public class AddNewSymptomActivity extends AppCompatActivity {
             AddNewSymptomActivity.this.finish();
             return true;
         } else if (item.getItemId() == R.id.action_saveSymptom) {
-            InputMethodManager inputManager = (InputMethodManager)
-                    getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-            AddNewSymptom();
+
+            if (EDT_TITLE.getText().length()!=0 &&!TextUtils.isEmpty(EDT_TITLE.getText())){
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                AddNewSymptom();
+            }else {
+                dialogOk _dialoglert=new dialogOk(AddNewSymptomActivity.this, getString(R.string.enter_titile)) {
+                    @Override
+                    public void onClickOk() {
+                        dismiss();
+                    }
+                };
+                _dialoglert.setCancelable(false);
+                _dialoglert.setCanceledOnTouchOutside(false);
+                _dialoglert.show();
+            }
+
+
             return true;
         }
         return false;

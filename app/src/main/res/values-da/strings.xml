@@ -376,4 +376,12 @@
     <string name="cover_photo">Coverbillede</string>
     <string name="delete_cover_photo">Er du sikker på at du vil slette dit coverbillede?</string>
     <string name="progress_loading">Loader - vent venligst...</string>
+
+    <string name="enter_titile">Venligst Indtast titel</string>
+    <string name="audioerror">Lydfil ikke køre</string>
+    <string name="audioremove">Er du sikker på du vil slette denne lyd på strategys</string>
+    <string name="hopeboxenterfolder">skal du indtaste navn Folder</string>
+    <string name="priority">Vælg en prioritet</string>
+    <string name="hopebox_history">Vælg venligst eventuelle medier</string>
+    <string name="contactadderror">Venligst Indtast fornavn eller telefonnummer</string>
 </resources>
