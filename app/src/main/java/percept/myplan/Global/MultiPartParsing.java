@@ -87,7 +87,7 @@ public class MultiPartParsing {
             SchemeRegistry registry = new SchemeRegistry();
             SSLSocketFactory socketFactory = SSLSocketFactory.getSocketFactory();
             socketFactory.setHostnameVerifier((X509HostnameVerifier) hostnameVerifier);
-            registry.register(new Scheme("http", socketFactory, 443));
+            registry.register(new Scheme("https", socketFactory, 443));
             SingleClientConnManager mgr = new SingleClientConnManager(client.getParams(), registry);
             HttpClient httpclient = new DefaultHttpClient(mgr, client.getParams());
 

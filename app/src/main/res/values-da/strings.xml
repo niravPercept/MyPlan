@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Minplan</string>
+    <string name="app_name">MyPlan</string>
     <string name="title_activity_home">Aktivitet</string>
 
     <string name="navigation_drawer_open">Åben navigationsmenuen</string>
@@ -88,7 +88,7 @@
     <string name="title_activity_profile">Profil</string>
     <string name="save">Gem</string>
     <string name="title_activity_moodratings">Humør</string>
-    <string name="sidas">Sidas</string>
+    <string name="sidas">SIDAS</string>
     <string name="mood">Humør</string>
     <string name="test_interval">Testinterval</string>
     <string name="everyweek">Ugentligt</string>
@@ -200,8 +200,8 @@
     <string name="sharemyloc">Del mine lokationer</string>
     <string name="action_next">Næste</string>
     <string name="sharepos">Del position</string>
-    <string name="moodratingsida">Humør - Sidas</string>
-    <string name="sidasfulltest">Fulde Sidas test</string>
+    <string name="moodratingsida">Humør - SIDAS</string>
+    <string name="sidasfulltest">Fulde SIDAS test</string>
     <string name="cont">Fortsæt</string>
     <string name="nextques">Næste spørgsmål</string>
     <string name="done">Udført</string>
@@ -307,7 +307,7 @@
     &lt;b&gt;VIGTIGT &lt;/b&gt;hvis din score er høj, vil du automatisk få en besked om at søge hjælp&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
     Det er vigtigt at du følger din kriseplan og reagerer
     </string>
-    
+
      <string name="test_result_btwn_15to21"> Svarene viser at du har det svært lige nu. Kig gerne i dine strategier for hjælp eller kontakt dit netværk. Hvis du mangler ideer til, hvad du ellers kan prøve. Så kik i vores inspirationsbank her. Husk at du kan bruge ’alarm’-knappen i
       &lt;br/&gt;&lt;/b&gt;&lt;font color="#47c1b6"&gt;MYPLan&lt;/font&gt;
 </string>
@@ -371,7 +371,7 @@
     <string name="notification_two">Notifikation 2</string>
     <string name="select_time">Vælg tid</string>
     <string name="notification_mood">Husk at udfylde dit humør.</string>
-    <string name="notification_sidas">Husk at udfylde din Sidas test.</string>
+    <string name="notification_sidas">Husk at udfylde din SIDAS test.</string>
     <string name="setting_off_location">Geotracking er deaktiveret. Aktiver denne for at dele dine lokationer.</string>
     <string name="cover_photo">Coverbillede</string>
     <string name="delete_cover_photo">Er du sikker på at du vil slette dit coverbillede?</string>

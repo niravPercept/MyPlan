@@ -89,7 +89,7 @@
     <string name="title_activity_profile">Profile</string>
     <string name="save">Save</string>
     <string name="title_activity_moodratings">Mood Ratings</string>
-    <string name="sidas">Sidas</string>
+    <string name="sidas">SIDAS</string>
     <string name="mood">Mood</string>
     <string name="test_interval">Test Interval</string>
     <string name="everyweek">Every Week</string>
@@ -196,19 +196,19 @@
     <string name="longitude_label">Longitude</string>
     <string name="last_update_time_label">Last location update time</string>
     <string name="completemoodratings">Complete today\'s Mood Rating</string>
-    <string name="seeallnote">See all note</string>
+    <string name="seeallnote">See all notes</string>
     <string name="seenotes">See Notes</string>
     <string name="sharemyloc">Share my location</string>
     <string name="action_next">Next</string>
     <string name="sharepos">Share Position</string>
-    <string name="moodratingsida">Mood Ratings - Sidas</string>
-    <string name="sidasfulltest">Sidas Full Test</string>
+    <string name="moodratingsida">Mood Ratings - SIDAS</string>
+    <string name="sidasfulltest">SIDAS Full Test</string>
     <string name="cont">Continue</string>
     <string name="nextques">Next question</string>
     <string name="done">Done</string>
     <string name="nointernet">No internet connection!</string>
     <!--<string name="sidastart">"&lt;b&gt;" + "Sidas" + "&lt;/b&gt;" + "consist of 5 questions" + "<br />" +
-                    "You can use" + "&lt;b&gt;" + "SIDAS" + "&lt;/b&gt;" + "to measure your suicidal thoughts." + "<br />" +
+                    "You can use" + "&lt;b&gt;" + "Sidas" + "&lt;/b&gt;" + "to measure your suicidal thoughts." + "<br />" +
                     "&lt;b&gt;" + "IMPORTANT " + "&lt;/b&gt;" + "if you have a high score, you will get an automate " +
                     "notification to seek help" + "<br />" + "It is important that you act and follow your crisis plan"</string>-->
 
@@ -307,12 +307,12 @@
     </string-array>
 
     <string name="test_start_warning_msg">
-    &lt;b&gt;SIDAS&lt;/b&gt; consist of 5 questions&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    You can use&lt;b&gt; SIDAS &lt;/b&gt;to measure your suicidal thoughts.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    &lt;b&gt;Sidas&lt;/b&gt; consist of 5 questions&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    You can use&lt;b&gt; Sidas &lt;/b&gt;to measure your suicidal thoughts.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
     &lt;b&gt;IMPORTANT &lt;/b&gt;if you have a high score, you will get an automate notification to seek help&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
     It is important that you act and follow your crisis plan
     </string>
-    
+
     <string name="test_result_btwn_15to21"> Your answers show that you are having a difficult time right now.
       Use your strategies for help and/or contact your network.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
       If you need ideas for an effective strategy, please view the inspiration ban here.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
@@ -379,7 +379,7 @@
     <string name="notification_two">Notification 2</string>
     <string name="select_time">Select Time</string>
     <string name="notification_mood">Remember to complete your mood rating.</string>
-    <string name="notification_sidas">Remember to complete your Sidas test.</string>
+    <string name="notification_sidas">Husk at fuldføre din SIDAS test.</string>
     <string name="setting_off_location">Geotracking settings off please switch on setting for sharing your location.</string>
     <string name="cover_photo">Cover Photo</string>
     <string name="delete_cover_photo">Are you sure you want to delete Cover Photo?</string>

@@ -2,5 +2,5 @@
 <resources>
 
     <!--<string name="server_url"><![CDATA[http://www.weiswise.com/myplan/index.php?option=com_plans&task=webservice]]></string>-->
-    <string name="server_url"><![CDATA[http://myplan.plus/index.php?option=com_plans&task=webservice]]></string>
+    <string name="server_url"><![CDATA[https://myplan.plus/index.php?option=com_plans&task=webservice]]></string>
 </resources>
