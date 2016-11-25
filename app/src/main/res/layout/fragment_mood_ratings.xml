@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvSidas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionBar"
+        android:background="@android:color/white"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="@string/sidas"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/sidemenu_seperator" />
+
+    <TextView
+        android:id="@+id/tvMood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPhoneList"
+        android:background="@android:color/white"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="@string/mood"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/sidemenu_seperator" />
+
+    <percept.myplan.Graph.BarGraph
+        android:id="@+id/bargraph"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="12dip"
+        android:visibility="gone"
+        app:barAxisColor="@color/transparent_blue"
+        app:barShowAxis="false"
+        app:barShowText="false" />
+
+
+    <percept.myplan.Graph.PieGraph
+        android:id="@+id/piegraph"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        app:pieInnerCircleRatio="128"
+        app:pieSlicePadding="0dip" />
+</LinearLayout>

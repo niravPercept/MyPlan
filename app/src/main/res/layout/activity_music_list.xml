@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_music_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="percept.myplan.Activities.MusicListActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/app_toolbar"/>
+
+    <ListView
+        android:id="@+id/lstMusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:divider="@color/sidemenu_seperator"
+        android:dividerHeight="1dp"></ListView>
+
+    <include layout="@layout/lay_internet_lost"/>
+
+</RelativeLayout>

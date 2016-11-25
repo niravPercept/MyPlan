@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_toolbar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include">
+
+        <LinearLayout
+            android:id="@+id/activity_moodRatings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:background="@color/backcolor"
+            android:orientation="vertical">
+
+
+            <!--<Switch-->
+            <!--android:id="@+id/switchSidas1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:background="@android:color/white"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@string/sidas"-->
+            <!--style="@style/SCBSwitch"-->
+            <!--android:textSize="16sp" />-->
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switchSidas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/white"
+                android:padding="10dp"
+                android:text="@string/sidas"
+                android:textSize="16sp"
+                android:theme="@style/SCBSwitch"/>
+
+            <LinearLayout
+                android:id="@+id/laySidas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/test_interval"
+                    android:textAllCaps="true"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rcvSidas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"/>
+                <!--<CheckBox
+                    android:id="@+id/chkEveryWeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                    android:paddingLeft="10dp"
+                    android:text="@string/everyweek" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/sidemenu_seperator" />
+
+                <CheckBox
+                    android:id="@+id/chkEveryTwoWeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:button="@null"
+                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                    android:paddingLeft="10dp"
+                    android:text="@string/everytwoweek"
+                    android:textColor="@color/toobarbelow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/sidemenu_seperator" />
+
+                <CheckBox
+                    android:id="@+id/chkEveryThreeWeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:button="@null"
+                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                    android:paddingLeft="10dp"
+                    android:text="@string/everythreeweek"
+                    android:textColor="@color/toobarbelow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/sidemenu_seperator" />
+
+                <CheckBox
+                    android:id="@+id/chkOnceAMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:button="@null"
+                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                    android:paddingLeft="10dp"
+                    android:text="@string/onceamonth"
+                    android:textColor="@color/toobarbelow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/sidemenu_seperator" />-->
+
+            </LinearLayout>
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switchMood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/switchSidas"
+                android:layout_marginTop="1dp"
+                android:background="@android:color/white"
+                android:padding="10dp"
+                android:text="@string/mood"
+                android:textSize="16sp"
+                android:theme="@style/SCBSwitch"/>
+
+            <LinearLayout
+                android:id="@+id/layMood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/mood_interval"
+                    android:textAllCaps="true"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <CheckBox
+                    android:id="@+id/chkOneDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:button="@null"
+                    android:drawableRight="@drawable/custom_checkbox"
+                    android:padding="10dp"
+                    android:text="@string/one_time_day"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <CheckBox
+                    android:id="@+id/chkTwoDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:button="@null"
+                    android:drawableRight="@drawable/custom_checkbox"
+                    android:padding="10dp"
+                    android:text="@string/two_times_day"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <TextView
+                    android:id="@+id/tvMoodTimeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:text="@string/mood_time"
+                    android:textAllCaps="true"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <LinearLayout
+                    android:id="@+id/llNotificationOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:text="@string/notification_one"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:id="@+id/tvAlarmOne"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:padding="10dp"
+                        android:text="09:00"
+                        android:textColor="@color/appBackColor"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <LinearLayout
+                    android:id="@+id/llNotificationTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:paddingRight="5dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:text="@string/notification_two"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:id="@+id/tvAlarmTwo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:padding="10dp"
+                        android:text="18:00"
+                        android:textColor="@color/appBackColor"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/sidemenu_seperator"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/lay_internet_lost"/>
+</RelativeLayout>

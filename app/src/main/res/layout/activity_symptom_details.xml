@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_symptom_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backcolor"
+                android:orientation="vertical"
+                tools:context="percept.myplan.Activities.SymptomDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_toolbar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="@string/title"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/edt_register_border"
+                android:gravity="right"
+                android:padding="5dp"
+                android:textColor="@color/appBackColor"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sidemenu_seperator"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@android:color/white"
+            android:padding="10dp"
+            android:text="@string/text"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/tvText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edt_register_border_white"
+            android:gravity="center_vertical"
+            android:minLines="3"
+            android:padding="10dp"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sidemenu_seperator"/>
+
+        <LinearLayout
+            android:id="@+id/layAddStrategy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvAddStrategy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/addstrategy"
+                android:textColor="@android:color/black"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/sidemenu_seperator"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvStrategiesToSymptom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="@string/strategies_to_symptom"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            />
+
+        <View
+            android:id="@+id/vNetwork"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sidemenu_seperator"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lstSymptomStrategy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btnDeleteSymptom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="@string/delete"
+            android:textColor="@color/red"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:background="@color/sidemenu_seperator"/>
+
+    </LinearLayout>
+
+
+    <include layout="@layout/lay_internet_lost"/>
+</RelativeLayout>

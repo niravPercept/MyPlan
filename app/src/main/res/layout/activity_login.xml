@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/appBackColor"
+                tools:context="percept.myplan.Activities.LoginActivity">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_above="@+id/tvWelcome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/img_logo_login"/>
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/layButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:paddingTop="10dp"
+            android:text="@string/welcome"
+            android:textColor="@android:color/white"/>
+
+        <RelativeLayout
+            android:id="@+id/layButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/login_btn_back"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnLogin"
+                android:layout_marginTop="5dp"
+                android:background="@color/login_btn_back"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvForgotPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layButton"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            android:text="@string/forgetpwd"
+            android:textColor="@color/login_btn_back"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/lay_help_info"/>
+</RelativeLayout>

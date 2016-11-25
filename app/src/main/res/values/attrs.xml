@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="core_area">
+        <attr name="underline_color" format="color" />
+        <attr name="underline_selected_color" format="color" />
+        <attr name="hint_color" format="color" />
+        <attr name="text_color" format="color" />
+        <attr name="hint_text" format="string" />
+        <attr name="codes" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PieGraph">
+        <attr name="pieInnerCircleRatio" format="integer" />
+        <attr name="pieSlicePadding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="BarGraph">
+        <attr name="barAxisColor" format="color" />
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="barShowAxis" format="boolean" />
+        <attr name="barShowAxisLabel" format="boolean" />
+        <attr name="barShowText" format="boolean" />
+        <attr name="barShowPopup" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PinEntryEditText">
+        <attr name="pinAnimationType" format="enum">
+            <enum name="popIn" value="0" />
+            <enum name="fromBottom" value="1" />
+            <enum name="none" value="-1" />
+        </attr>
+        <attr name="pinCharacterMask" format="string" />
+        <attr name="pinLineStroke" format="dimension" />
+        <attr name="pinLineStrokeSelected" format="dimension" />
+        <attr name="pinCharacterSpacing" format="dimension" />
+        <attr name="pinTextBottomPadding" format="dimension" />
+        <attr name="pinLineColors" format="color" />
+        <attr name="pinBackgroundDrawable" format="reference" />
+        <attr name="pinBackgroundIsSquare" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CircularTextView">
+        <attr name="solidColor" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="strokeColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleCheckbox">
+        <attr name="showOuterCircle" format="boolean" />
+
+        <attr name="tickColor" format="string"/>
+        <attr name="outerCircleColor" format="string"/>
+        <attr name="innerCircleColor" format="string"/>
+        <attr name="textColor" format="string"/>
+        <attr name="circleBorderColor" format="string"/>
+
+        <attr name="outerCircleRadius" format="dimension"/>
+        <attr name="innerCircleRadius" format="dimension"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="borderThickness" format="dimension"/>
+        <attr name="tickThickness" format="dimension"/>
+
+        <attr name="textLeftPadding" format="dimension"/>
+        <attr name="text" format="string"/>
+
+    </declare-styleable>
+
+</resources>

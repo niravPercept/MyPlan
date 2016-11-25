@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/layMoodRatingsSaveNote"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/lay_moodrating_addnote_border"
+        android:orientation="vertical">
+
+
+        <NumberPicker
+            android:id="@+id/pickYear"
+            android:layout_width="150dp"
+            android:theme="@android:style/Theme.Holo.Light.Dialog"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sidemenu_seperator" />
+
+        <TextView
+            android:id="@+id/tvDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="@string/done"
+            android:textColor="@color/appbackColor" />
+    </LinearLayout>
+
+</RelativeLayout>

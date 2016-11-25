@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_audioview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/app_toolbar"/>
+    <Button
+        android:text="Play Audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="138dp"
+        android:id="@+id/btn_audiostart"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Puase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_audiopuase"
+        android:layout_alignBaseline="@+id/btn_audiostart"
+        android:layout_alignBottom="@+id/btn_audiostart"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp"
+        android:id="@+id/btn_audiostop"
+        android:layout_alignBaseline="@+id/btn_audiopuase"
+        android:layout_alignBottom="@+id/btn_audiopuase"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_audio"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

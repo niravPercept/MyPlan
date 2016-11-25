@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_danger_signals"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backcolor"
+    android:orientation="vertical"
+    tools:context="percept.myplan.Activities.DangerSignalsActivity">
+
+    <include layout="@layout/app_toolbar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="@string/dangersignaltxt"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_bullet"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="@string/socialwithdraw"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_bullet"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="@string/increateusedrugs"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_bullet"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="@string/mentaldisorder"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_bullet"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="@string/previousattempt"
+        android:textSize="16sp" />
+</LinearLayout>

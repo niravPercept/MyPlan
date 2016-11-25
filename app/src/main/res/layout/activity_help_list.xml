@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backcolor"
+    android:fitsSystemWindows="true"
+    tools:context="percept.myplan.Activities.HelpListEditActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/layTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/contacts"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/tvEditHelpList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/editlist"
+            android:textAllCaps="true" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/viewSeperator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layTitle"
+        android:layout_marginTop="10dp"
+        android:background="@color/toobarbelow"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llBottomView"
+        android:layout_below="@+id/viewSeperator"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lstHelpList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingLeft="10dp" />
+
+
+        <TextView
+            android:id="@+id/tvAddHelpContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableLeft="@drawable/add_circle"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="@string/addnewcontact"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBottomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/lay_moodrating_addnote_border"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/question_mark" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/edithelplistmsg"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+
+
+    <include layout="@layout/lay_internet_lost" />
+</RelativeLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_strategy"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backcolor"
+    android:orientation="vertical"
+    tools:context="percept.myplan.Activities.AddStrategyActivity">
+
+    <include
+        android:id="@+id/lay1"
+        layout="@layout/app_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay1"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="@string/title"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edt_register_border"
+            android:gravity="right"
+            android:padding="5dp"
+            android:textColor="@color/appBackColor" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lay3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/lay2"
+        android:layout_marginLeft="15dp"
+        android:background="@color/sidemenu_seperator" />
+
+    <LinearLayout
+        android:id="@+id/lay4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay3"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="@string/text"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/edtText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edt_register_border"
+            android:lines="3"
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lay5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/lay4"
+        android:layout_marginLeft="15dp"
+        android:background="@color/sidemenu_seperator" />
+
+
+    <TextView
+        android:id="@+id/tvAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay5"
+        android:background="@android:color/white"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/alarm"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:id="@+id/lay6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvAlarm"
+        android:layout_marginLeft="15dp"
+        android:background="@color/sidemenu_seperator" />
+
+
+    <TextView
+        android:id="@+id/tvNetwork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lay6"
+        android:background="@android:color/white"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+
+        android:text="@string/network"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:id="@+id/lay7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvNetwork"
+        android:layout_marginLeft="15dp"
+        android:background="@color/sidemenu_seperator" />
+
+
+    <TextView
+        android:id="@+id/tvImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lay7"
+        android:background="@android:color/white"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/images"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:id="@+id/lay8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvImages"
+        android:layout_marginLeft="15dp"
+        android:background="@color/sidemenu_seperator" />
+
+
+    <TextView
+        android:id="@+id/tvMusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay8"
+        android:background="@android:color/white"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/music"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:id="@+id/lay9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvMusic"
+        android:layout_marginLeft="15dp"
+        android:background="@color/sidemenu_seperator" />
+
+
+    <TextView
+        android:id="@+id/tvLinks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay9"
+        android:background="@android:color/white"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/links"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvLinks"
+        android:background="@color/sidemenu_seperator" />
+
+    <include layout="@layout/lay_internet_lost"/>
+</RelativeLayout>

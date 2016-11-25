@@ -1,0 +1,209 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="percept.myplan.fragments.fragmentHome">
+
+    <RelativeLayout
+        android:id="@+id/layImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layHomeButton"
+        android:background="@color/toolbarback">
+
+        <ImageView
+            android:id="@+id/imgUserImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tvCaptureImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/img_capture"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/img_capture"
+            android:gravity="center_vertical"
+            android:text="@string/insertpersonalimg" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layMoodRatings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layHomeButton"
+        android:layout_margin="25dp"
+        android:background="@drawable/lay_moodrating_home_border"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appBackColor">
+
+            <TextView
+                android:id="@+id/tvMoodRatingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/imgCloseMoodRating"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="@string/moodratings"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:id="@+id/imgCloseMoodRating"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/close" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/howareyoufeelingtoday"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgVerySad"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/mood_very_sad" />
+
+            <ImageView
+                android:id="@+id/imgSad"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/mood_sad" />
+
+            <ImageView
+                android:id="@+id/imgOk"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/mood_nomood" />
+
+            <ImageView
+                android:id="@+id/imgHappy"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/mood_happy" />
+
+            <ImageView
+                android:id="@+id/imgVeryHappy"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/mood_very_happy" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgInfo"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/info" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layHomeButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <!--   <Button
+               android:id="@+id/btnHelp"
+               android:background="@color/toolbarback"
+               android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_weight="1"
+               android:text="@string/help" />-->
+
+        <LinearLayout
+            android:id="@+id/layHelpHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/home_help"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_help" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/help"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layEmergencyHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/home_emergency"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_emergency" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/emergency"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <!--  <Button
+              android:id="@+id/btnEmergency"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="1"
+              android:background="@color/appBackColor"
+              android:text="@string/emergency" />-->
+    </LinearLayout>
+
+
+
+    <include layout="@layout/lay_internet_lost" />
+
+</RelativeLayout>

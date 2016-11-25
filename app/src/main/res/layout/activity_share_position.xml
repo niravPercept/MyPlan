@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_share_position"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="percept.myplan.Activities.SharePositionActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_toolbar"/>
+
+    <TextView
+        android:id="@+id/tvShareMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include"
+        android:layout_margin="10dp"
+        android:background="@drawable/icon_chat_2"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="@string/share_location_msg"
+        android:textColor="@android:color/white"
+        android:textColorLink="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/btn_register_border"
+        android:text="@string/send"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>

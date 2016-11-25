@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:card_view="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:baselineAligned="false">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:background="@drawable/lay_moodrating_home_border"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/appBackColor"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvAlarmTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:padding="@dimen/album_title_padding"
+                    android:text="Wake Up"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/album_title" />
+
+                <TextView
+                    android:id="@+id/tvAlarmEdit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:padding="@dimen/album_title_padding"
+                    android:text="Edit"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/album_title" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layAlarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layTop"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="20dp"
+                android:paddingLeft="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="08:05"
+                        android:textSize="28dp"
+                        android:id="@+id/tvAlarmTime"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alarm"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switchAlarmStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/layTop"
+                    android:padding="10dp"
+                    android:theme="@style/SCBSwitch"
+                    android:layout_marginTop="15dp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backcolor">
+
+    <LinearLayout
+        android:id="@+id/activity_hope_details_add_element"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backcolor"
+        android:orientation="vertical"
+        tools:context="percept.myplan.Activities.HopeDetailsAddElementActivity">
+
+        <include layout="@layout/app_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/title"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/edtHopeElementTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/edt_register_border_white"
+                android:gravity="right"
+                android:padding="10dp"
+                android:textColor="@color/appBackColor" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/sidemenu_seperator" />
+
+        <TextView
+            android:id="@+id/tvChooseHopElementImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/chooseimage"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/sidemenu_seperator" />
+
+        <TextView
+            android:id="@+id/tvChooseHopElementMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/choosemusic"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/sidemenu_seperator" />
+
+        <TextView
+            android:id="@+id/tvChooseHopElementVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/choosevideo"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/sidemenu_seperator" />
+
+        <TextView
+            android:id="@+id/tvChooseHopElementNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/leaveanote"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/sidemenu_seperator" />
+
+        <TextView
+            android:id="@+id/tvChooseHopElementLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/linktoweb"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/sidemenu_seperator" />
+    </LinearLayout>
+
+    <include layout="@layout/lay_internet_lost" />
+</RelativeLayout>

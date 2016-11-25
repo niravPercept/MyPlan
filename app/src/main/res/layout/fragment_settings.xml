@@ -1,0 +1,225 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backcolor"
+    tools:context="percept.myplan.fragments.fragmentSettings">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/setting_profile" />
+
+            <TextView
+                android:id="@+id/tvProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgProfile"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/profile"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="52dp"
+            android:background="@color/toobarbelow"></View>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgMoodRatings"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/setting_moodrating_new" />
+
+            <TextView
+                android:id="@+id/tvMoodRatings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgMoodRatings"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/moodratings"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="52dp"
+            android:background="@color/toobarbelow"></View>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgGeoTracking"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/setting_tracking" />
+
+            <TextView
+                android:id="@+id/tvGeoTracking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgGeoTracking"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/geotracking"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="52dp"
+            android:background="@color/toobarbelow"></View>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgExportPlan"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/setting_export" />
+
+            <TextView
+                android:id="@+id/tvExportPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgExportPlan"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/exportmyplan"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="52dp"
+            android:background="@color/toobarbelow"></View>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgNotification"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/setting_noti" />
+
+            <TextView
+                android:id="@+id/tvNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgNotification"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/notifications"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="52dp"
+            android:background="@color/toobarbelow"></View>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgFeedBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/setting_feedback" />
+
+            <TextView
+                android:id="@+id/tvFeedBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgFeedBack"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/feedback"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="52dp"
+            android:background="@color/toobarbelow"></View>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgShare"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/setting_share" />
+
+            <TextView
+                android:id="@+id/tvShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgShare"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/share"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="52dp"
+            android:background="@color/toobarbelow"></View>
+
+
+    </LinearLayout>
+</FrameLayout>

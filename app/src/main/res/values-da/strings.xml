@@ -1,0 +1,387 @@
+<resources>
+    <string name="app_name">MyPlan</string>
+    <string name="title_activity_home">Aktivitet</string>
+
+    <string name="navigation_drawer_open">Åben navigationsmenuen</string>
+    <string name="navigation_drawer_close">Luk navigationsmenuen</string>
+
+    <string name="action_settings">Indstillinger</string>
+
+    <string name="login">Log på</string>
+    <string name="sign_up">Opret bruger</string>
+
+    <string name="first_name">Fornavn</string>
+    <string name="last_name">Efternavn</string>
+    <string name="emailadd">E-mailadresse</string>
+    <string name="email">E-mail</string>
+    <string name="phone_no">Telefonnummer</string>
+    <string name="birthday">Fødselsår</string>
+    <string name="choose_pwd">Vælg adgangskode - 4 tegn</string>
+    <string name="enter">Ok</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hej</string>
+    <string name="help">Hjælp</string>
+    <string name="emergency">Nødsituation</string>
+    <string name="title_activity_add_contact">Kontakter</string>
+    <string name="addcontactfromphone">Tilføj kontakt fra telefonbog</string>
+    <string name="addnewcontact">Tilføj ny kontakt</string>
+    <string name="title_activity_add_contact_from_phone">Alle kontakter</string>
+    <string name="title_activity_splash">Forside</string>
+    <string name="prototypeby"><![CDATA[Prototype by Weis & Wise]]></string>
+    <string name="welcome">Velkommen til Minplan</string>
+    <string name="forgetpwd">Glemt adgangskode ?</string>
+    <string name="forgetpwdtitle">Glemt adgangskode</string>
+    <string name="symptops">Symptomer</string>
+    <string name="strategies">Strategier</string>
+    <string name="contacts">Kontakter</string>
+    <string name="hopebox">Hope Box</string>
+    <string name="moodratings">Humør</string>
+    <string name="nearestemerroom">Tætteste skadestue</string>
+    <string name="quickmsg">Hurtig besked</string>
+    <string name="shareloc">Del min lokation</string>
+    <string name="settings">Indstillinger</string>
+    <string name="logout">Log ud</string>
+    <string name="title_activity_sign_up_1">Opret bruger</string>
+    <string name="tvbirthday">Fødselsdag</string>
+    <string name="password">adgangskode</string>
+    <string name="insertpersonalimg">Indsæt personligt billede</string>
+    <string name="howtosignup">Sådan opretter du en bruger</string>
+    <string name="howtosignin">Log på</string>
+    <string name="howtostartnewcontact">Sådan opretter du en ny kontakt</string>
+    <string name="howtoaddhelp">Sådan tilføjer du hjælp</string>
+    <string name="enterpwd">Indtast adgangskode</string>
+    <string name="pwdprotectdata">Adgangskode beskytter din data</string>
+    <string name="enteremailtoreset">Indtast e-mailadresse for at nulstille dit adgangskode</string>
+    <string name="send">Send</string>
+    <string name="howareyoufeelingtoday">Hvordan har du det i dag?</string>
+    <string name="todaysmoodrating">Dagens humør</string>
+    <string name="wouldliketoaddnote">Vil du tilføje en note</string>
+    <string name="no">Nej</string>
+    <string name="yes">Ja</string>
+    <string name="addnotetotodaymoodrating">Tilføj note til dagens humør</string>
+    <string name="savenote">Gem note</string>
+    <string name="never">Aldrig</string>
+    <string name="always">Altid</string>
+    <string name="nextquesion">Næste spørgsmål (2/5)</string>
+    <string name="title_activity_quick_message_details">Hurtig besked</string>
+    <string name="messages">Besked</string>
+    <string name="editlist">Rediger liste</string>
+    <string name="addnewmsg">Tilføj ny besked</string>
+    <string name="help_list">Hjælp</string>
+    <string name="title_activity_emergency_contact">Kontaktperson</string>
+    <string name="onlyoneemergencycontact">Du kan højst have 1 kontakt tilføjet en nødsituation</string>
+    <string name="title_activity_help_list">Rediger hjælp</string>
+    <string name="edithelplistmsg">Du kan højst have 10 kontaktpersoner. Slet venligst en kontaktperson før du tilføjer en ny.</string>
+    <string name="title_activity_create_quick_msg">Vælg modtager</string>
+    <string name="title_activity_send_message">Send besked</string>
+    <string name="notimsg">Notifikationer for besked</string>
+    <string name="notimsgdetail">Jeg bruger Minplan appen til selvhjælp. Du vil automatisk modtage denne besked, når jeg har brug for din hjælp. Dette er blot til information, så du ved hvorfor jeg sender disse beskeder :-</string>
+    <string name="yourqckmsg">Din hurtige besked</string>
+    <string name="profile">Profil</string>
+    <string name="geotracking">Geo Tracking</string>
+    <string name="exportmyplan">Eksporter Minplan</string>
+    <string name="notifications">Notifikationer</string>
+    <string name="feedback">Feedback</string>
+    <string name="share">Del</string>
+    <string name="profiledit">Rediger profil</string>
+    <string name="title_activity_profile">Profil</string>
+    <string name="save">Gem</string>
+    <string name="title_activity_moodratings">Humør</string>
+    <string name="sidas">SIDAS</string>
+    <string name="mood">Humør</string>
+    <string name="test_interval">Testinterval</string>
+    <string name="everyweek">Ugentligt</string>
+    <string name="everytwoweek">Hver anden uge</string>
+    <string name="everythreeweek">Hver tredje uge</string>
+    <string name="onceamonth">En gang om måneden</string>
+    <string name="enablelocationsharing">Kunne ikke dele lokation</string>
+    <string name="title_activity_geotracking">Geotracking</string>
+    <string name="includemoodratings">Inkluder humør</string>
+    <string name="exportpdftoemail">Eksporter PDF til e-mail</string>
+    <string name="title_activity_exportplan">Eksporter Minplan</string>
+    <string name="title_activity_notification">Notifikationer</string>
+    <string name="addnewbox">Tilføj ny boks</string>
+    <string name="title_activity_addhopebox">Tilføj Hope Box</string>
+    <string name="addfolderimage">Tilføj billede til mappe</string>
+    <string name="title">Navn</string>
+    <string name="namefolder">Mappenavn</string>
+    <string name="err_network_not_available">Tjek internetforbindelse!</string>
+    <string name="addnewsymptom">Tilføj nyt symptom</string>
+    <string name="signuperror">Fejl ved oprettelse</string>
+    <string name="dangersignal">Faresignaler</string>
+    <string name="text">Tekst</string>
+    <string name="title_activity_symptoms">Symptomer</string>
+    <string name="action_edit">Rediger</string>
+    <string name="title_activity_strategy">Strategi</string>
+    <string name="title_activity_strategy_details_other">Strategi</string>
+    <string name="title_activity_strategy_details_other_submitted">Inspireret af</string>
+    <string name="addnewstrategy">Tilføj ny strategi</string>
+    <string name="inspiration">Inspiration</string>
+    <string name="action_add">Tilføj</string>
+    <string name="alarms">Alarmer</string>
+    <string name="morning">Morgen</string>
+    <string name="network">Kontakt</string>
+    <string name="images">Billeder</string>
+    <string name="addastrategy">Tilføj strategi</string>
+    <string name="internetconn">Tjek internetforbindelse</string>
+    <string name="writevalidemail">Indtast venligst gyldig e-mailadresse</string>
+    <string name="title_activity_addsymptom">Tilføj symptom</string>
+    <string name="alarm">Alarm</string>
+    <string name="music">Musik</string>
+    <string name="links">Links</string>
+    <string name="action_save">Gem</string>
+    <string name="addstrategy">Tilføj strategi</string>
+    <string name="fillupfield">Udfyld venligst alle påkrævet felter.</string>
+    <string name="addcontact">Tilføj kontakt</string>
+    <string name="search">Søg</string>
+    <string name="contactsaved">Kontakten er gemt</string>
+    <string name="used_by">Anvendt af</string>
+    <string name="subby">Tilføjet af</string>
+    <string name="category">Kategori</string>
+    <string name="description">Beskrivelse</string>
+    <string name="addtomystrategies">Tilføj til mine strategier</string>
+    <string name="alert">Advarsel</string>
+    <string name="alertStrategymsg">Vil du tilføje denne inspiration til dine strategier ?</string>
+    <string name="repeat">Gentag</string>
+    <string name="once">En enkelt gang</string>
+    <string name="sound">Lyd</string>
+    <string name="snooze">Snooze</string>
+    <string name="label">Mærke</string>
+    <string name="allcontact">Alle kontakter</string>
+    <string name="addimage">Tilføj billede</string>
+    <string name="chooseexistingimage">Vælg fra fotobibliotek</string>
+    <string name="takenewimage">Tag nyt billede</string>
+    <string name="choosefromphone">Vælg fra telefon</string>
+    <string name="choosefromlink">Vælg fra link</string>
+    <string name="addmusic">Tilføj musik</string>
+    <string name="musiclist">Musikliste</string>
+    <string name="addlink">Tilføj link</string>
+    <string name="url">URL</string>
+    <string name="addlinktext">Sådan tilføjer du et link - hvis du ønsker at linke til en anden side, skal du vælge hjemmesideadressen</string>
+    <string name="insertlink">Indsæt link</string>
+    <string name="strategyadded">Strategien er tilføjet.</string>
+    <string name="hopeboxadded">Hope box tilføjet</string>
+    <string name="newelement">Ny tilføjelse</string>
+    <string name="chooseimage">Vælg billede</string>
+    <string name="choosemusic">Vælg musik</string>
+    <string name="choosevideo">Vælg video</string>
+    <string name="leaveanote">Efterlad note</string>
+    <string name="linktoweb">Link til hjemmeside</string>
+    <string name="strategy">Strategi</string>
+    <string name="strategyedit">Strategien er redigeret</string>
+    <string name="edit">Rediger</string>
+    <string name="dangersignaltxt">En eller to af disse symptomer kan ikke alene forudsige en mental lidelse. Hvis en person oplever flere symptomer samtidig og disse symptomer afholder personen fra at studere, arbejde eller have kontakt med andre mennesker, bør personen søge professionel hjælp. Personer med selvmordsadfærd, selvmordstanker eller overvejelser om at skade andre, har brug for akut hjælp.</string>
+    <string name="socialwithdraw">Social tilbagetrækning</string>
+    <string name="increateusedrugs">Øget brug af medicin</string>
+    <string name="mentaldisorder">Symptom på mental lidelse</string>
+    <string name="previousattempt">Tidligere selvmordsforsøg</string>
+    <string name="chooseexistingvideo">Vælg eksisterende video</string>
+    <string name="recordvideo">Optag ny video</string>
+    <string name="leavenote">Efterlad note</string>
+    <string name="pleaseaddnote">Tilføj venligst note</string>
+    <string name="pickagainwithlesstime">Vælg en video på højst 20 sekunder</string>
+    <string name="takefullsidastest">Tag den fulde sidas test</string>
+    <string name="camerapermissiondenied">Det var ikke muligt at få adgang til kameraet</string>
+    <string name="readstoragedenied">Det var ikke muligt at få adgang til lagring</string>
+    <string name="gallery">Vælg billede</string>
+    <string name="capture">Tag billede</string>
+    <string name="upload_photo">Upload billede</string>
+    <string name="sharestrategyanno">Del din strategi anonymt</string>
+    <string name="permissiondenied">Adgang nægtet</string>
+    <string name="requiredpermissionn">Adgang påkrævet</string>
+
+    <string name="latitude_label">Bredde</string>
+    <string name="longitude_label">Længde</string>
+    <string name="last_update_time_label">Tidspunkt for sidste lokationsopdatering</string>
+    <string name="completemoodratings">Fuldfør dagens humør</string>
+    <string name="seeallnote">Se alle noter</string>
+    <string name="seenotes">Se noter</string>
+    <string name="sharemyloc">Del mine lokationer</string>
+    <string name="action_next">Næste</string>
+    <string name="sharepos">Del position</string>
+    <string name="moodratingsida">Humør - SIDAS</string>
+    <string name="sidasfulltest">Fulde SIDAS test</string>
+    <string name="cont">Fortsæt</string>
+    <string name="nextques">Næste spørgsmål</string>
+    <string name="done">Udført</string>
+    <string name="nointernet">Ingen internetforbindelse!</string>
+    <!--<string name="sidastart">"&lt;b&gt;" + "Sidas" + "&lt;/b&gt;" + "consist of 5 questions" + "<br />" +
+                    "You can use" + "&lt;b&gt;" + "SIDAS" + "&lt;/b&gt;" + "to measure your suicidal thoughts." + "<br />" +
+                    "&lt;b&gt;" + "IMPORTANT " + "&lt;/b&gt;" + "if you have a high score, you will get an automate " +
+                    "notification to seek help" + "<br />" + "It is important that you act and follow your crisis plan"</string>-->
+
+
+    <string name="retry">Prøv igen</string>
+    <string name="home_page">Hjem</string>
+    <string name="click_to_exit">Gå venligst tilbage for at afslutte</string>
+    <string name="location_update">Opdatering af lokationer</string>
+    <string name="hello">Hej</string>
+    <string name="old_password">Tidligere adgangskode</string>
+    <string name="new_password">Nyt adgangskode</string>
+    <string name="change_password">Ændre adgangskode</string>
+    <string name="add_alarm">Tilføj alarm</string>
+    <string name="action_change">Rediger</string>
+    <string name="required">Påkrævet</string>
+    <string name="toast_old_password_invalid">Indtast venligst tidligere gyldigt adgangskode</string>
+    <string name="toast_new_password_invalid">Indtast venligst nyt gyldigt adgangskode</string>
+    <string name="share_strategy_success">Din strategi er delt.</string>
+    <string name="add_ringtone">Tilføj ny ringetone</string>
+    <string name="add_email">Tilføj ny e-mail</string>
+    <string name="add_url">Tilføj ny URL</string>
+    <string name="add_address">Tilføj ny adresse</string>
+    <string name="assign_priority">Vælg prioritet</string>
+    <string name="company">Virksomhed</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Fortryd</string>
+    <string name="add_photo">Tilføj billede</string>
+    <string name="nearest_emergency_room">Tætteste skadestue</string>
+    <string name="editcontact">Rediger kontakt</string>
+    <string name="submitted">Udført</string>
+    <string name="submit">Udfør</string>
+    <string name="complete_test">Fuldfør test</string>
+    <string name="user">Bruger ID</string>
+    <string name="entries">Adgange</string>
+    <string name="entry">Adgang</string>
+    <string name="no_entry_submitted">Ingen adgange tilføjet</string>
+    <string name="delete_hope_element">Er du sikker på at du vil slette denne hope media tilføjelse?</string>
+    <string name="delete_hope_box">Er du sikker på at du vil slette denne hope box?</string>
+    <string name="delete_hope_box_success">Hope box slettet</string>
+    <string name="delete_hope_media_success">Hope media tilføjelsen er slettet</string>
+    <string name="login_error">Fejl ved log in</string>
+    <string name="forgot_success">En mail er sendt. Tjek venligst din e-mail for at nulstille adgangskode.</string>
+    <string name="quick_msg">Hurtig besked</string>
+    <string name="details">Detaljer</string>
+    <string name="share_with">Del</string>
+    <string name="share_location_msg">Dette er min nuværende lokation. Klik på følgende URL for at se på kort</string>
+    <string name="month_of">Måned</string>
+    <string name="week_of">Uge</string>
+    <string name="share_on">Del med..</string>
+    <string name="subject">Emne</string>
+    <string name="give_ur_feedback">Giv din feedback</string>
+
+    <string name="view_calendar">Vis Kalender</string>
+    <string name="take_full_test">Tag den fulde test</string>
+    <string name="Sidas0">0-14 - Du gør det godt.</string>
+    <string name="Sidas15">15-21 - Du har en vanskelig tid lige nu.</string>
+    <string name="Sidas22">22-50 - Du befinder dig i en krise. Søg hjælp nu.</string>
+    <string name="sidas_description">SIDAS består af 5 spørgsmål som måler graden af selvmordstanker. Du kan selv opsætte betingelserne for SIDAS testen under ”Indstillinger”. Dine resultater bliver gemt, så du kan måle dine fremskridt. VIGTIGT: hvis du scorer højt vil du modtage en besked om at søge hjælp. Dette er en automatisk besked så det er vigtigt at du selv handler og følger din kriseplan.</string>
+
+
+    <string-array name="navigation_menu">
+        <item>Symptomer</item>
+        <item>Strategier</item>
+        <item>Kontakter</item>
+        <item>Hope Box</item>
+        <item>Humør</item>
+        <item/>
+        <item>Hurtig besked</item>
+        <item>Del min lokation</item>
+        <item>Nærmeste skadestue</item>
+        <item/>
+        <item>Indstillinger</item>
+        <item>Log ud</item>
+    </string-array>
+
+    <string-array name="sidas_interval">
+        <item>Ugentligt</item>
+        <item>Hver anden uge</item>
+        <item>Hver tredje uge</item>
+        <item>En gang om måneden</item>
+    </string-array>
+
+    <string-array name="alarm_repeat">
+        <item>Aldrig</item>
+        <item>Søndag</item>
+        <item>Mandag</item>
+        <item>Tirsdag</item>
+        <item>Onsdag</item>
+        <item>Torsdag</item>
+        <item>Fredag</item>
+        <item>Lørdag</item>
+    </string-array>
+
+    <string name="test_start_warning_msg">
+    &lt;b&gt;SIDAS&lt;/b&gt; består af 5 spørgsmål&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    Du kan bruge&lt;b&gt; SIDAS &lt;/b&gt;til at måle dine selvmordstanker.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    &lt;b&gt;VIGTIGT &lt;/b&gt;hvis din score er høj, vil du automatisk få en besked om at søge hjælp&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    Det er vigtigt at du følger din kriseplan og reagerer
+    </string>
+
+     <string name="test_result_btwn_15to21"> Svarene viser at du har det svært lige nu. Kig gerne i dine strategier for hjælp eller kontakt dit netværk. Hvis du mangler ideer til, hvad du ellers kan prøve. Så kik i vores inspirationsbank her. Husk at du kan bruge ’alarm’-knappen i
+      &lt;br/&gt;&lt;/b&gt;&lt;font color="#47c1b6"&gt;MYPLan&lt;/font&gt;
+</string>
+<string name="test_result_greater_21">Svarene viser at du befinder dig i en krise. Det er vigtigt at søge hjælp nu. Involver dit netværk eller bruge ’alarm’-knappen i
+     &lt;br/&gt;&lt;/b&gt;&lt;font color="#47c1b6"&gt;MYPLan&lt;/font&gt;
+</string>
+    <string name="test_result_less_15">&lt;br/&gt;&lt;br/&gt;&lt;h2&gt;Tillykke!&lt;/h2&gt;din score ligger under grænseværdien!&lt;br/&gt;&lt;br/&gt;</string>
+
+    <string name="share_body">Jeg vil gerne dele Minplan appen, som er en digital krisplan.
+                        Download Minplan fra &lt;a href="http://itunes.apple.com"&gt; AppStore &lt;/a&gt; eller
+     &lt;a href="http://play.google.com"&gt;Google Play&lt;/a&gt;. Dette er gratis</string>
+    <string name="title_activity_feedback">Feedback</string>
+    <string name="validate_email">Indtast venligst gyldig e-mailadresse</string>
+    <string name="validate_subject">Vælg venligst emne for feedback</string>
+    <string name="validate_detail_feedback">Indtast venligst nogle få ord som feedback</string>
+    <string name="distance_nearest">Afstand til nærmeste:</string>
+    <string name="km">KM</string>
+    <string name="nearest_emergency">Du er nu ved nærmeste skadestue</string>
+    <string name="no_emergency_room">Du har ingen skadestuer</string>
+    <string name="emergency_room_name">Indtast navn på skadestue</string>
+    <string name="address">Tilføj adresse</string>
+    <string name="postcode">Postnummer</string>
+    <string name="add_room">Tilføj skadestue</string>
+    <string name="open_google_maps">Vil du åbne ruten i Google Maps?</string>
+    <string name="max_10_images">Du kan højst vælge 10 billeder</string>
+    <string name="selected_images">Dine valgte billeder</string>
+    <string name="selected_music">Din valgte musik</string>
+    <string name="max_5_music_files">Du kan højst vælge 5 musikfiler</string>
+    <string name="delete_symptom">Er du sikker på at du vil slette dette symptom?</string>
+    <string name="delete_contact">Er du sikker på at du vil slette denne kontakt?</string>
+    <string name="delete_alarm">Er du sikker på at du vil slette denne alarm?</string>
+    <string name="delete">Slet</string>
+    <string name="export_myplan_pdf">Eksporter Minplan to PDF</string>
+    <string name="pdf_password">Tilføj venligst en 4-cifret kode til din PDF</string>
+    <string name="mail_success_msg">Din kriseplan er nu sendt til din e-mail</string>
+    <string name="help_contact_validate">Du kan højst tilføje 10 kontaktpersoner!</string>
+    <string name="share_strategy_confirm">Er du sikker på at du vil dele din strategi anonymt med andre brugere af Minplan. En administrator vil nu følge op på dit ønske om at være anonym.</string>
+    <string name="strategyadd_failed">Tilføjelse af strategi mislykkedes. Prøv venligst igen senere</string>
+    <string name="validate_enter_emergency_room">Indtast venligst navn på skadestue</string>
+    <string name="validate_address">Tilføj adresse</string>
+    <string name="add_video">Tilføj video</string>
+    <string name="dialog_no_gps">Ingen GPS</string>
+    <string name="dialog_no_gps_messgae">Du har ikke aktiveret din lokationstjeneste.</string>
+    <string name="dialog_enable_gps">GPS</string>
+    <string name="exit">Afslut</string>
+    <string name="thank_feedback">Tak for din feedback.</string>
+    <string name="pdf_success_msg">En PDF er sendt til din e-mail med en beskyttende adgangskode.</string>
+    <string name="dialog_gps_msg">Din GPS er deaktiveret. Vil du aktivere din GPS?</string>
+    <string name="confimation_call">Er du sikker på at du vil ringe til dette nummer?</string>
+    <string name="strategies_to_symptom">Strategier mod dette symptom</string>
+    <string name="time">Tid</string>
+    <string name="multiple_days">Flere dage</string>
+    <string name="update_emergency_room">Skadestuen er opdateret.</string>
+    <string name="added_emergency_room">Skadestue er tilføjet.</string>
+    <string name="mood_interval">Humør intervaller</string>
+    <string name="mood_times">Humør tid</string>
+    <string name="mood_time">Humør tid</string>
+    <string name="one_time_day">En gang om dagen</string>
+    <string name="two_times_day">To gange dagligt</string>
+    <string name="notification_one">Notifikation 1</string>
+    <string name="notification_two">Notifikation 2</string>
+    <string name="select_time">Vælg tid</string>
+    <string name="notification_mood">Husk at udfylde dit humør.</string>
+    <string name="notification_sidas">Husk at udfylde din SIDAS test.</string>
+    <string name="setting_off_location">Geotracking er deaktiveret. Aktiver denne for at dele dine lokationer.</string>
+    <string name="cover_photo">Coverbillede</string>
+    <string name="delete_cover_photo">Er du sikker på at du vil slette dit coverbillede?</string>
+    <string name="progress_loading">Loader - vent venligst...</string>
+
+    <string name="enter_titile">Venligst Indtast titel</string>
+    <string name="audioerror">Lydfil ikke køre</string>
+    <string name="audioremove">Er du sikker på du vil slette denne lyd på strategys</string>
+    <string name="hopeboxenterfolder">skal du indtaste navn Folder</string>
+    <string name="priority">Vælg en prioritet</string>
+    <string name="hopebox_history">Vælg venligst eventuelle medier</string>
+    <string name="contactadderror">Venligst Indtast fornavn eller telefonnummer</string>
+</resources>

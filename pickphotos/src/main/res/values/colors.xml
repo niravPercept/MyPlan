@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f5f7f6</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#4e4b4c</color>
+
+    <color name="appBackColor">#47c1b6</color>
+
+    <color name="toobarbelow">#a9a9a9</color>
+    <color name="toolbarback">#F6F6F6</color>
+</resources>
