@@ -8,8 +8,8 @@ android {
         applicationId "percept.myplan"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 11
-        versionName "1.10"
+        versionCode 15
+        versionName "1.14"
 
 
         ndk {
