@@ -388,6 +388,9 @@ public class SignUpActivity extends AppCompatActivity {
                         SignUpActivity.this.finish();*/
                     } else {
                         Toast.makeText(SignUpActivity.this, getResources().getString(R.string.signuperror), Toast.LENGTH_SHORT).show();
+                        mProgressDialog.dismiss();
+                         startActivity(new Intent(SignUpActivity.this, LoginActivity_1.class));
+                        SignUpActivity.this.finish();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -408,12 +411,13 @@ public class SignUpActivity extends AppCompatActivity {
                 public void onError(VolleyError message) {
                     Log.d(":::::::::: ", message.toString());
                     mProgressDialog.dismiss();
+
                 }
 
                 @Override
                 public void onResponse(JSONObject response) {
                     Log.d(":::::::::: ", response.toString());
-                    mProgressDialog.dismiss();
+
                     try {
                         if (response.has(Constant.DATA)) {
                             if (response.getJSONObject(Constant.DATA).getString(Constant.STATUS).equals("Success")) {
@@ -424,7 +428,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 Constant.PROFILE_USER_NAME = response.getJSONObject(Constant.DATA).getJSONObject(Constant.USER).getString(Constant.USER_NAME);
                                 Constant.PROFILE_NAME = response.getJSONObject(Constant.DATA).getJSONObject(Constant.USER).getString(Constant.NAME);
                                 Constant.PROFILE_USER_ID = response.getJSONObject(Constant.DATA).getJSONObject(Constant.USER).getString(Constant.ID);
-
+                                mProgressDialog.dismiss();
                                 UTILS.setPreference(Constant.PREF_EMAIL, EDT_EMAIL.getText().toString().trim());
                                 startActivity(new Intent(SignUpActivity.this, HomeActivity.class));
                                 SignUpActivity.this.finish();

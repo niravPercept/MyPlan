@@ -482,7 +482,8 @@ public class AddStrategyImageActivity extends AppCompatActivity {
 //                            rvPhotos.setAdapter(imageAdapter);
 //                        AddStrategyImageActivity.this.finish();
                         }
-                        imageAdapter.notifyDataSetChanged();
+                        if (imageAdapter !=null)
+                               imageAdapter.notifyDataSetChanged();
                     } else {
 //                        addHopeBoxImageElement(HOPE_TITLE, HOPE_ID, FILE_PATH, HOPE_ELEMENT_ID, "image");
 

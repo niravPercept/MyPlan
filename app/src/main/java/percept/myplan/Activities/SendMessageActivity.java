@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -54,11 +55,11 @@ public class SendMessageActivity extends AppCompatActivity {
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
         mTitle.setText(getResources().getString(R.string.title_activity_send_message));
 
-        BTN_SEND = (Button) findViewById(R.id.btnSendMessage);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE| WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         EDT_MSG = (EditText) findViewById(R.id.edtMsg);
         edtNotificationMsg = (EditText) findViewById(R.id.edtNotificationMsg);
         REL_COORDINATE = (CoordinatorLayout) findViewById(R.id.snakeBar);
-
+        BTN_SEND = (Button) findViewById(R.id.btnSendMessage);
 
         EDT_MSG.setText("");
 
