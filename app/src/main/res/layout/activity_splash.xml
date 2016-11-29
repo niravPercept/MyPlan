@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,4 +28,12 @@
             android:textColor="@android:color/white" />
         <!--android:text="@string/prototypeby"-->
     </RelativeLayout>
+
+    <ImageView
+        android:layout_height="100dp"
+        android:id="@+id/imgsuportedby"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:layout_width="200dp" />
 </RelativeLayout>

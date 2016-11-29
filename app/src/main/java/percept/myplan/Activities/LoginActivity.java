@@ -45,6 +45,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private RelativeLayout LAY_INFO, REL_MAIN;
     private Utils UTILS;
 
+    private  ImageView imagesupport;
+
     private ProgressBar pbHelpVideo;
     private ArrayList<HelpVideos> listHelpVideos;
     private TextView tvTitle1, tvTitle2, tvTitle3, tvTitle4;
@@ -57,6 +59,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         chekcVesion();
         autoScreenTracking();
+
+
         UTILS = new Utils(LoginActivity.this);
         if (UTILS.getPreference(Constant.PREF_LOGGEDIN).equals("true")) {
             Constant.SID = UTILS.getPreference(Constant.PREF_SID);
@@ -89,6 +93,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ivThumb2 = (ImageView) findViewById(R.id.ivThumb2);
         ivThumb3 = (ImageView) findViewById(R.id.ivThumb3);
         ivThumb4 = (ImageView) findViewById(R.id.ivThumb4);
+
+        // supported by image show logo
+        imagesupport= (ImageView) findViewById(R.id.imgsuportedby_login);
+        String a= getResources().getConfiguration().locale.getDisplayLanguage();
+
+        if (a.equals("English")){
+            imagesupport.setImageResource(R.drawable.tryglogo_eng);
+        }else {
+            imagesupport.setImageResource(R.drawable.tryglogo);
+        }
 
         tvTitle1.setOnClickListener(this);
         tvTitle2.setOnClickListener(this);
@@ -304,7 +318,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         .setCrashHandling(CrashHandling.SILENT) // Default
                         .enableAnalytics(true)                 // Default
                         .useShakeFeedback(false, null)          // Default
-                        .updateInterval(60)                     // Default
+                        .updateInterval(80)                     // Default
                         .useApi14(true)                         // Default
                         .build();
 

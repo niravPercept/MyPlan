@@ -8,16 +8,27 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 
 import percept.myplan.Activities.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        // supported by image show logo
+        imageView= (ImageView) findViewById(R.id.imgsuportedby);
+        String a= getResources().getConfiguration().locale.getDisplayLanguage();
+
+        if (a.equals("English")){
+            imageView.setImageResource(R.drawable.tryglogo_eng);
+        }else {
+            imageView.setImageResource(R.drawable.tryglogo);
+        }
 
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
