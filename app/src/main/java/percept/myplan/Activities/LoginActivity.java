@@ -318,7 +318,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         .setCrashHandling(CrashHandling.SILENT) // Default
                         .enableAnalytics(true)                 // Default
                         .useShakeFeedback(false, null)          // Default
-                        .updateInterval(80)                     // Default
+                        .updateInterval(60)                     // Default
                         .useApi14(true)                         // Default
                         .build();
 
