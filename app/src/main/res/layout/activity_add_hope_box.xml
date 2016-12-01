@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_add_hope_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backcolor"
+                android:orientation="vertical"
+                tools:context="percept.myplan.Activities.AddHopeBoxActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_toolbar"></include>
+
+        <RelativeLayout
+            android:id="@+id/relSelectImg"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/lay_moodrating_home_border">
+
+            <Button
+                android:id="@+id/btnAddFolderImage"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/btn_register_border"
+                android:text="@string/addfolderimage"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relSelectedImg"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/lay_moodrating_home_border">
+
+            <ImageView
+                android:id="@+id/imgHopeFolder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sidemenu_seperator"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="@string/namefolder"
+                android:textColor="@android:color/black"/>
+
+            <EditText
+                android:id="@+id/edtFolderName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/edt_register_border"
+                android:gravity="right"
+                android:hint="@string/title"
+                android:padding="5dp"
+                android:textColor="@color/appBackColor"
+                android:textColorHint="@color/appBackColor"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sidemenu_seperator"/>
+    </LinearLayout>
+
+
+
+    <include layout="@layout/lay_internet_lost"/>
+</RelativeLayout>

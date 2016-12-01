@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_strategy_links"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backcolor"
+    android:orientation="vertical"
+    tools:context="percept.myplan.Activities.AddStrategyLinksActivity">
+
+    <include
+        android:id="@+id/lay1"
+        layout="@layout/app_toolbar" />
+
+    <View
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/lay1"
+        android:layout_marginTop="50dp"
+        android:background="@color/sidemenu_seperator" />
+
+    <LinearLayout
+        android:id="@+id/lay3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay2"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/url"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/edt_register_border_white"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:id="@+id/edtLink"
+            android:gravity="right"
+            android:padding="10dp"
+            android:textColor="@color/appBackColor" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lay4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/lay3"
+        android:background="@color/sidemenu_seperator" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay4"
+        android:padding="10dp"
+        android:text="@string/addlinktext" />
+
+    <Button
+        android:id="@+id/btnInsertLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_register_border"
+        android:text="@string/insertlink"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <include layout="@layout/lay_internet_lost"/>
+</RelativeLayout>

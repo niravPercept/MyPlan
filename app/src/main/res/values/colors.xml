@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f5f7f6</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#4e4b4c</color>
+
+    <color name="appBackColor">#47c1b6</color>
+
+    <color name="underline_default_color">#CCCCCC</color>
+    <color name="underline_selected_color">#000</color>
+    <color name="hintColor">#CCCCCC</color>
+    <color name="textColor">#000</color>
+
+    <color name="dark">#FF222222</color>
+
+    <color name="red">#FFFF0000</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="transparent_blue">#800000FF</color>
+    <color name="green">#FF00FF00</color>
+    <color name="green_light">#FF99CC00</color>
+    <color name="orange">#FFFFBB33</color>
+    <color name="transparent_orange">#80FFBB33</color>
+    <color name="purple">#FFAA66CC</color>
+    <color name="login_btn_back">#03A192</color>
+    <color name="sidemenu_seperator">#C8C7CC</color>
+    <color name="toobarbelow">#a9a9a9</color>
+    <color name="toolbarback">#F6F6F6</color>
+    <color name="shadowback">#55000000</color>
+
+    <color name="pin_normal">#000000</color>
+    <color name="login_forget_color">#0B554E</color>
+    <color name="backcolor">#EFEFF3</color>
+    <color name="home_emergency">#ed1c24</color>
+    <color name="home_help">#fed304</color>
+
+    <color name="album_title">#4c4c4c</color>
+
+    <color name="date_outside_month_text_color_activity_1">#A1F5FF</color>
+
+    <color name="verysad">#ed1c24</color>
+    <color name="sad">#F7941E</color>
+    <color name="ok">#fcd406</color>
+    <color name="veryhappy">#1ea293</color>
+    <!--<color name="veryhappy">#04a060</color>-->
+    <!--<color name="happy">#CDCCCC</color>-->
+    <color name="happy">#47c1b6</color>
+
+    <color name="pie_color1">#04a060</color>
+    <color name="pie_color2">#fed304</color>
+    <color name="pie_color3">#ed1c24</color>
+
+    <color name="btninspicolor">#04a060</color>
+
+    <color name="white_transparent">#B9FFFFFF</color>
+
+</resources>

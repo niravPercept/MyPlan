@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_strategy_to_symptom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="percept.myplan.Activities.AddStrategyToSymptomActivity">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/app_toolbar"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_above="@+id/btnInspiration"
+        android:layout_below="@+id/toolbar1"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lstStrategy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/tvAddNewSymptom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableLeft="@drawable/add_circle"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="@string/addnewstrategy"
+            android:visibility="gone"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnInspiration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:layout_above="@+id/snakeBar"
+        android:background="@drawable/btn_register_border"
+        android:text="@string/inspiration"
+        android:textColor="@android:color/white" />
+
+
+    <include layout="@layout/lay_internet_lost"
+        android:id="@+id/snakeBar"/>
+</RelativeLayout>

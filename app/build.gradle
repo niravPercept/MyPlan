@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '24.0.1'
+
+    defaultConfig {
+        applicationId "percept.myplan"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 11
+        versionName "1.10"
+
+
+        ndk {
+            moduleName "webp"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar', '*.so'], dir: 'libs')
+    compile project(':pickphotos')
+    compile files('libs/httpclient-4.3.6.jar')
+    compile files('libs/httpcore-4.3.3.jar')
+    compile files('libs/httpmime-4.3.6.jar')
+    compile project(':library')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.google.android.gms:play-services-location:9.4.0'
+    compile 'com.google.android.gms:play-services-maps:9.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
+    compile 'com.google.android.exoplayer:exoplayer:r1.5.9'
+    compile 'com.theartofdev.edmodo:android-image-cropper:2.3.0'
+    compile 'im.ene.lab:flvv:1.0.0'
+    testCompile 'junit:junit:4.12'
+    compile(name:'tpalib-1.4.5', ext:'aar')
+    compile files('libs/mint-5.1.0.jar')
+    compile files('libs/isoparser-1.0.6.jar')
+    compile files('libs/aspectjrt-1.7.3 (1).jar')
+}

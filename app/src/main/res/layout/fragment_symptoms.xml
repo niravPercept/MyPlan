@@ -1,0 +1,61 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:id="@+id/snakeBar"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:background="@color/backcolor"
+                                                 tools:context="percept.myplan.fragments.fragmentSymptoms">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btnDangerSignal"
+            android:layout_below="@+id/viewSeperator"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/lstSymptom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backcolor"/>
+
+            <TextView
+                android:id="@+id/tvAddNewSymptom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableLeft="@drawable/add_circle"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="@string/addnewsymptom"
+                android:textColor="@android:color/black"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnDangerSignal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/btn_register_border"
+            android:text="@string/dangersignal"
+            android:textColor="@android:color/white"/>
+
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/lay_help_info"/>
+
+</android.support.design.widget.CoordinatorLayout>

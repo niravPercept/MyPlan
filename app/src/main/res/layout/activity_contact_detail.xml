@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/app_toolbar"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/lay1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <percept.myplan.customviews.RoundedImageView
+                        android:id="@+id/imgContact"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/contact_default"/>
+
+                    <percept.myplan.customviews.RoundedImageView
+                        android:id="@+id/imgMsgContact"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/contact_msg"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/tvContactChar"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:text="@string/add_photo"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:visibility="visible"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edtFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="@string/first_name"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/sidemenu_seperator"/>
+
+                    <EditText
+                        android:id="@+id/edtLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="@string/last_name"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/sidemenu_seperator"/>
+
+                    <EditText
+                        android:id="@+id/edtCompany"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="@string/company"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/sidemenu_seperator"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imgAddPhoneNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@drawable/add_circle"/>
+                <EditText
+                    android:id="@+id/edtAddPhoneNo"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:hint="@string/phone_no"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"/>
+
+
+
+                    </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/sidemenu_seperator"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imgAddRingTone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@drawable/add_circle"/>
+                <TextView
+                    android:id="@+id/tvAddRingTone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@null"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/add_ringtone"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"/>
+                    </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imgAddEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@drawable/add_circle"/>
+                <EditText
+                    android:id="@+id/edtAddEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:hint="@string/add_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"/>
+                    </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/sidemenu_seperator"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imgAddUrl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@drawable/add_circle"/>
+                <EditText
+                    android:id="@+id/edtAddUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:hint="@string/add_url"
+                    android:imeOptions="actionNext"
+                    android:inputType="textWebEditText"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"/>
+                    </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imgAddAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@drawable/add_circle"/>
+                <EditText
+                    android:id="@+id/edtAddAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:hint="@string/add_address"
+                    android:imeOptions="actionDone"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"/>
+                    </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="35dp"
+                    android:background="@color/sidemenu_seperator"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imgAssignPriority"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@drawable/add_circle"/>
+                <TextView
+                    android:id="@+id/tvAssignPriority"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/assign_priority"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"/>
+                    </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/sidemenu_seperator"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <include layout="@layout/lay_internet_lost"/>
+</RelativeLayout>

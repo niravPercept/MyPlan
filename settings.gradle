@@ -1,0 +1,1 @@
+include ':app', ':pickphotos', ':library', ':ffmpeg4android_lib'

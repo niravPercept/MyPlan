@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="percept.myplan.Activities.CreateQuickMsgActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_toolbar"></include>
+
+        <include layout="@layout/lay_help_contact"></include>
+
+        <include layout="@layout/lay_contact_list"></include>
+    </LinearLayout>
+
+    <include layout="@layout/lay_internet_lost"/>
+</RelativeLayout>

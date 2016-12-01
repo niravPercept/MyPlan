@@ -1,0 +1,396 @@
+<resources>
+    <string name="app_name">MyPlan</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="login">Log In</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="emailadd">Email Address</string>
+    <string name="email">Email</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="birthday">Birthday - year</string>
+    <string name="choose_pwd">Choose Passcode - 4 Digits</string>
+    <string name="enter">Enter</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="help">Help</string>
+    <string name="emergency">Emergency</string>
+    <string name="title_activity_add_contact">Contacts</string>
+    <string name="addcontactfromphone">Add contact from phonelist</string>
+    <string name="choosefromexisting">Choose existing contact</string>
+    <string name="addnewcontact">Add new contact</string>
+    <string name="title_activity_add_contact_from_phone">AllContacts</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="prototypeby"><![CDATA[Prototype by Weis & Wise]]></string>
+    <string name="welcome">Welcome to MyPlan</string>
+    <string name="forgetpwd">Forgot Passcode ?</string>
+    <string name="forgetpwdtitle">Forgot Passcode</string>
+    <string name="symptops">Symptoms</string>
+    <string name="strategies">Strategies</string>
+    <string name="contacts">Contacts</string>
+    <string name="hopebox">Hope Box</string>
+    <string name="moodratings">Mood Ratings</string>
+    <string name="nearestemerroom">Nearest emergency room</string>
+    <string name="quickmsg">Quick Messages</string>
+    <string name="shareloc">Share my location</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="title_activity_sign_up_1">SignUpActivity_1</string>
+    <string name="tvbirthday">Birthday</string>
+    <string name="password">Passcode</string>
+    <string name="insertpersonalimg">Insert Personal Image</string>
+    <string name="howtosignup">How to Sign Up</string>
+    <string name="howtosignin">How to Sign In</string>
+    <string name="howtostartnewcontact">How to start a new contact</string>
+    <string name="howtoaddhelp">How to add help</string>
+    <string name="enterpwd">Enter Passcode</string>
+    <string name="pwdprotectdata">A Passcode protects your data</string>
+    <string name="enteremailtoreset">Enter email to reset your Passcode</string>
+    <string name="send">Send</string>
+    <string name="howareyoufeelingtoday">How are you feeling today?</string>
+    <string name="todaysmoodrating">Today\'s Mood Rating</string>
+    <string name="wouldliketoaddnote">Would you like to add a note</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="addnotetotodaymoodrating">Add note to today\'s mood rating</string>
+    <string name="savenote">Save Note</string>
+    <string name="never">Never</string>
+    <string name="always">Always</string>
+    <string name="nextquesion">Next Question (2/5)</string>
+    <string name="title_activity_quick_message_details">QuickMessageDetailsActivity</string>
+    <string name="messages">Messages</string>
+    <string name="editlist">Edit List</string>
+    <string name="addnewmsg">Add new message</string>
+    <string name="help_list">Help List</string>
+    <string name="title_activity_emergency_contact">Emergency Contact</string>
+    <string name="onlyoneemergencycontact">You can have maximum of 1 contact assigned to emergency</string>
+    <string name="title_activity_help_list">Edit Help List</string>
+    <string name="edithelplistmsg">You can have maximum of 10 assigned contact listed in help.Please reassign priority to one contact before adding a new.</string>
+    <string name="title_activity_create_quick_msg">Choose recipient</string>
+    <string name="title_activity_send_message">Send Message</string>
+    <string name="notimsg">Notification Message</string>
+    <string name="notimsgdetail">I am using the app myplan to help me cope. The following message has been set as an automatic message and can be sent by me when I need your help.This is just an information to you, so that you know the reason for sending the following message :-</string>
+    <string name="yourqckmsg">Your quick message</string>
+    <string name="profile">Profile</string>
+    <string name="geotracking">Geo Tracking</string>
+    <string name="exportmyplan">Export MyPlan</string>
+    <string name="notifications">Notifications</string>
+    <string name="feedback">FeedBack</string>
+    <string name="share">Share</string>
+    <string name="profiledit">Profile Edit</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="save">Save</string>
+    <string name="title_activity_moodratings">Mood Ratings</string>
+    <string name="sidas">SIDAS</string>
+    <string name="mood">Mood</string>
+    <string name="test_interval">Test Interval</string>
+    <string name="everyweek">Every Week</string>
+    <string name="everytwoweek">Every 2 week</string>
+    <string name="everythreeweek">Every 3 week</string>
+    <string name="onceamonth">Once a month</string>
+    <string name="enablelocationsharing">Enable sharing of location</string>
+    <string name="title_activity_geotracking">Geotracking</string>
+    <string name="includemoodratings">Include Mood Ratings</string>
+    <string name="exportpdftoemail">Export PDF to email</string>
+    <string name="title_activity_exportplan">Export MyPlan</string>
+    <string name="title_activity_notification">Notifications</string>
+    <string name="addnewbox">Add new box</string>
+    <string name="title_activity_addhopebox">Add Hope Box</string>
+    <string name="addfolderimage">Add folder image</string>
+    <string name="title">Title</string>
+    <string name="namefolder">Name Folder</string>
+    <string name="err_network_not_available">Check Internet connection!</string>
+    <string name="addnewsymptom">Add new symptom</string>
+    <string name="signuperror">Sign Up Error</string>
+    <string name="dangersignal">Danger signals</string>
+    <string name="text">Text</string>
+    <string name="title_activity_symptoms">Symptoms</string>
+    <string name="action_edit">Edit</string>
+    <string name="title_activity_strategy">Strategy</string>
+    <string name="title_activity_strategy_details_other">StrategyDetailsOtherActivity</string>
+    <string name="title_activity_strategy_details_other_submitted">Inspired By</string>
+    <string name="addnewstrategy">Add new strategy</string>
+    <string name="inspiration">Inspiration</string>
+    <string name="action_add">Add</string>
+    <string name="alarms">Alarms</string>
+    <string name="morning">Morning</string>
+    <string name="network">Contact</string>
+    <string name="images">Images</string>
+    <string name="addastrategy">Add a strategy</string>
+    <string name="internetconn">Please check internet connection</string>
+    <string name="writevalidemail">Please write valid email address</string>
+    <string name="title_activity_addsymptom">Add Symptom</string>
+    <string name="alarm">Alarm</string>
+    <string name="music">Music</string>
+    <string name="links">Links</string>
+    <string name="action_save">Save</string>
+    <string name="addstrategy">Add Strategy</string>
+    <string name="fillupfield">Please fill up all field to sign up.</string>
+    <string name="addcontact">Add Contact</string>
+    <string name="search">Search</string>
+    <string name="contactsaved">Contact saved successfully</string>
+    <string name="used_by">Used by</string>
+    <string name="subby">Submitted by</string>
+    <string name="category">Category</string>
+    <string name="description">Description</string>
+    <string name="addtomystrategies">Add to my strategies</string>
+    <string name="alert">Alert</string>
+    <string name="alertStrategymsg">Would you like to add this inspiration to your strategies ?</string>
+    <string name="repeat">Repeat</string>
+    <string name="once">Once</string>
+    <string name="sound">Sound</string>
+    <string name="snooze">Snooze</string>
+    <string name="label">Label</string>
+    <string name="allcontact">All Contacts</string>
+    <string name="addimage">Add Image</string>
+    <string name="chooseexistingimage">Choose existing image</string>
+    <string name="takenewimage">Take a new image</string>
+    <string name="choosefromphone">Choose from phone</string>
+    <string name="choosefromlink">Choose from link</string>
+    <string name="addmusic">Add music</string>
+    <string name="musiclist">Music List</string>
+    <string name="addlink">Add Link</string>
+    <string name="url">URL</string>
+    <string name="addlinktext">How to add a link - if you want to link to a page or another website ,select the web address</string>
+    <string name="insertlink">Insert Link</string>
+    <string name="strategyadded">Strategy Added Successfully.</string>
+    <string name="hopeboxadded">Hope box added</string>
+    <string name="newelement">New Element</string>
+    <string name="chooseimage">Choose Image</string>
+    <string name="choosemusic">Choose music</string>
+    <string name="choosevideo">Choose video</string>
+    <string name="leaveanote">Leave a note</string>
+    <string name="linktoweb">Link to web</string>
+    <string name="strategy">Strategy</string>
+    <string name="strategyedit">Strategy editted successfully</string>
+    <string name="edit">Edit</string>
+    <string name="dangersignaltxt">One or two of these symptoms alone can\'t predict a mental illness. But if a person is experiencing several at one time and the symptom are causing serious problem in ability to study,work or relate to other,he/she should be seen by a mental health prefessional.People with suicidal thought or intent,or thought of harming other need immediate attention.</string>
+    <string name="socialwithdraw">Social withdrawal</string>
+    <string name="increateusedrugs">Increase use of drugs</string>
+    <string name="mentaldisorder">Mental disorder symptoms</string>
+    <string name="previousattempt">Previous suicide attempt</string>
+    <string name="chooseexistingvideo">Choose existing video</string>
+    <string name="recordvideo">Record new video</string>
+    <string name="leavenote">Leave a note</string>
+    <string name="pleaseaddnote">Please add note</string>
+    <string name="pickagainwithlesstime">Please pick video with less then 20 seconds</string>
+    <string name="takefullsidastest">Take full sidas test</string>
+    <string name="camerapermissiondenied">Camera permission denied</string>
+    <string name="readstoragedenied">Read storage permission denied</string>
+    <string name="gallery">Pick Photo</string>
+    <string name="capture">Take Photo</string>
+    <string name="upload_photo">Select Photo</string>
+    <string name="sharestrategyanno">Share strategy anonymously</string>
+    <string name="permissiondenied">Permission denied</string>
+    <string name="requiredpermissionn">Permission is required</string>
+
+    <string name="latitude_label">Latitude</string>
+    <string name="longitude_label">Longitude</string>
+    <string name="last_update_time_label">Last location update time</string>
+    <string name="completemoodratings">Complete today\'s Mood Rating</string>
+    <string name="seeallnote">See all notes</string>
+    <string name="seenotes">See Notes</string>
+    <string name="sharemyloc">Share my location</string>
+    <string name="action_next">Next</string>
+    <string name="sharepos">Share Position</string>
+    <string name="moodratingsida">Mood Ratings - SIDAS</string>
+    <string name="sidasfulltest">SIDAS Full Test</string>
+    <string name="cont">Continue</string>
+    <string name="nextques">Next question</string>
+    <string name="done">Done</string>
+    <string name="nointernet">No internet connection!</string>
+    <!--<string name="sidastart">"&lt;b&gt;" + "Sidas" + "&lt;/b&gt;" + "consist of 5 questions" + "<br />" +
+                    "You can use" + "&lt;b&gt;" + "Sidas" + "&lt;/b&gt;" + "to measure your suicidal thoughts." + "<br />" +
+                    "&lt;b&gt;" + "IMPORTANT " + "&lt;/b&gt;" + "if you have a high score, you will get an automate " +
+                    "notification to seek help" + "<br />" + "It is important that you act and follow your crisis plan"</string>-->
+
+
+    <string name="retry">Retry</string>
+    <string name="home_page">Home Page</string>
+    <string name="click_to_exit">Please click back again to exit</string>
+    <string name="location_update">Location Updated</string>
+    <string name="hello">Hello</string>
+    <string name="old_password">Old Passcode</string>
+    <string name="new_password">New Passcode</string>
+    <string name="change_password">Change Passcode</string>
+    <string name="add_alarm">Add Alarm</string>
+    <string name="action_change">Change</string>
+    <string name="required">Required</string>
+    <string name="toast_old_password_invalid">Please enter valid Old Passcode</string>
+    <string name="toast_new_password_invalid">Please enter valid New Passcode</string>
+    <string name="share_strategy_success">Successfully shared your Strategy.</string>
+    <string name="add_ringtone">Add new Ringtone</string>
+    <string name="add_email">Add new E-mail</string>
+    <string name="add_url">Add new URL</string>
+    <string name="add_address">Add new address</string>
+    <string name="assign_priority">Assign Priority</string>
+    <string name="company">Company</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="nearest_emergency_room">Nearest Emergency Rooms</string>
+    <string name="editcontact">Edit Contact</string>
+    <string name="submitted">Submitted</string>
+    <string name="submit">Submit</string>
+    <string name="complete_test">Complete Test</string>
+    <string name="user">User ID</string>
+    <string name="entries">entries</string>
+    <string name="entry">entry</string>
+    <string name="no_entry_submitted">No entry submitted</string>
+    <string name="delete_hope_element">Are you sure you want to delete this hope media element?</string>
+    <string name="delete_hope_box">Are you sure you want to delete this entire hope box?</string>
+    <string name="delete_hope_box_success">Hope box deleted successfully</string>
+    <string name="delete_hope_media_success">Hope media element deleted successfully</string>
+    <string name="login_error">Login Error</string>
+    <string name="forgot_success">Mail sent successfully. Please check your mail for resetting your passcode.</string>
+    <string name="quick_msg">Quick Message</string>
+    <string name="details">Details</string>
+    <string name="share_with">Share With</string>
+    <string name="share_location_msg">This is my current location. Click the following URL to see it on map</string>
+    <string name="month_of">Month of</string>
+    <string name="week_of">Week of</string>
+    <string name="share_on">Share On..</string>
+    <string name="subject">Subject</string>
+    <string name="give_ur_feedback">Give your Feedback</string>
+
+    <string name="progress_uploading">Uploading - please hold on...</string>
+    <string name="progress_loading">Loading - please hold on...</string>
+
+
+    <string name="view_calendar">View Calendar</string>
+    <string name="take_full_test">Take Full Test</string>
+    <string name="Sidas0">0-14 - You are doing well.</string>
+    <string name="Sidas15">15-21 - You are having a difficult time right now.</string>
+    <string name="Sidas22">22-50 - You are having a crisis. Seek help.</string>
+    <string name="sidas_description">The SIDAS is designed to screen individuals in the community for presence of suicidal thoughts and assess the severity of these thoughts. It consists of five times, each targeting an attribute of suicidal thoughts: frequency, controllability, closeness to attempt, level of distress associated with the thoughts and impact on daily functioning. Responses are measured on a 10-point scale. Items are coded so that a higher total score reflects more severe suicidal thoughts.</string>
+
+
+    <string-array name="navigation_menu">
+        <item>Symptoms</item>
+        <item>Strategies</item>
+        <item>Contacts</item>
+        <item>Hope Box</item>
+        <item>Mood Ratings</item>
+        <item />
+        <item>Quick Messages</item>
+        <item>Share my location</item>
+        <item>Nearest emergency room</item>
+        <item />
+        <item>Settings</item>
+        <item>Logout</item>
+    </string-array>
+
+    <string-array name="sidas_interval">
+        <item>Every Week</item>
+        <item>Every 2 Week</item>
+        <item>Every 3 Week</item>
+        <item>Once a month</item>
+    </string-array>
+
+    <string-array name="alarm_repeat">
+        <item>Never</item>
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <string name="test_start_warning_msg">
+    &lt;b&gt;Sidas&lt;/b&gt; consist of 5 questions&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    You can use&lt;b&gt; Sidas &lt;/b&gt;to measure your suicidal thoughts.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    &lt;b&gt;IMPORTANT &lt;/b&gt;if you have a high score, you will get an automate notification to seek help&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    It is important that you act and follow your crisis plan
+    </string>
+
+    <string name="test_result_btwn_15to21"> Your answers show that you are having a difficult time right now.
+      Use your strategies for help and/or contact your network.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+      If you need ideas for an effective strategy, please view the inspiration ban here.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+      Remember that you always can use the HELP button in &lt;font color="#47c1b6"&gt;MyPlan&lt;/font&gt;
+</string>
+<string name="test_result_greater_21">Your answers show that you are having a crisis.It is important that you seek help now!
+    &lt;br/&gt;&lt;br/&gt;&lt;br/&gt; Follow your crisis plan, involve your networkog/or use
+    &lt;b&gt;HELP&lt;/b&gt; or &lt;b&gt;EMERGENCY&lt;/b&gt; buttons in &lt;font color="#47c1b6"&gt;MYPLan&lt;/font&gt;
+</string>
+    <string name="test_result_less_15">&lt;br/&gt;&lt;br/&gt;&lt;h2&gt;Congratulation!&lt;/h2&gt;your score is below the threshold!&lt;br/&gt;&lt;br/&gt;</string>
+
+    <string name="share_body">I want to tell you about the app MyPlan, which is an electronic crisis plan.
+                        Download MyPlan from &lt;a href="http://itunes.apple.com"&gt; AppStore &lt;/a&gt; or
+     &lt;a href="http://play.google.com"&gt;Google Play&lt;/a&gt;. It\'s completely free</string>
+    <string name="title_activity_feedback">FeedbackActivity</string>
+    <string name="validate_email">Please enter valid Email Address</string>
+    <string name="validate_subject">Please enter Subject for feedback</string>
+    <string name="validate_detail_feedback">Please give few words for feedback</string>
+    <string name="distance_nearest">Distance to nearest:</string>
+    <string name="km">KM</string>
+    <string name="nearest_emergency">You are at your nearest emergency room</string>
+    <string name="no_emergency_room">You have no emergency room</string>
+    <string name="emergency_room_name">Enter Emergency Room Name</string>
+    <string name="address">Enter Address</string>
+    <string name="postcode">Post Code</string>
+    <string name="add_room">Add Emergency Room</string>
+    <string name="open_google_maps">Will you open the route in Google Maps?</string>
+    <string name="max_10_images">You can only select a maximum of 10 images</string>
+    <string name="selected_images">Your selected images</string>
+    <string name="selected_music">Your selected music</string>
+    <string name="max_5_music_files">You can only select a maximum of 5 Music files</string>
+    <string name="delete_symptom">Are you sure you want to delete this Symptom?</string>
+    <string name="delete_contact">Are you sure you want to delete this Contact?</string>
+    <string name="delete_alarm">Are you sure you want to delete this Alarm?</string>
+    <string name="delete">Delete</string>
+    <string name="export_myplan_pdf">Export MyPlan to PDF</string>
+    <string name="pdf_password">Please add a 4 digit\ncode to the PDF</string>
+    <string name="mail_success_msg">Your Plan has been sent to mail successfully</string>
+    <string name="help_contact_validate">You can\'t select more than 10 contacts for Help!</string>
+    <string name="share_strategy_confirm">Are you sure you want to share you strategy title and text anonymously with MyPlan users. No media will be shared, and an Administrator will check for anonymization purposes.</string>
+    <string name="strategyadd_failed">Strategy Adding Failed. Please try again later</string>
+    <string name="validate_enter_emergency_room">Please enter Emergency Room Name</string>
+    <string name="validate_address">Please add address</string>
+    <string name="add_video">Add Video</string>
+    <string name="dialog_no_gps">No GPS</string>
+    <string name="dialog_no_gps_messgae">Seems like you have not started your location service.</string>
+    <string name="dialog_enable_gps">Enable GPS</string>
+    <string name="exit">Exit</string>
+    <string name="thank_feedback">Thank you for feedback.</string>
+    <string name="pdf_success_msg">Your PDF has been sent to your e-mail with a passcode protecting it.</string>
+    <string name="dialog_gps_msg">Your GPS is turn off on your phone. Do you want to turn od GPS?</string>
+    <string name="confimation_call">Are you sure you want to call to this number?</string>
+    <string name="strategies_to_symptom">Strategies for this symptom</string>
+    <string name="time">Time</string>
+    <string name="multiple_days">Multiple Days</string>
+    <string name="update_emergency_room">Emergency Room has been updated.</string>
+    <string name="added_emergency_room">Emergency Room has been added.</string>
+    <string name="mood_interval">MOOD RATING INTERVAL</string>
+    <string name="mood_times">MOOD RATING TIMES</string>
+    <string name="mood_time">MOOD RATING TIME</string>
+    <string name="one_time_day">One time per day</string>
+    <string name="two_times_day">Two times per day</string>
+    <string name="notification_one">Notification 1</string>
+    <string name="notification_two">Notification 2</string>
+    <string name="select_time">Select Time</string>
+    <string name="notification_mood">Remember to complete your mood rating.</string>
+    <string name="notification_sidas">Husk at fuldføre din SIDAS test.</string>
+    <string name="setting_off_location">Geotracking settings off please switch on setting for sharing your location.</string>
+    <string name="cover_photo">Cover Photo</string>
+    <string name="delete_cover_photo">Are you sure you want to delete Cover Photo?</string>
+    <string name="video_size_bigger">Unable to add this video. Video size must be less than 5 MB. Please choose another video.</string>
+    <string name="music_size_bigger">Unable to add this music. Music size must be less than 5 MB. Please choose another music file.</string>
+    <string name="image_size_bigger">Unable to add this image. Image must be less than 512 KB. Please choose another image.</string>
+    <string name="enter_titile">Please Enter Title</string>
+    <string name="audioerror">Audio file not run</string>
+    <string name="audioremove">Are you sure you want to delete this Audio on Strategys</string>
+    <string name="hopeboxenterfolder">please enter Name Folder</string>
+    <string name="priority">Please select one priority </string>
+    <string name="hopebox_history">Please select any Media</string>
+    <string name="contactadderror">Please Enter First name or Phone number</string>
+</resources>
