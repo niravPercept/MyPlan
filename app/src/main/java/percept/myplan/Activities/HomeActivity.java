@@ -56,7 +56,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.tpa.tpalib.TPA;
 import io.tpa.tpalib.TpaConfiguration;
+import io.tpa.tpalib.ext.CrashHandling;
+import io.tpa.tpalib.ext.TpaLog;
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
 import percept.myplan.Global.Constant;
 import percept.myplan.Global.General;
@@ -139,6 +142,7 @@ public class HomeActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        chekcVesion();
         autoScreenTracking();
         UTILS = new Utils(HomeActivity.this);
         if (getIntent().hasExtra("FROM")) {
@@ -206,6 +210,22 @@ public class HomeActivity extends AppCompatActivity implements
         // Update values using data stored in the Bundle.
         updateValuesFromBundle(savedInstanceState);
 
+
+
+    }
+
+    private void chekcVesion() {
+        TpaConfiguration config =
+                new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")
+                        .setLogType(TpaLog.Type.BOTH)           // Default
+                        .setCrashHandling(CrashHandling.SILENT) // Default
+                        .enableAnalytics(true)                 // Default
+                        .useShakeFeedback(false, null)          // Default
+                        .updateInterval(1)                     // Default
+                        .useApi14(true)                         // Default
+                        .build();
+
+        TPA.initialize(this, config);
     }
 
     private void CheckSession() {
@@ -479,6 +499,8 @@ public class HomeActivity extends AppCompatActivity implements
             if (mGoogleApiClient.isConnected() && mRequestingLocationUpdates) {
                 startLocationUpdates();
             }
+
+        chekcVesion();
     }
 
     @Override

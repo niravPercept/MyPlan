@@ -747,11 +747,12 @@ public class fragmentHome extends Fragment {
 //        }
 //    }
 public void showProgress(String message){
-    mProgressDialog = new ProgressDialog(getActivity());
+    mProgressDialog = new ProgressDialog(getContext());
     mProgressDialog.setMessage(getString(R.string.progress_loading));
     mProgressDialog.setIndeterminate(false);
     mProgressDialog.setCanceledOnTouchOutside(false);
-    mProgressDialog.show();
+    if (mProgressDialog !=null)
+          mProgressDialog.show();
     }
 
     public void dismissProgress(){

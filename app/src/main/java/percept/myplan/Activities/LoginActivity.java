@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,15 +27,21 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import io.tpa.tpalib.TPA;
 import io.tpa.tpalib.TpaConfiguration;
+import io.tpa.tpalib.ext.CrashHandling;
+import io.tpa.tpalib.ext.TpaLog;
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
 import percept.myplan.Global.Constant;
 import percept.myplan.Global.General;
 import percept.myplan.Global.Utils;
 import percept.myplan.Interfaces.VolleyResponseListener;
 import percept.myplan.POJO.HelpVideos;
+import percept.myplan.POJO.info;
 import percept.myplan.R;
+import percept.myplan.adapters.getHelpinfoadapter;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,17 +50,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private RelativeLayout LAY_INFO, REL_MAIN;
     private Utils UTILS;
 
+    private  ImageView imagesupport;
+
     private ProgressBar pbHelpVideo;
     private ArrayList<HelpVideos> listHelpVideos;
     private TextView tvTitle1, tvTitle2, tvTitle3, tvTitle4;
     private ImageView ivThumb1, ivThumb2, ivThumb3, ivThumb4;
+    private ListView lstmenu;
+    private List<info> infos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        chekcVesion();
         autoScreenTracking();
+
+
         UTILS = new Utils(LoginActivity.this);
         if (UTILS.getPreference(Constant.PREF_LOGGEDIN).equals("true")) {
             Constant.SID = UTILS.getPreference(Constant.PREF_SID);
@@ -77,23 +92,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         BTN_INFO = (Button) findViewById(R.id.btnShowInfo);
         BTN_SHOWINFOINSIDE = (Button) findViewById(R.id.btnShowInfoInside);
 
-        tvTitle1 = (TextView) findViewById(R.id.tvTitle1);
+       /* tvTitle1 = (TextView) findViewById(R.id.tvTitle1);
         tvTitle2 = (TextView) findViewById(R.id.tvTitle2);
         tvTitle3 = (TextView) findViewById(R.id.tvTitle3);
         tvTitle4 = (TextView) findViewById(R.id.tvTitle4);
         ivThumb1 = (ImageView) findViewById(R.id.ivThumb1);
         ivThumb2 = (ImageView) findViewById(R.id.ivThumb2);
         ivThumb3 = (ImageView) findViewById(R.id.ivThumb3);
-        ivThumb4 = (ImageView) findViewById(R.id.ivThumb4);
+        ivThumb4 = (ImageView) findViewById(R.id.ivThumb4);*/
 
-        tvTitle1.setOnClickListener(this);
+        infos=new ArrayList<>();
+        lstmenu= (ListView) findViewById(R.id.listmenuinfo);
+
+
+        // supported by image show logo
+        imagesupport= (ImageView) findViewById(R.id.imgsuportedby_login);
+        String a= getResources().getConfiguration().locale.getDisplayLanguage();
+
+        if (a.equals("English")){
+            imagesupport.setImageResource(R.drawable.tryglogo_eng);
+        }else {
+            imagesupport.setImageResource(R.drawable.tryglogo);
+        }
+
+        /*tvTitle1.setOnClickListener(this);
         tvTitle2.setOnClickListener(this);
         tvTitle3.setOnClickListener(this);
         tvTitle4.setOnClickListener(this);
         ivThumb1.setOnClickListener(this);
         ivThumb2.setOnClickListener(this);
         ivThumb3.setOnClickListener(this);
-        ivThumb4.setOnClickListener(this);
+        ivThumb4.setOnClickListener(this);*/
 
         //android:background="#55000000"
         BTN_INFO.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +141,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     super.onAnimationEnd(animation);
                                     LAY_INFO.setVisibility(View.VISIBLE);
                                     pbHelpVideo=new ProgressBar(getApplicationContext());
-                                    getHelpinfo();
+                                    if (infos.size()==0) {
+                                        getHelpinfo();
+                                    }
                                 }
                             });
 
@@ -176,6 +207,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
+        lstmenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (listHelpVideos != null && listHelpVideos.size() > 2) {
+                    watchVideoOnYouTube(listHelpVideos.get(2).getVideoLink());
+
+                }
+            }
+        });
     }
 
     private void getHelpinfo() {
@@ -193,22 +233,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     try {
                         listHelpVideos = new Gson().fromJson(response.getJSONArray(Constant.DATA).toString(), new TypeToken<ArrayList<HelpVideos>>() {
                         }.getType());
-                        tvTitle1.setText(listHelpVideos.get(0).getVideoTitle());
-                        tvTitle2.setText(listHelpVideos.get(1).getVideoTitle());
-                        tvTitle3.setText(listHelpVideos.get(2).getVideoTitle());
-                        tvTitle4.setText(listHelpVideos.get(3).getVideoTitle());
-                        Picasso.with(LoginActivity.this)
-                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(0).getVideoLink() + "/1.jpg")
-                                .into(ivThumb1);
-                        Picasso.with(LoginActivity.this)
-                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(1).getVideoLink() + "/1.jpg")
-                                .into(ivThumb2);
-                        Picasso.with(LoginActivity.this)
-                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(2).getVideoLink() + "/1.jpg")
-                                .into(ivThumb3);
-                        Picasso.with(LoginActivity.this)
-                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(3).getVideoLink() + "/1.jpg")
-                                .into(ivThumb4);
+
+                        infos.clear();
+                        for (int i=0;i<listHelpVideos.size();i++){
+                            info in=new info(listHelpVideos.get(i).getVideoLink(),listHelpVideos.get(i).getVideoTitle());
+                            infos.add(in);
+                        }
+
+                        getHelpinfoadapter adapter=new getHelpinfoadapter(getApplicationContext(),infos);
+                        lstmenu.setAdapter(adapter);
+//                        tvTitle1.setText(listHelpVideos.get(0).getVideoTitle());
+//                        tvTitle2.setText(listHelpVideos.get(1).getVideoTitle());
+//                        tvTitle3.setText(listHelpVideos.get(2).getVideoTitle());
+//                        tvTitle4.setText(listHelpVideos.get(3).getVideoTitle());
+//                        Picasso.with(LoginActivity.this)
+//                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(0).getVideoLink() + "/1.jpg")
+//                                .into(ivThumb1);
+//                        Picasso.with(LoginActivity.this)
+//                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(1).getVideoLink() + "/1.jpg")
+//                                .into(ivThumb2);
+//                        Picasso.with(LoginActivity.this)
+//                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(2).getVideoLink() + "/1.jpg")
+//                                .into(ivThumb3);
+//                        Picasso.with(LoginActivity.this)
+//                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(3).getVideoLink() + "/1.jpg")
+//                                .into(ivThumb4);
                         pbHelpVideo.setVisibility(View.GONE);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -233,7 +282,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    @Override
+  /*  @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tvTitle1:
@@ -265,7 +314,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
         }
-    }
+    }*/
+
+
     public void autoScreenTracking(){
         TpaConfiguration config =
                 new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")
@@ -277,6 +328,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onResume() {
         super.onResume();
         AppLifeCycle.getInstance().resumed(this);
+        chekcVesion();
     }
 
     @Override
@@ -289,5 +341,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onStop() {
         super.onStop();
         AppLifeCycle.getInstance().stopped(this);
+    }
+    private void chekcVesion() {
+        TpaConfiguration config =
+                new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")
+                        .setLogType(TpaLog.Type.BOTH)           // Default
+                        .setCrashHandling(CrashHandling.SILENT) // Default
+                        .enableAnalytics(true)                 // Default
+                        .useShakeFeedback(false, null)          // Default
+                        .updateInterval(60)                     // Default
+                        .useApi14(true)                         // Default
+                        .build();
+
+        TPA.initialize(this, config);
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

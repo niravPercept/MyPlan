@@ -114,7 +114,10 @@ public class InspirationCategoryActivity extends AppCompatActivity {
 
                 @Override
                 public void onResponse(JSONObject response) {
-                    mProgressDialog.dismiss();
+
+                    if (mProgressDialog.isShowing())
+                          mProgressDialog.dismiss();
+
                     Log.d(":::: ", response.toString());
                     Gson gson = new Gson();
                     try {
@@ -128,6 +131,7 @@ public class InspirationCategoryActivity extends AppCompatActivity {
                     LST_INSPIRATION_CATEGORY.setAdapter(ADAPTER);
                 }
             },"");
+
         } catch (Exception e) {
             e.printStackTrace();
             mProgressDialog.dismiss();

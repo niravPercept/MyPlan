@@ -25,6 +25,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".Activities.LoginActivity"
@@ -148,7 +149,9 @@
             android:name=".Activities.SendMessageActivity"
             android:label="@string/title_activity_send_message"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustPan|adjustResize"
+            />
         <activity
             android:name=".Activities.SettingProfileActivity"
             android:label="@string/title_activity_profile"

@@ -1,8 +1,15 @@
 package percept.myplan.Activities;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -24,7 +31,7 @@ public class SharePositionActivity extends AppCompatActivity {
     private static final int SMS_REQUEST_CODE = 101;
     private Button BTN_SEND;
     private TextView tvShareMsg;
-
+    double longitude,latitude;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,26 +49,55 @@ public class SharePositionActivity extends AppCompatActivity {
         tvShareMsg = (TextView) findViewById(R.id.tvShareMsg);
         BTN_SEND = (Button) findViewById(R.id.btnSend);
 
-        final LatLng latLng = getIntent().getParcelableExtra("CURRENT_LOCATION");
+        //final LatLng latLng = getIntent().getParcelableExtra("CURRENT_LOCATION");
         final String strContactNos = getIntent().getStringExtra("CONTACT_NOs");
         String msg = " ";
 
+        //String sharelo="<a href=\"http://maps.google.com/?q="+latLng.latitude+","+latLng.longitude;
+
+//        tvShareMsg.setText(sharelo);
 //        tvShareMsg.setText(Html.fromHtml("&lt;a href=\"http://www.google.com\"&gt;URL&lt;/a&gt;"));
-        tvShareMsg.setText(Html.fromHtml(getString(R.string.share_location_msg) + "<br/>" +
-                "<a href=\"http://maps.google.com/?q="
-                + latLng.latitude + "," + latLng.longitude + "\">" + getString(R.string.url) + "</a>"));
+
+
+
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,2000,10,locationListener);
+        final Location location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+       // myLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+       // Location location=locationmanager.getLastKnownLocation(provider);
+        longitude = location.getLongitude();
+        latitude = location.getLatitude();
+
+        tvShareMsg.setText(Html.fromHtml(getString(R.string.share_location_msg) + "<br/>" +"<a href=\"http://maps.google.com/?q="+ latitude + "," + longitude + "\">" + getString(R.string.url) + "</a>"));
         tvShareMsg.setMovementMethod(LinkMovementMethod.getInstance());
+
+
         BTN_SEND.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
-                sendIntent.setData(Uri.parse("sms:" + strContactNos));
-                sendIntent.putExtra("sms_body", getString(R.string.share_location_msg) +
-                        " " + "http://maps.google.com/?q=" + latLng.latitude + "," + latLng.longitude);
-                sendIntent.putExtra("exit_on_sent", true);
-                startActivityForResult(sendIntent, SMS_REQUEST_CODE);
+
+                    Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
+                    sendIntent.setData(Uri.parse("sms:" + strContactNos));
+                    sendIntent.putExtra("sms_body", getString(R.string.share_location_msg) +" " + "http://maps.google.com/?q=" + latitude + "," +longitude);
+                    sendIntent.putExtra("exit_on_sent", true);
+                    startActivityForResult(sendIntent, SMS_REQUEST_CODE);
+
             }
         });
+
+
     }
 
     @Override
@@ -106,4 +142,25 @@ public class SharePositionActivity extends AppCompatActivity {
         super.onStop();
         AppLifeCycle.getInstance().stopped(this);
     }
+    private final LocationListener locationListener = new LocationListener() {
+        public void onLocationChanged(Location location) {
+            longitude = location.getLongitude();
+            latitude = location.getLatitude();
+        }
+
+        @Override
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String s) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String s) {
+
+        }
+    };
 }
