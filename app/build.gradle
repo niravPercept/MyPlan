@@ -8,10 +8,9 @@ android {
         applicationId "percept.myplan"
         minSdkVersion 16
         targetSdkVersion 23
-        multiDexEnabled true
         versionCode 18
         versionName "1.17"
-
+        multiDexEnabled true
 
         ndk {
             moduleName "webp"
@@ -69,4 +68,8 @@ dependencies {
     compile files('libs/mint-5.1.0.jar')
     compile files('libs/isoparser-1.0.6.jar')
     compile files('libs/aspectjrt-1.7.3 (1).jar')
+
+    //
+    compile 'com.android.support:multidex:1.0.1'
+
 }

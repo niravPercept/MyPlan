@@ -4,7 +4,12 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -13,6 +18,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -50,6 +56,7 @@ import percept.myplan.POJO.SymptomStrategy;
 import percept.myplan.R;
 import percept.myplan.adapters.SymptomStrategyAdapter;
 
+import static percept.myplan.Activities.AddStrategyToSymptomActivity.LIST_STRATEGY;
 import static percept.myplan.fragments.fragmentSymptoms.GET_STRATEGY;
 
 public class SymptomDetailsActivity extends AppCompatActivity {
@@ -187,6 +194,9 @@ public class SymptomDetailsActivity extends AppCompatActivity {
 
             }
         });
+
+
+        initSwipe();
     }
 
     @Override
@@ -386,6 +396,131 @@ public class SymptomDetailsActivity extends AppCompatActivity {
             snackbar.show();
         }
     }
+
+
+
+    private void initSwipe() {
+        final Paint p = new Paint();
+        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                final int position = viewHolder.getAdapterPosition();
+                final dialogYesNoOption _dialog = new dialogYesNoOption(SymptomDetailsActivity.this, getString(R.string.delete_symptom)) {
+
+                    @Override
+                    public void onClickYes() {
+
+                     LIST_SYMPTOMSTRATEGY.remove(LIST_SYMPTOMSTRATEGY.get(position).getId());
+                     LIST_STRATEGY.remove(LIST_SYMPTOMSTRATEGY.get(position).getId());
+                     ADAPTER.notifyDataSetChanged();
+                     SaveSymptoms();
+                     dismiss();
+
+//                        if (!General.checkInternetConnection(SymptomDetailsActivity.this))
+//                            return;
+//                        mProgressDialog = new ProgressDialog(SymptomDetailsActivity.this);
+//                        mProgressDialog.setMessage(getString(R.string.progress_loading));
+//                        mProgressDialog.setIndeterminate(false);
+//                        mProgressDialog.setCanceledOnTouchOutside(false);
+//                        mProgressDialog.show();
+//                        Map<String, String> params = new HashMap<String, String>();
+//                        params.put("sid", Constant.SID);
+//                        params.put("sname", Constant.SNAME);
+//                        params.put("id", SYMPTOM_ID);
+//                        params.put("title", TV_TITLE.getText().toString().trim());
+//                        params.put("description", TV_TEXT.getText().toString().trim());
+//                        params.put("strategy_id", STR_STRATEGYID);
+//                        params.put("state", "1");
+//
+//                        try {
+//                            new General().getJSONContentFromInternetService(SymptomDetailsActivity.this, General.PHPServices.SAVE_SYMPTOM, params, true, false, true, new VolleyResponseListener() {
+//                                @Override
+//                                public void onError(VolleyError message) {
+//
+//                                }
+//
+//                                @Override
+//                                public void onResponse(JSONObject response) {
+//                                    mProgressDialog.dismiss();
+//                                    GET_STRATEGY = true;
+//                                    Log.d(":::::", response.toString());
+//                                    SymptomDetailsActivity.this.finish();
+//                                }
+//                            },SYMPTOM_ID);
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                            mProgressDialog.dismiss();
+//                            Snackbar snackbar = Snackbar
+//                                    .make(REL_COORDINATE, getResources().getString(R.string.nointernet), Snackbar.LENGTH_INDEFINITE)
+//                                    .setAction(getResources().getString(R.string.retry), new View.OnClickListener() {
+//                                        @Override
+//                                        public void onClick(View view) {
+//                                            SaveSymptoms();
+//                                        }
+//                                    });
+//                            snackbar.setActionTextColor(Color.RED);
+//                            View sbView = snackbar.getView();
+//                            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+//                            textView.setTextColor(Color.YELLOW);
+//                            snackbar.show();
+//                        }
+//                     //SaveSymptoms();
+                    }
+                    @Override
+                    public void onClickNo() {
+                        ADAPTER.notifyDataSetChanged();
+                        dismiss();
+                       // dismiss();
+                    }
+                };
+                _dialog.setCancelable(false);
+                _dialog.setCanceledOnTouchOutside(false);
+                _dialog.show();
+
+            }
+
+            @Override
+            public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+                Bitmap icon;
+                if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+
+                    View itemView = viewHolder.itemView;
+                    float height = (float) itemView.getBottom() - (float) itemView.getTop();
+                    float width = height / 3;
+
+//                    if(dX > 0){
+//                        p.setColor(Color.parseColor("#388E3C"));
+//                        RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop(), dX,(float) itemView.getBottom());
+//                        c.drawRect(background,p);
+//                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_edit_white);
+//                        RectF icon_dest = new RectF((float) itemView.getLeft() + width ,(float) itemView.getTop() + width,(float) itemView.getLeft()+ 2*width,(float)itemView.getBottom() - width);
+//                        c.drawBitmap(icon,null,icon_dest,p);
+//                    } else {
+                    p.setColor(getResources().getColor(android.R.color.white));
+                    RectF background = new RectF((float) itemView.getRight() + dX, (float) itemView.getTop(), (float) itemView.getRight(), (float) itemView.getBottom());
+                    c.drawRect(background, p);
+                    icon = BitmapFactory.decodeResource(getResources(), R.drawable.icon_delete);
+                    RectF icon_dest = new RectF((float) itemView.getRight() - 2 * width, (float) itemView.getTop() + width, (float) itemView.getRight() - width, (float) itemView.getBottom() - width);
+                    c.drawBitmap(icon, null, icon_dest, p);
+//                    }
+                }
+                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+            }
+        };
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+        itemTouchHelper.attachToRecyclerView(LST_SYMPTOMSTRATEGY);
+    }
+
+
+
+
     public void autoScreenTracking(){
         TpaConfiguration config =
                 new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")
