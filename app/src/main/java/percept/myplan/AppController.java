@@ -56,17 +56,17 @@ public class AppController extends Application {
 
         Mint.initAndStartSession(this, "390c5614");
 
-        TpaConfiguration config =
-                new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")
-                        .setLogType(TpaLog.Type.BOTH)           // Default
-                        .setCrashHandling(CrashHandling.SILENT) // Default
-                        .enableAnalytics(true)                 // Default
-                        .useShakeFeedback(false, null)          // Default
-                        .updateInterval(60)                     // Default
-                        .useApi14(true)                         // Default
-                        .build();
-
-        TPA.initialize(this, config);
+//        TpaConfiguration config =
+//                new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")
+//                        .setLogType(TpaLog.Type.BOTH)           // Default
+//                        .setCrashHandling(CrashHandling.SILENT) // Default
+//                        .enableAnalytics(true)                 // Default
+//                        .useShakeFeedback(false, null)          // Default
+//                        .updateInterval(60)                     // Default
+//                        .useApi14(true)                         // Default
+//                        .build();
+//
+//        TPA.initialize(this, config);
 
         handleSSLHandshake();
     }

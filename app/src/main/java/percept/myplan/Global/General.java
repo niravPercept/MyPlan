@@ -145,6 +145,8 @@ public class General {
                 return ".deleteProfilemage";
             case DELETE_STRATEGY_AUDIO:
                 return ".DeleteStrategyaudio";
+            case GETHELPINFOSYMPTOMS:
+                return ".getHelpinfosymptoms";
             default:
                 return "";
         }
@@ -197,6 +199,20 @@ public class General {
                 _str = _str + "&lang=da";
             }
         }
+
+        if (getServiceName(servicesName).equalsIgnoreCase(".getHelpinfo")) {
+            if (Locale.getDefault().getLanguage().equalsIgnoreCase("da")) {
+                _str = _str + "&lang=da";
+            }
+        }
+        if (getServiceName(servicesName).equalsIgnoreCase(".getHelpinfosymptoms")) {
+            if (Locale.getDefault().getLanguage().equalsIgnoreCase("da")) {
+                _str = _str + "&lang=da";
+            }
+        }
+
+
+
         JSONObject parameters = new JSONObject(params);
 
         Log.d("::::::Params ", parameters.toString());
@@ -296,6 +312,6 @@ public class General {
         GET_USER_STRATEGY, PROFILE, DELETE_HOPE_BOX, FORGOT_PASSWORD,
         GET_SETTINGS, SAVE_SETTINGS, GET_MESSAGE, SAVE_MESSAGE, GET_HELP_INFO, GIVE_FEEDBACK,
         GET_EMERGENCY_ROOMS, SAVE_EMERGENCY_ROOM, DELETE_STRATEGY_IMAGES, DELETE_SYMPTOM, DELETE_HOPE_MEDIA,
-        GET_EXPORT_PDF, GET_PROFILE, DELETE_PROFILEMAGE,DELETE_STRATEGY_AUDIO,
+        GET_EXPORT_PDF, GET_PROFILE, DELETE_PROFILEMAGE,DELETE_STRATEGY_AUDIO,GETHELPINFOSYMPTOMS,
     }
 }

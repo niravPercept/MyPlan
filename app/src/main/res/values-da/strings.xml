@@ -384,4 +384,11 @@
     <string name="priority">Vælg en prioritet</string>
     <string name="hopebox_history">Vælg venligst eventuelle medier</string>
     <string name="contactadderror">Venligst Indtast fornavn eller telefonnummer</string>
+
+    <string name="choosefromexisting">Vælg eksisterende kontaktperson</string>
+    <string name="progress_uploading">Upload - venligst holde på ...</string>
+    <string name="video_size_bigger">Kan ikke tilføje denne video. Video størrelse skal være mindre end 5 MB. Vælg venligst en anden video.</string>
+    <string name="music_size_bigger">Kan ikke tilføje denne musik. Musik størrelse skal være mindre end 5 MB. Vælg venligst en anden musikfil.</string>
+    <string name="image_size_bigger">Kan ikke tilføje dette billede. Billede skal være mindre end 512 KB. Vælg et andet billede.</string>
+
 </resources>

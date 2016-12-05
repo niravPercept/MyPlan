@@ -29,8 +29,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -59,8 +61,10 @@ import percept.myplan.Interfaces.ClickListener;
 import percept.myplan.Interfaces.VolleyResponseListener;
 import percept.myplan.POJO.HelpVideos;
 import percept.myplan.POJO.Symptom;
+import percept.myplan.POJO.info;
 import percept.myplan.R;
 import percept.myplan.adapters.SymptomAdapter;
+import percept.myplan.adapters.getHelpinfoadapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,6 +87,9 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
     private TextView tvTitle1, tvTitle2, tvTitle3, tvTitle4;
     private ImageView ivThumb1, ivThumb2, ivThumb3, ivThumb4;
     private ProgressDialog mProgressDialog;
+
+    private ListView lstmenu;
+    private List<info> infos;
     public fragmentSymptoms() {
         // Required empty public constructor
     }
@@ -145,14 +152,17 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
 
         BTN_INFO = (Button) _View.findViewById(R.id.btnShowInfo);
         BTN_SHOWINFOINSIDE = (Button) _View.findViewById(R.id.btnShowInfoInside);
-        tvTitle1 = (TextView) _View.findViewById(R.id.tvTitle1);
+        /*tvTitle1 = (TextView) _View.findViewById(R.id.tvTitle1);
         tvTitle2 = (TextView) _View.findViewById(R.id.tvTitle2);
         tvTitle3 = (TextView) _View.findViewById(R.id.tvTitle3);
         tvTitle4 = (TextView) _View.findViewById(R.id.tvTitle4);
         ivThumb1 = (ImageView) _View.findViewById(R.id.ivThumb1);
         ivThumb2 = (ImageView) _View.findViewById(R.id.ivThumb2);
         ivThumb3 = (ImageView) _View.findViewById(R.id.ivThumb3);
-        ivThumb4 = (ImageView) _View.findViewById(R.id.ivThumb4);
+        ivThumb4 = (ImageView) _View.findViewById(R.id.ivThumb4);*/
+
+        infos=new ArrayList<>();
+        lstmenu= (ListView)_View.findViewById(R.id.listmenuinfo);
         //android:background="#55000000"
         BTN_INFO.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,14 +217,24 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
                         });
             }
         });
-        tvTitle1.setOnClickListener(this);
+       /* tvTitle1.setOnClickListener(this);
         tvTitle2.setOnClickListener(this);
         tvTitle3.setOnClickListener(this);
         tvTitle4.setOnClickListener(this);
         ivThumb1.setOnClickListener(this);
         ivThumb2.setOnClickListener(this);
         ivThumb3.setOnClickListener(this);
-        ivThumb4.setOnClickListener(this);
+        ivThumb4.setOnClickListener(this);*/
+
+        lstmenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (listHelpVideos != null && listHelpVideos.size() > 1) {
+                    watchVideoOnYouTube(listHelpVideos.get(1).getVideoLink());
+                }
+            }
+        });
+
         initSwipe();
         return _View;
     }
@@ -302,7 +322,7 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
     private void getHelpinfo() {
         showProgress(getString(R.string.progress_loading));
         try {
-            new General().getJSONContentFromInternetService(getActivity(), General.PHPServices.GET_HELP_INFO, new HashMap<String, String>(), true, false, true, new VolleyResponseListener() {
+            new General().getJSONContentFromInternetService(getActivity(), General.PHPServices.GETHELPINFOSYMPTOMS, new HashMap<String, String>(), true, false, true, new VolleyResponseListener() {
                 @Override
                 public void onError(VolleyError message) {
                     dismissProgress();
@@ -314,7 +334,17 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
                     try {
                         listHelpVideos = new Gson().fromJson(response.getJSONArray(Constant.DATA).toString(), new TypeToken<ArrayList<HelpVideos>>() {
                         }.getType());
-                        tvTitle1.setText(listHelpVideos.get(0).getVideoTitle());
+
+                        infos.clear();
+                        for (int i=0;i<listHelpVideos.size();i++){
+                            info in=new info(listHelpVideos.get(i).getVideoLink(),listHelpVideos.get(i).getVideoTitle());
+                            infos.add(in);
+                        }
+
+                        getHelpinfoadapter adapter=new getHelpinfoadapter(getContext(),infos);
+                        lstmenu.setAdapter(adapter);
+
+                        /*tvTitle1.setText(listHelpVideos.get(0).getVideoTitle());
                         tvTitle2.setText(listHelpVideos.get(1).getVideoTitle());
                         tvTitle3.setText(listHelpVideos.get(2).getVideoTitle());
                         tvTitle4.setText(listHelpVideos.get(3).getVideoTitle());
@@ -329,7 +359,7 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
                                 .into(ivThumb3);
                         Picasso.with(getActivity())
                                 .load("http://img.youtube.com/vi/" + listHelpVideos.get(3).getVideoLink() + "/1.jpg")
-                                .into(ivThumb4);
+                                .into(ivThumb4);*/
                         dismissProgress();
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -356,7 +386,7 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
+        /*switch (view.getId()) {
             case R.id.tvTitle1:
             case R.id.ivThumb1:
                 if (listHelpVideos != null && listHelpVideos.size() > 0) {
@@ -385,7 +415,7 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
 
                 }
                 break;
-        }
+        }*/
     }
 
     private void initSwipe() {
