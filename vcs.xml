@@ -14,8 +14,16 @@
           <option name="url" value="https://bitbucket.org/gmerit/android-snosuite" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://github.com" />
+          <option name="userName" value="niravpercept" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/niravPercept/MyPlan.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="$USER_HOME$/Vishnu/Developement" />
+    <option name="cloneParentDir" value="$USER_HOME$/ketan/" />
   </component>
 </application>
