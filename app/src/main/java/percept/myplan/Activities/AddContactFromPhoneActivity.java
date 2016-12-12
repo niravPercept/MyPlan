@@ -143,6 +143,7 @@ public class AddContactFromPhoneActivity extends AppCompatActivity implements
 //        LST_CONTACT = (RecyclerView) findViewById(R.id.lstContact);
         LIST_CONTACTS = new ArrayList<>();
 
+
         LST_CONTACT = (StickyListHeadersListView) findViewById(R.id.list);
         LST_CONTACT.setOnStickyHeaderChangedListener(this);
         LST_CONTACT.setOnStickyHeaderOffsetChangedListener(this);
@@ -205,11 +206,19 @@ public class AddContactFromPhoneActivity extends AppCompatActivity implements
             @Override
             public void onTextChanged(CharSequence s, int i, int i2, int i3) {
 
-                CONTACT_ADAPTER.getFilter().filter(s.toString());
+                if (CONTACT_ADAPTER != null)
+                     CONTACT_ADAPTER.getFilter().filter(s.toString());
+                else
+                    ADAPTER.getFilter().filter(s.toString());
+
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
+                if (CONTACT_ADAPTER != null)
+                    CONTACT_ADAPTER.getFilter().filter(editable.toString());
+                else
+                    ADAPTER.getFilter().filter(editable.toString());
             }
         });
 

@@ -21,6 +21,7 @@ import java.util.Set;
 
 import percept.myplan.R;
 
+
 /**
  * StickyHeaderLayoutManager
  * Provides equivalent behavior to a simple LinearLayoutManager, but where section header items

@@ -116,7 +116,8 @@ public class MoodSummaryActivity extends AppCompatActivity {
                             Calendar cal = Calendar.getInstance();
                             cal.setTime(date);
                             String _suffix = UTILS.getDayOfMonthSuffix(cal.get(Calendar.DAY_OF_MONTH));
-                            SimpleDateFormat _getDay = new SimpleDateFormat("EEEE d'" + _suffix + "' ' of ' MMMM");
+                            SimpleDateFormat _getDay = new SimpleDateFormat("EEEE, d MMMM yyyy");
+//                            SimpleDateFormat _getDay = new SimpleDateFormat("EEEE d'" + _suffix + "' ' of ' MMMM");
                             LIST_MOOD.get(i).setMOOD_DATE_STRING(_getDay.format(date));
                         } catch (ParseException e) {
                             e.printStackTrace();

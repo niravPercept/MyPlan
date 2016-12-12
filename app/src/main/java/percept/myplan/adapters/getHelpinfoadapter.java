@@ -10,8 +10,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import percept.myplan.Activities.LoginActivity;
 import percept.myplan.POJO.info;
 import percept.myplan.R;
 

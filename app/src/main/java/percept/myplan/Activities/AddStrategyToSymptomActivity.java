@@ -53,7 +53,7 @@ public class AddStrategyToSymptomActivity extends AppCompatActivity {
 
     private TextView TV_ADDSTRATEGY;
     private RecyclerView LST_STRATEGY;
-    public static List<Strategy> LIST_STRATEGY;
+    private List<Strategy> LIST_STRATEGY;
     private StrategySelectionAdapter ADAPTER;
     private Button BTN_INSPIRATION;
     private List<String> LIST_SELECTEDID;

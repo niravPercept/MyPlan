@@ -1,7 +1,7 @@
 /********************************************************************
  *                                                                  *
  * THIS FILE IS PART OF THE Ogg CONTAINER SOURCE CODE.              *
- * USE, DISTRIBUTION AND REPRODUCTION OF THIS LIBRARY SOURCE IS     *
+ * USE, DISTRIBUTION AND REpercept OF THIS LIBRARY SOURCE IS     *
  * GOVERNED BY A BSD-STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *

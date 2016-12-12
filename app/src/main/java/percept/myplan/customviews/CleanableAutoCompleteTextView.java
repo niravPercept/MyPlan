@@ -116,6 +116,8 @@ public class CleanableAutoCompleteTextView extends AutoCompleteTextView implemen
 		}
 	}
 
+
+
 	@Override
 	public void onTextChanged(AutoCompleteTextView view, String text) {
 		if (isFocused()) {

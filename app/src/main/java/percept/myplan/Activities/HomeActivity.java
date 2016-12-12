@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -24,6 +25,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -136,6 +138,8 @@ public class HomeActivity extends AppCompatActivity implements
     private TextView TV_PROFILE_NAME;
     private ImageView IMG_DRAWER;
     private boolean isFromDialog = false;
+    Fragment fragment1=null;
+    TextView mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,6 +183,7 @@ public class HomeActivity extends AppCompatActivity implements
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
         TV_PROFILE_NAME = (TextView) findViewById(R.id.tvProfileName);
         IMG_DRAWER = (ImageView) findViewById(R.id.imgDrawer);
 
@@ -188,6 +193,22 @@ public class HomeActivity extends AppCompatActivity implements
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 drawer.closeDrawers();
                 selectItem(i + 1);
+            }
+        });
+
+
+        TV_PROFILE_NAME.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawers();
+                selectItem(0);
+//              String  tag = fragmentHome.class.getSimpleName();
+//                fragment1 = getSupportFragmentManager().findFragmentByTag(tag);
+//                if (fragment1== null) {
+//                    fragment1 = new fragmentHome();
+//                }
+//                mTitle.setText(getResources().getString(R.string.app_name));
+//                Constant.CURRENT_FRAGMENT = fragmentHome.INDEX;
             }
         });
 
@@ -549,7 +570,7 @@ public class HomeActivity extends AppCompatActivity implements
         Fragment fragment = null;
         FragmentManager fragmentManager = getSupportFragmentManager();
         String tag = "";
-        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+
         switch (position) {
             case fragmentHome.INDEX:
                 tag = fragmentHome.class.getSimpleName();
@@ -849,8 +870,13 @@ public class HomeActivity extends AppCompatActivity implements
         TpaConfiguration config =
                 new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")
                         // other config settings
+                        .enableAnalytics(true)
+                        .useShakeFeedback(true, null)
                         .enableAutoTrackScreen(true)
                         .build();
+        //config.getUpdateInterval();
+//        Log.e("update",config.getUpdateInterval().toString());
+
     }
 
 

@@ -56,7 +56,6 @@ import percept.myplan.POJO.SymptomStrategy;
 import percept.myplan.R;
 import percept.myplan.adapters.SymptomStrategyAdapter;
 
-import static percept.myplan.Activities.AddStrategyToSymptomActivity.LIST_STRATEGY;
 import static percept.myplan.fragments.fragmentSymptoms.GET_STRATEGY;
 
 public class SymptomDetailsActivity extends AppCompatActivity {
@@ -194,9 +193,6 @@ public class SymptomDetailsActivity extends AppCompatActivity {
 
             }
         });
-
-
-        initSwipe();
     }
 
     @Override
@@ -397,9 +393,7 @@ public class SymptomDetailsActivity extends AppCompatActivity {
         }
     }
 
-
-
-    private void initSwipe() {
+/*    private void initSwipe() {
         final Paint p = new Paint();
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
@@ -411,72 +405,52 @@ public class SymptomDetailsActivity extends AppCompatActivity {
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 final int position = viewHolder.getAdapterPosition();
-                final dialogYesNoOption _dialog = new dialogYesNoOption(SymptomDetailsActivity.this, getString(R.string.delete_symptom)) {
+//                if (direction == ItemTouchHelper.LEFT){
+//                    adapter.removeItem(position);
+//                } else {
+                // Snackbar.make(getView(), "Swipe Right", Snackbar.LENGTH_LONG).show();
+//                }
+                dialogYesNoOption _dialog = new dialogYesNoOption(SymptomDetailsActivity.this, getString(R.string.delete_symptom)) {
 
                     @Override
                     public void onClickYes() {
+                       *//* if (!General.checkInternetConnection(SymptomDetailsActivity.this))
+                            return;
+                        HashMap<String, String> params = new HashMap<>();
+                        params.put("sid",Constant.SID);
+                        params.put("sname",Constant.SNAME);
+                        params.put("id",LIST_SYMPTOM.get(position).getId());
 
-                     LIST_SYMPTOMSTRATEGY.remove(LIST_SYMPTOMSTRATEGY.get(position).getId());
-                     LIST_STRATEGY.remove(LIST_SYMPTOMSTRATEGY.get(position).getId());
-                     ADAPTER.notifyDataSetChanged();
-                     SaveSymptoms();
-                     dismiss();
+                        try {
+                            showProgress(getString(R.string.progress_loading));
+                            dismiss();
+                            new General().getJSONContentFromInternetService(getActivity(),
+                                    General.PHPServices.DELETE_SYMPTOM, params,
+                                    true, false, true, new VolleyResponseListener() {
 
-//                        if (!General.checkInternetConnection(SymptomDetailsActivity.this))
-//                            return;
-//                        mProgressDialog = new ProgressDialog(SymptomDetailsActivity.this);
-//                        mProgressDialog.setMessage(getString(R.string.progress_loading));
-//                        mProgressDialog.setIndeterminate(false);
-//                        mProgressDialog.setCanceledOnTouchOutside(false);
-//                        mProgressDialog.show();
-//                        Map<String, String> params = new HashMap<String, String>();
-//                        params.put("sid", Constant.SID);
-//                        params.put("sname", Constant.SNAME);
-//                        params.put("id", SYMPTOM_ID);
-//                        params.put("title", TV_TITLE.getText().toString().trim());
-//                        params.put("description", TV_TEXT.getText().toString().trim());
-//                        params.put("strategy_id", STR_STRATEGYID);
-//                        params.put("state", "1");
-//
-//                        try {
-//                            new General().getJSONContentFromInternetService(SymptomDetailsActivity.this, General.PHPServices.SAVE_SYMPTOM, params, true, false, true, new VolleyResponseListener() {
-//                                @Override
-//                                public void onError(VolleyError message) {
-//
-//                                }
-//
-//                                @Override
-//                                public void onResponse(JSONObject response) {
-//                                    mProgressDialog.dismiss();
-//                                    GET_STRATEGY = true;
-//                                    Log.d(":::::", response.toString());
-//                                    SymptomDetailsActivity.this.finish();
-//                                }
-//                            },SYMPTOM_ID);
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                            mProgressDialog.dismiss();
-//                            Snackbar snackbar = Snackbar
-//                                    .make(REL_COORDINATE, getResources().getString(R.string.nointernet), Snackbar.LENGTH_INDEFINITE)
-//                                    .setAction(getResources().getString(R.string.retry), new View.OnClickListener() {
-//                                        @Override
-//                                        public void onClick(View view) {
-//                                            SaveSymptoms();
-//                                        }
-//                                    });
-//                            snackbar.setActionTextColor(Color.RED);
-//                            View sbView = snackbar.getView();
-//                            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-//                            textView.setTextColor(Color.YELLOW);
-//                            snackbar.show();
-//                        }
-//                     //SaveSymptoms();
+                                        @Override
+                                        public void onError(VolleyError message) {
+                                            dismissProgress();
+                                            ADAPTER.notifyDataSetChanged();
+                                        }
+
+                                        @Override
+                                        public void onResponse(JSONObject response) {
+                                            dismissProgress();
+                                            LIST_SYMPTOM.remove(position);
+                                            ADAPTER.notifyDataSetChanged();
+                                        }
+                                    },LIST_SYMPTOM.get(position).getId());
+                        } catch (Exception e) {
+                            dismissProgress();
+                            e.printStackTrace();
+                        }*//*
                     }
+
                     @Override
                     public void onClickNo() {
                         ADAPTER.notifyDataSetChanged();
                         dismiss();
-                       // dismiss();
                     }
                 };
                 _dialog.setCancelable(false);
@@ -515,8 +489,10 @@ public class SymptomDetailsActivity extends AppCompatActivity {
             }
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
-        itemTouchHelper.attachToRecyclerView(LST_SYMPTOMSTRATEGY);
-    }
+        itemTouchHelper.attachToRecyclerView(LST_SYMPTOM);
+    }*/
+
+
 
 
 
@@ -526,6 +502,8 @@ public class SymptomDetailsActivity extends AppCompatActivity {
                 new TpaConfiguration.Builder("d3baf5af-0002-4e72-82bd-9ed0c66af31c", "https://weiswise.tpa.io/")
                         // other config settings
                         .enableAutoTrackScreen(true)
+                        .enableAnalytics(true)
+                        .useShakeFeedback(true)
                         .build();
     }
     @Override
@@ -545,4 +523,8 @@ public class SymptomDetailsActivity extends AppCompatActivity {
         super.onStop();
         AppLifeCycle.getInstance().stopped(this);
     }
+
+
+
+
 }
