@@ -153,12 +153,18 @@ public class PieGraph extends View implements HoloGraphAnimate {
             currentAngle = currentAngle + currentSweep;
 
             mPaint.setTextAlign(Paint.Align.CENTER);
+//            mPaint.setTextAlign(P);
             mPaint.setColor(0xFFFFFFFF);
-            mPaint.setTextSize(28.0f);
+            mPaint.setTextSize(40.0f);
             if (!TextUtils.isEmpty(slice.getTitle()))
+               /* canvas.drawText(slice.getTitle(),
+                        (float) (midX + ((radius - innerRadius)/2)*Math.sin((currentSweep)*(Math.PI/360) )),
+                        (float) (midY - ( (radius - innerRadius)/2)*Math.cos((currentSweep)*(Math.PI/360))),
+                        mPaint);*/
+
                 canvas.drawText(slice.getTitle(),
-                        (float) (midX + (innerRadius + (radius - innerRadius)/2)*Math.sin((currentSweep)*(Math.PI/360) )),
-                        (float) (midY - (innerRadius + (radius - innerRadius)/2)*Math.cos((currentSweep)*(Math.PI/360))),
+                        (float) (midX -((radius - innerRadius)/2)*Math.sin((currentSweep)*(Math.PI/360) )),
+                        (float) (midY +( (radius - innerRadius)/2)*Math.sin((currentSweep)*(Math.PI/360))),
                         mPaint);
             count++;
         }

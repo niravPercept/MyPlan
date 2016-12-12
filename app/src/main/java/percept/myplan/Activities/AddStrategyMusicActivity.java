@@ -25,6 +25,7 @@ import java.util.List;
 import io.tpa.tpalib.lifecycle.AppLifeCycle;
 import percept.myplan.Global.Constant;
 import percept.myplan.POJO.HopeDetail;
+import percept.myplan.POJO.StrategyDetails;
 import percept.myplan.R;
 
 public class AddStrategyMusicActivity extends AppCompatActivity {
@@ -41,6 +42,7 @@ public class AddStrategyMusicActivity extends AppCompatActivity {
     public List<String> listmusics;//change by ketan
     private RecyclerView rvMusic;
     private SelectedMusicListAdapter selectedMusicListAdapter;
+    private  AddStrategyActivity  addlink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,13 +148,43 @@ public class AddStrategyMusicActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case SET_LINK:
-                if (resultCode == RESULT_OK) {
-                    Intent returnIntent = new Intent();
-                    returnIntent.putExtra("LINK", data.getStringExtra("LINK"));
+            if (resultCode == RESULT_OK) {
+
+                if (FROM.equals("") || FROM_EDIT) {
+                    if (FROM_EDIT) {
+                        listmusic = new ArrayList<>();
+                        String ar = data.getStringExtra("LINK");
+                        StrategyEditActivity.LIST_MUSIC.add(ar);
+                        listmusic.addAll(StrategyEditActivity.LIST_MUSIC);
+
+                        selectedMusicListAdapter = new SelectedMusicListAdapter(listmusic);
+                        Log.d("strategylist", StrategyEditActivity.LIST_MUSIC.toString());
+                        rvMusic.setAdapter(selectedMusicListAdapter);
+                    } else {
+                        String ar = data.getStringExtra("LINK");
+                        AddStrategyActivity.LIST_MUSIC.add(ar);
+                        selectedMusicListAdapter = new SelectedMusicListAdapter(AddStrategyActivity.LIST_MUSIC);
+                        rvMusic.setAdapter(selectedMusicListAdapter);
+                    }
+                }
+            }else AddStrategyMusicActivity.this.finish();
+                   /* Intent returnIntent = new Intent();
+                    returnIntent.putExtra("LINK1", data.getStringExtra("LINK"));
                     setResult(Activity.RESULT_OK, returnIntent);
-                    AddStrategyMusicActivity.this.finish();
-                } else AddStrategyMusicActivity.this.finish();
+                    AddStrategyMusicActivity.this.finish();*/
+                //} else
                 break;
+
+
+//            case SET_LINK:
+//                if (resultCode == RESULT_OK) {
+//                    Intent returnIntent = new Intent();
+//                    returnIntent.putExtra("LINK", data.getStringExtra("LINK"));
+//                    setResult(Activity.RESULT_OK, returnIntent);
+//
+//                   // AddStrategyMusicActivity.this.finish();
+//                } else AddStrategyMusicActivity.this.finish();
+//                break;
             case REQ_CODE_MUSIC_LIST:
                 if (resultCode == RESULT_OK) {// change Method
                     if (FROM.equals("") || FROM_EDIT) {

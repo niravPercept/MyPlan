@@ -1,6 +1,8 @@
 package percept.myplan.adapters;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -43,6 +45,7 @@ public class SidaSummaryAdapter extends RecyclerView.Adapter<SidaSummaryAdapter.
         return new MyViewHolder(itemView);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         SidaSummary _mood = LST_MOOD.get(position);
@@ -68,19 +71,27 @@ public class SidaSummaryAdapter extends RecyclerView.Adapter<SidaSummaryAdapter.
 //            $color = '#ed1c24';
         }
 
-        slice.setValue(Float.parseFloat(_mood.getAvg_Score()));
+        slice.setValue(100);
         slice.setTitle(new DecimalFormat("0").format(Float.parseFloat(_mood.getAvg_Score())));
 
         LST_PIEDATA.add(slice);
+
         slice = new PieSlice();
         slice.setColor(CONTEXT.getResources().getColor(android.R.color.transparent));
-        slice.setValue(100 - Float.parseFloat(_mood.getAvg_Score()));
+//        slice.setValue(100 - 99);
 //        slice.setTitle(new DecimalFormat("0.00").format(100 - Float.parseFloat(_mood.getAvg_Score())) + "%");
         LST_PIEDATA.add(slice);
+
+
         SIDA_PIE_GRAPH.removeSlices();
         SIDA_PIE_GRAPH.addSlice(LST_PIEDATA.get(0));
         SIDA_PIE_GRAPH.addSlice(LST_PIEDATA.get(1));
         SIDA_PIE_GRAPH.setPadding(2);
+        SIDA_PIE_GRAPH.setPadding(10);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            SIDA_PIE_GRAPH.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+        }
 
 
     }

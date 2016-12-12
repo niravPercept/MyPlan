@@ -179,24 +179,32 @@ public class SidaTestActivity extends AppCompatActivity {
                     Log.i(":::SidasTest::", response.toString());
                     mProgressDialog.dismiss();
                     try {
-                        int score = response.getJSONObject(Constant.DATA).getInt("score");
-                        if (score > 15 && score <= 21) {
-                            InfoDialog infoDialog = new InfoDialog(SidaTestActivity.this, getString(R.string.test_result_btwn_15to21),
+                        int score= response.getJSONObject(Constant.DATA).getInt("score");
+                       // int score=20;
+                        if (score >=15 && score < 21) {
+                            InfoDialog infoDialog = new InfoDialog(SidaTestActivity.this,getString(R.string.test_result_btwn_15to21) ,
                                     getString(R.string.help), getString(R.string.inspiration)) {
+
 
                                 @Override
                                 public void onClickFirstButton() {
+//                                    Intent _intent = new Intent(SidaTestActivity.this, HelpListActivity.class);
+//                                    startActivity(_intent);
                                     Intent _intent = new Intent(SidaTestActivity.this, HelpListActivity.class);
                                     startActivity(_intent);
                                 }
 
                                 @Override
                                 public void onClickSecondButton() {
-                                    Intent _iIntent = new Intent();
-                                    _iIntent.putExtra("SIDAS_OPEN_STRATEGIES", true);
-                                    setResult(RESULT_OK, _iIntent);
+//                                    Intent _iIntent = new Intent();
+//                                    _iIntent.putExtra("SIDAS_OPEN_STRATEGIES", true);
+//                                    setResult(RESULT_OK, _iIntent);
+                                    Intent _intent = new Intent(SidaTestActivity.this, InspirationCategoryActivity.class);
+                                    startActivity(_intent);
+                                    SidaTestActivity.this.finish();
                                 }
                             };
+                            infoDialog.setCanceledOnTouchOutside(true);
                             infoDialog.show();
                             infoDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override
@@ -204,7 +212,7 @@ public class SidaTestActivity extends AppCompatActivity {
 
                                 }
                             });
-                        } else if (score > 21) {
+                        } else if (score >= 21) {
                             InfoDialog infoDialog = new InfoDialog(SidaTestActivity.this, getString(R.string.test_result_greater_21),
                                     getString(R.string.help), getString(R.string.emergency)) {
 
@@ -221,7 +229,9 @@ public class SidaTestActivity extends AppCompatActivity {
                                     getEmergencyContact();
                                 }
                             };
+                            infoDialog.setCanceledOnTouchOutside(true);
                             infoDialog.show();
+
                             infoDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override
                                 public void onDismiss(DialogInterface dialogInterface) {
@@ -237,6 +247,7 @@ public class SidaTestActivity extends AppCompatActivity {
                                     SidaTestActivity.this.finish();
                                 }
                             };
+                            infoDialog.setCanceledOnTouchOutside(true);
                             infoDialog.show();
                             infoDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override

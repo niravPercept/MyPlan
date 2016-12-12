@@ -62,6 +62,7 @@ import percept.myplan.Interfaces.VolleyResponseListener;
 import percept.myplan.POJO.HelpVideos;
 import percept.myplan.POJO.Symptom;
 import percept.myplan.POJO.info;
+import percept.myplan.POJO.infohelp;
 import percept.myplan.R;
 import percept.myplan.adapters.SymptomAdapter;
 import percept.myplan.adapters.getHelpinfoadapter;
@@ -105,6 +106,8 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
         BTN_DANGERSIGNAL = (Button) _View.findViewById(R.id.btnDangerSignal);
         REL_COORDINATE = (CoordinatorLayout) _View.findViewById(R.id.snakeBar);
         LIST_SYMPTOM = new ArrayList<>();
+        infos=new ArrayList<>();
+
 
 
         setHasOptionsMenu(true);
@@ -152,18 +155,16 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
 
         BTN_INFO = (Button) _View.findViewById(R.id.btnShowInfo);
         BTN_SHOWINFOINSIDE = (Button) _View.findViewById(R.id.btnShowInfoInside);
-        /*tvTitle1 = (TextView) _View.findViewById(R.id.tvTitle1);
-        tvTitle2 = (TextView) _View.findViewById(R.id.tvTitle2);
-        tvTitle3 = (TextView) _View.findViewById(R.id.tvTitle3);
-        tvTitle4 = (TextView) _View.findViewById(R.id.tvTitle4);
-        ivThumb1 = (ImageView) _View.findViewById(R.id.ivThumb1);
-        ivThumb2 = (ImageView) _View.findViewById(R.id.ivThumb2);
-        ivThumb3 = (ImageView) _View.findViewById(R.id.ivThumb3);
-        ivThumb4 = (ImageView) _View.findViewById(R.id.ivThumb4);*/
-
-        infos=new ArrayList<>();
-        lstmenu= (ListView)_View.findViewById(R.id.listmenuinfo);
+//        tvTitle1 = (TextView) _View.findViewById(R.id.tvTitle1);
+//        tvTitle2 = (TextView) _View.findViewById(R.id.tvTitle2);
+//        tvTitle3 = (TextView) _View.findViewById(R.id.tvTitle3);
+//        tvTitle4 = (TextView) _View.findViewById(R.id.tvTitle4);
+//        ivThumb1 = (ImageView) _View.findViewById(R.id.ivThumb1);
+//        ivThumb2 = (ImageView) _View.findViewById(R.id.ivThumb2);
+//        ivThumb3 = (ImageView) _View.findViewById(R.id.ivThumb3);
+//        ivThumb4 = (ImageView) _View.findViewById(R.id.ivThumb4);
         //android:background="#55000000"
+        lstmenu= (ListView)_View.findViewById(R.id.listmenuinfo);
         BTN_INFO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,8 +180,9 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
                                 public void onAnimationEnd(Animator animation) {
                                     super.onAnimationEnd(animation);
                                     LAY_INFO.setVisibility(View.VISIBLE);
-                                    if (listHelpVideos == null)
-                                        getHelpinfo();
+                                    if (listHelpVideos == null){
+                                            getHelpinfo();
+                                    }
                                 }
                             });
 
@@ -217,14 +219,14 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
                         });
             }
         });
-       /* tvTitle1.setOnClickListener(this);
-        tvTitle2.setOnClickListener(this);
-        tvTitle3.setOnClickListener(this);
-        tvTitle4.setOnClickListener(this);
-        ivThumb1.setOnClickListener(this);
-        ivThumb2.setOnClickListener(this);
-        ivThumb3.setOnClickListener(this);
-        ivThumb4.setOnClickListener(this);*/
+//        tvTitle1.setOnClickListener(this);
+//        tvTitle2.setOnClickListener(this);
+//        tvTitle3.setOnClickListener(this);
+//        tvTitle4.setOnClickListener(this);
+//        ivThumb1.setOnClickListener(this);
+//        ivThumb2.setOnClickListener(this);
+//        ivThumb3.setOnClickListener(this);
+//        ivThumb4.setOnClickListener(this);
 
         lstmenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -234,6 +236,8 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
                 }
             }
         });
+
+
 
         initSwipe();
         return _View;
@@ -343,23 +347,22 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
 
                         getHelpinfoadapter adapter=new getHelpinfoadapter(getContext(),infos);
                         lstmenu.setAdapter(adapter);
-
-                        /*tvTitle1.setText(listHelpVideos.get(0).getVideoTitle());
-                        tvTitle2.setText(listHelpVideos.get(1).getVideoTitle());
-                        tvTitle3.setText(listHelpVideos.get(2).getVideoTitle());
-                        tvTitle4.setText(listHelpVideos.get(3).getVideoTitle());
-                        Picasso.with(getActivity())
-                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(0).getVideoLink() + "/1.jpg")
-                                .into(ivThumb1);
-                        Picasso.with(getActivity())
-                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(1).getVideoLink() + "/1.jpg")
-                                .into(ivThumb2);
-                        Picasso.with(getActivity())
-                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(2).getVideoLink() + "/1.jpg")
-                                .into(ivThumb3);
-                        Picasso.with(getActivity())
-                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(3).getVideoLink() + "/1.jpg")
-                                .into(ivThumb4);*/
+//                        tvTitle1.setText(listHelpVideos.get(0).getVideoTitle());
+//                        tvTitle2.setText(listHelpVideos.get(1).getVideoTitle());
+//                        tvTitle3.setText(listHelpVideos.get(2).getVideoTitle());
+//                        tvTitle4.setText(listHelpVideos.get(3).getVideoTitle());
+//                        Picasso.with(getActivity())
+//                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(0).getVideoLink() + "/1.jpg")
+//                                .into(ivThumb1);
+//                        Picasso.with(getActivity())
+//                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(1).getVideoLink() + "/1.jpg")
+//                                .into(ivThumb2);
+//                        Picasso.with(getActivity())
+//                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(2).getVideoLink() + "/1.jpg")
+//                                .into(ivThumb3);
+//                        Picasso.with(getActivity())
+//                                .load("http://img.youtube.com/vi/" + listHelpVideos.get(3).getVideoLink() + "/1.jpg")
+//                                .into(ivThumb4);
                         dismissProgress();
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -386,36 +389,36 @@ public class fragmentSymptoms extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        /*switch (view.getId()) {
-            case R.id.tvTitle1:
-            case R.id.ivThumb1:
-                if (listHelpVideos != null && listHelpVideos.size() > 0) {
-                    watchVideoOnYouTube(listHelpVideos.get(0).getVideoLink());
-
-                }
-                break;
-            case R.id.tvTitle2:
-            case R.id.ivThumb2:
-                if (listHelpVideos != null && listHelpVideos.size() > 1) {
-                    watchVideoOnYouTube(listHelpVideos.get(1).getVideoLink());
-
-                }
-                break;
-            case R.id.tvTitle3:
-            case R.id.ivThumb3:
-                if (listHelpVideos != null && listHelpVideos.size() > 2) {
-                    watchVideoOnYouTube(listHelpVideos.get(2).getVideoLink());
-
-                }
-                break;
-            case R.id.tvTitle4:
-            case R.id.ivThumb4:
-                if (listHelpVideos != null && listHelpVideos.size() > 3) {
-                    watchVideoOnYouTube(listHelpVideos.get(3).getVideoLink());
-
-                }
-                break;
-        }*/
+        switch (view.getId()) {
+//            case R.id.tvTitle1:
+//            case R.id.ivThumb1:
+//                if (listHelpVideos != null && listHelpVideos.size() > 0) {
+//                    watchVideoOnYouTube(listHelpVideos.get(0).getVideoLink());
+//
+//                }
+//                break;
+//            case R.id.tvTitle2:
+//            case R.id.ivThumb2:
+//                if (listHelpVideos != null && listHelpVideos.size() > 1) {
+//                    watchVideoOnYouTube(listHelpVideos.get(1).getVideoLink());
+//
+//                }
+//                break;
+//            case R.id.tvTitle3:
+//            case R.id.ivThumb3:
+//                if (listHelpVideos != null && listHelpVideos.size() > 2) {
+//                    watchVideoOnYouTube(listHelpVideos.get(2).getVideoLink());
+//
+//                }
+//                break;
+//            case R.id.tvTitle4:
+//            case R.id.ivThumb4:
+//                if (listHelpVideos != null && listHelpVideos.size() > 3) {
+//                    watchVideoOnYouTube(listHelpVideos.get(3).getVideoLink());
+//
+//                }
+//                break;
+        }
     }
 
     private void initSwipe() {

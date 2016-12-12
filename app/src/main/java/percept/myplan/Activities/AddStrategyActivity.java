@@ -64,7 +64,7 @@ public class AddStrategyActivity extends AppCompatActivity {
     private final int SET_LINK = 25;
     private EditText EDT_TITLE, EDT_TEXT;
     private TextView TV_ALARM, TV_IMAGES, TV_LINKS, TV_NETWORK, TV_MUSIC;
-    private String STR_LINK = "", STR_CONTACTID = "";
+    public String STR_LINK = "", STR_CONTACTID = "";
     private HashMap<String, List<Alarm>> MAP_ALARM;
     private Utils UTILS;
     private ProgressDialog mProgressDialog;
@@ -564,8 +564,10 @@ public class AddStrategyActivity extends AppCompatActivity {
 
                 if (data != null && data.hasExtra("LINK")) {
                     if (resultCode == Activity.RESULT_OK) {
-                        STR_LINK = data.getStringExtra("LINK");
-                        Log.d(":::::: ", STR_LINK);
+                    /*    STR_LINK = data.getStringExtra("LINK");
+                        Log.d(":::::: ", STR_LINK);*/
+                        LIST_MUSIC.add(data.getStringExtra("LINK"));
+                        Log.d("list music",LIST_MUSIC.toString());
 
                     }
                 }

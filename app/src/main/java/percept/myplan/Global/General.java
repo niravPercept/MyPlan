@@ -199,7 +199,6 @@ public class General {
                 _str = _str + "&lang=da";
             }
         }
-
         if (getServiceName(servicesName).equalsIgnoreCase(".getHelpinfo")) {
             if (Locale.getDefault().getLanguage().equalsIgnoreCase("da")) {
                 _str = _str + "&lang=da";
@@ -210,6 +209,7 @@ public class General {
                 _str = _str + "&lang=da";
             }
         }
+
 
 
 

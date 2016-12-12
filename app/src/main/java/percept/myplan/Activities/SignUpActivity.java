@@ -710,14 +710,32 @@ public class SignUpActivity extends AppCompatActivity {
             YEAR_PICKER = (NumberPicker) findViewById(R.id.pickYear);
             //setNumberPickerTextColor(YEAR_PICKER, android.R.color.black);
 
-            YEAR_PICKER.setMinValue(1960);
-            YEAR_PICKER.setMaxValue(SYEAR - 10);
+            int NUMBER_OF_VALUES = ((SYEAR - 4)-1916); //num of values in the picker
+            Log.e("Start",""+NUMBER_OF_VALUES);
+            int PICKER_RANGE = (SYEAR - 3);
+            Log.e("Rangge",""+PICKER_RANGE);
+            final String[] displayedValues  = new String[NUMBER_OF_VALUES];
+
+            for(int i=0; i<NUMBER_OF_VALUES; i++){
+                String displayValue = String.valueOf(PICKER_RANGE - (i+1));
+                Log.e("SetValue",""+displayValue);
+                displayedValues[i] = displayValue;
+            }
+
+
+            YEAR_PICKER.setMinValue(0);
+            YEAR_PICKER.setMaxValue(displayedValues.length-1);
+            YEAR_PICKER.setDisplayedValues(displayedValues);
+
+//            YEAR_PICKER.setMinValue(1917);
+//            YEAR_PICKER.setMaxValue(SYEAR - 4);
+           // YEAR_PICKER.setDescendantFocusability(NumberPicker.FOCUS_BEFORE_DESCENDANTS);
 
             TV_DONE.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     YEAR_PICKER.clearFocus();
-                    YEAR = String.valueOf(YEAR_PICKER.getValue());
+                    YEAR = String.valueOf(displayedValues[YEAR_PICKER.getValue()]);
                     YearCalender.this.dismiss();
                 }
             });
