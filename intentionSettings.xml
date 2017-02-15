@@ -3,5 +3,6 @@
     <ignoreAction name="Java/Refactorings/Introduce local variable" />
     <ignoreAction name="Java/Declaration/Move assignment to field declaration" />
     <ignoreAction name="Java/Declaration/Split Declaration" />
+    <ignoreAction name="Java/Imports/Expand Static Import" />
   </component>
 </application>
