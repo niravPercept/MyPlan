@@ -22,8 +22,12 @@
           <option name="url" value="https://github.com/niravPercept/MyPlan.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/QuickBlox/quickblox-android-sdk/tree/master/sample-chat" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="$USER_HOME$/ketan/percept.Myplan/MyPlan" />
+    <option name="cloneParentDir" value="$USER_HOME$/demo" />
   </component>
 </application>
