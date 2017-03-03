@@ -3,5 +3,6 @@
     <ignored-resource url="http://schemas.android.com/apk/res-auto" />
     <ignored-resource url="http://schemas.android.com/apk/res/android" />
     <ignored-resource url="http://schemas.android.com/apk/res/com.snosuite.src" />
+    <ignored-resource url="urn:oasis:names:tc:xliff:document:1.2" />
   </component>
 </application>
