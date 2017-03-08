@@ -6,5 +6,6 @@
     <ignoreAction name="Java/Imports/Expand Static Import" />
     <ignoreAction name="Java/Imports/Add On Demand Static Import" />
     <ignoreAction name="Java/Modifiers/Make Private" />
+    <ignoreAction name="Java/Imports/Add Single-Member Static Import" />
   </component>
 </application>
