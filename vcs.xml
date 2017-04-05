@@ -46,8 +46,12 @@
           <option name="url" value="https://github.com/raweng/augmented-reality-view.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="git@bitbucket.org:prakashpatel/android-nearme.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="$USER_HOME$/demo" />
+    <option name="cloneParentDir" value="$USER_HOME$/Android/studioworkspace" />
   </component>
 </application>
